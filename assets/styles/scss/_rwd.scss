@@ -1,0 +1,60 @@
+
+// 行動裝置
+@mixin rwd-mobile() {
+  @media all and (max-width: 1023px) {
+    @content;
+  }
+}
+
+// 電腦
+@mixin rwd-pc() {
+  @media all and (min-width: 1024px) {
+    @content;
+  }
+}
+
+// ---------------
+// 大於等於 觸發
+@mixin rwd-more($more) {
+  @media all and (min-width: ($more + 'px')) {
+    @content;
+  }
+}
+
+// 小於等於 觸發
+@mixin rwd-less($less) {
+  @media all and (max-width: ($less + 'px')) {
+    @content;
+  } 
+}
+ 
+// 兩數之間 觸發
+@mixin rwd-between($min, $max) {
+  @media all and (min-width: ($min + 'px')) and (max-width: ($max + 'px')) {
+    @content;
+  }
+}
+
+// -------------------
+// 寬度限制(需要有RWD輔助)
+@mixin rwd-limit($pc-gap: 40px, $mobile-gap: 10px) {
+  width: 100vw;
+  margin: 0 auto;
+  @include rwd-mobile {
+    padding: 0 $mobile-gap;
+  }
+  @include rwd-pc {
+    max-width: calc(1920px + $pc-gap * 2) !important;
+    padding: 0 $pc-gap;
+  }
+}
+
+// 寬度左右留白(需要有RWD輔助)
+@mixin rwd-padding($pc-gap: 40px, $mobile-gap: 10px) {
+  @include rwd-mobile {
+    padding: 0 $mobile-gap;
+  }
+  @include rwd-pc {
+    padding: 0 $pc-gap;
+  }
+}

@@ -1,0 +1,4 @@
+// 轉換rem
+@function rem($px: 16px, $defaultVal: 16px) {
+  @return calc($px / $defaultVal) * 1rem;
+}

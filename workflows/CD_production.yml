@@ -1,0 +1,17 @@
+name: CD_production
+on:
+  workflow_run:
+    workflows: CI_production # 需要监听的流程名字
+    types: completed
+jobs:
+    continuous-deployment:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        steps:
+          - name: Remote SSH Command
+            uses: appleboy/ssh-action@v1.0.0
+            with:
+              host: ${{ secrets.SSH_HOST_NAME }}
+              username: ${{ secrets.SSH_USERNAME }}
+              password: ${{ secrets.SSH_PASSWORD }}
+              script: cd ${{ secrets.FOLDER_PATH }} && ./deploy.sh

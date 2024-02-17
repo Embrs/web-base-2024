@@ -1,0 +1,92 @@
+:root {
+  --primary-900: #240507;
+  --primary-800: #480A0E;
+  --primary-700: #6B1016;
+  --primary-600: #8F151D;
+  --primary-500: #B31A24;
+  --primary-400: #E02A36;
+  --primary-300: #E85F68;
+  --primary-200: #F0949A;
+  --primary-100: #F7CACD;
+  --primary: #B31A24;
+
+  --secondary-900: #2D200B;
+  --secondary-800: #5A4015;
+  --secondary-700: #876020;
+  --secondary-600: #B47F2A;
+  --secondary-500: #D39C43;
+  --secondary-400: #DCB069;
+  --secondary-300: #E5C48E;
+  --secondary-200: #EDD7B4;
+  --secondary-100: #F6EBD9;
+  --secondary: #D39C43;
+
+  --tertiary-900: #49340D;
+  --tertiary-800: #92671B;
+  --tertiary-700: #D89A2C;
+  --tertiary-600: #E6BD75;
+  --tertiary-500: #F3E0BE;
+  --tertiary-400: #F5E6CB;
+  --tertiary-300: #F8ECD8;
+  --tertiary-200: #FAF3E5;
+  --tertiary-100: #FDF9F2;
+  --tertiary: #F3E0BE;
+
+  --error: #D90000;
+
+  --t-dark: #413737;
+  --t-gray: #949494;
+  --t-white: #FFFFFF;
+  --bg: #FDF9F2;
+}
+:root.dark {
+  --primary-900: #240507;
+  --primary-800: #480A0E;
+  --primary-700: #6B1016;
+  --primary-600: #8F151D;
+  --primary-500: #B31A24;
+  --primary-400: #E02A36;
+  --primary-300: #E85F68;
+  --primary-200: #F0949A;
+  --primary-100: #F7CACD;
+  --primary: #B31A24;
+
+  --secondary-900: #2D200B;
+  --secondary-800: #5A4015;
+  --secondary-700: #876020;
+  --secondary-600: #B47F2A;
+  --secondary-500: #D39C43;
+  --secondary-400: #DCB069;
+  --secondary-300: #E5C48E;
+  --secondary-200: #EDD7B4;
+  --secondary-100: #F6EBD9;
+  --secondary: #D39C43;
+
+  --tertiary-900: #49340D;
+  --tertiary-800: #92671B;
+  --tertiary-700: #D89A2C;
+  --tertiary-600: #E6BD75;
+  --tertiary-500: #F3E0BE;
+  --tertiary-400: #F5E6CB;
+  --tertiary-300: #F8ECD8;
+  --tertiary-200: #FAF3E5;
+  --tertiary-100: #FDF9F2;
+  --tertiary: #F3E0BE;
+
+  --error: #D90000;
+
+  --t-dark: #413737;
+  --t-gray: #949494;
+  --t-white: #FFFFFF;
+
+  --bg: #FDF9F2;
+}
+
+:root.pink {
+  --primary-100: #31af31;
+  --t-dark: #22E235;
+  --bg: #BD5743;
+
+  /* element-plus 自定義。 pink 無法使用 element scss 設定檔，所以要強制調整*/
+  --el-color-primary: #626aef;
+}

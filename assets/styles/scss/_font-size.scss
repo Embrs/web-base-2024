@@ -1,0 +1,41 @@
+// 預設 font size 16px
+@mixin fs($size: 16px) {
+  $calcSize: 16px;
+  $lineHeight: 1.5rem;
+  $letterSpacing: .1em;
+
+  @if $size == "display-large" { // Display
+    $calcSize: rem(64px);
+    $lineHeight: 1em;
+    $letterSpacing: .05em;
+  } @else if $size == "display-medium" {
+    $calcSize: rem(48px);
+    $lineHeight: 1em;
+    $letterSpacing: .05em;
+  } @else if $size == "display-small" {
+    $calcSize: rem(28px);
+    $lineHeight: 1em;
+    $letterSpacing: .05em;
+  } @else if $size == "body-regular" {// Body 
+    $calcSize: rem(16px);
+  } @else if $size == "body-small" {
+    $calcSize: rem(14px);
+  } @else if $size == "footnote-description" { 
+    $calcSize: rem(12px);
+    $lineHeight: 1.25rem;
+    $letterSpacing: 0;
+  } @else if $size == "label-large" { // Label 
+    $calcSize: rem(16px);
+  } @else if $size == "label-small" {
+    $calcSize: rem(14px);
+    $lineHeight: 1.25rem;
+    $letterSpacing: 0;
+  } @else { // Default 
+    $calcSize: rem($size);
+  } 
+
+  font-size: $calcSize;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}
+
