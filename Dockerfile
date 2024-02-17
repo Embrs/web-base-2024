@@ -1,4 +1,4 @@
-FROM node:18.17.1-alpine as builder
+FROM node:20.11.1-alpine3.19 as builder
 LABEL stage=builder
 
 # Create app directory
@@ -9,7 +9,7 @@ RUN npm ci
 COPY . /app/
 RUN npm run build
 
-FROM node:18.17.1-alpine
+FROM node:20.11.1-alpine3.19
 WORKDIR /app
 COPY --from=builder /app/.output .
 COPY --from=builder /app/version.ts .
