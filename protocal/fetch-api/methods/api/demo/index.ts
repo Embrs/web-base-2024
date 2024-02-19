@@ -1,4 +1,4 @@
-import { methods } from '../setting';
+import { methods } from '../../setting';
 import * as mock from './mock';
 const isMock = import.meta.env.VITE_TEST_MODE === 'T';
 // -----------------------------------------------------------------------------------------------

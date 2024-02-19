@@ -1,4 +1,4 @@
-import * as all from './apis';
+import * as demo from './methods/api/demo/index';
 export default {
-  ...all
+  ...demo
 };
