@@ -6,6 +6,7 @@ export type localeType = 'en' |'zhTw';
 export const StoreI18n = pinia.defineStore('StoreI18n', () => {
   // const { locale: i18nLocale } = useI18n();
   const locale = ref<localeType>('zhTw');
+  // const { locale } = useI18n();
 
   const elLocale = computed(() => {
     switch (locale.value) {

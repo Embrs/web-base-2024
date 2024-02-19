@@ -15,6 +15,7 @@ const ClickShowLog = () => {
   ElButton(type="primary" @click="storeI18n.ChangeLocale('zhTw')") Tw
   ElButton(type="primary" @click="ClickShowLog") Show Log
   p {{ i18n('welcome') }}
+  p {{ $t('welcome') }}
 </template>
 
 <style lang="scss" scoped>

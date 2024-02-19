@@ -22,7 +22,6 @@ export default defineNuxtConfig({
   modules: [
     // '@nuxtjs/i18n', // 目前壞了，等待官方修復 https://nuxt.com.cn/modules/i18n
     // '@zadigetvoltaire/nuxt-gtm', // GTM 要使用請解除 https://nuxt.com.cn/modules/nuxt-gtm
-    // 'nuxt3-meta-pixel', // FB 像素 要使用請解除 https://github.com/quando1910/nuxt3-meta-pixel
     '@element-plus/nuxt', // https://nuxt.com.cn/modules/element-plus
     '@pinia/nuxt', // https://ithelp.ithome.com.tw/articles/10302381
     '@nuxtjs/device', // const {} = useDevice(); // https://nuxt.com/modules/device
@@ -47,7 +46,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '',
     public: {
-      apiUrl: '',
+      apiBase: '',
+      domainUrl: '',
       clarityOpen: '',
       clarityCode: '',
       testMode: isDev ? 'T' : 'F'
@@ -145,8 +145,8 @@ export default defineNuxtConfig({
   // element plus setting ----------------------------------------------
   elementPlus: {
     icon: 'ElIcon',
-    importStyle: 'scss',
-    themes: ['dark']
+    importStyle: 'scss'
+    // themes: ['dark'] //暗黑模式
   },
 
   // vite ---------------------------------------------------------------
