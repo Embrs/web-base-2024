@@ -6,10 +6,10 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box; /* 1 */
-  border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: theme('borderColor.DEFAULT', currentColor); /* 2 */
+  border-width: 0; /* 2 */
+  border-color: theme('borderColor.DEFAULT', currentcolor); /* 2 */
+  box-sizing: border-box; /* 1 */
 }
 
 ::before,
@@ -27,22 +27,22 @@
 */
 
 html {
-  line-height: 1.5; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -moz-tab-size: 4; /* 3 */
-  tab-size: 4; /* 3 */
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
 
-  font-family: "Noto Sans", "Noto Sans TC";
+  /* font-family: "Noto Sans", "Noto Sans TC"; */
   overflow-x: hidden;
   overflow-y: overlay;
   margin: 0;
   padding: 0;
-  min-width: 100vw;
-  max-width: 100vw;
-  min-height: 100vh;
   font-size: 16px;
   border: 0;
   outline: none;
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,6 +56,10 @@ html {
 body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
+}
+#__nuxt {
+  /* font-family: "Noto Sans", "Noto Sans TC"; */
+  font-family: "Noto Sans TC";
 }
 
 /*
@@ -81,7 +85,7 @@ abbr:where([title]) {
 /*
 Remove the default font size and weight for headings.
 */
-/* 
+
 h1,
 h2,
 h3,
@@ -90,51 +94,46 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-} */
+}
 
-/* 48px */
-h1 {
+/* h1 {
   font-size: 3rem; 
   line-height: 1.5em;
   letter-spacing: .05em;
 }
-/* 40px */
 h2 {
   font-size: 2.5rem;
   line-height: 1.5em;
   letter-spacing: .05em;
 }
-/* 36px */
 h3 {
   font-size: 2.25rem;
   line-height: 3.375rem;
   letter-spacing: .05em;
 }
-/* 28px */
 h4 {
   font-size: 1.75rem;
   line-height: 2rem;
   letter-spacing: .05em;
 }
-/* 24px */
 h5 {
   font-size: 1.5rem;
   line-height: 1.75rem;
   letter-spacing: .05em;
 }
-/* 20px */
 h6 {
   font-size: 1.25rem;
   line-height: 1.5rem;
   letter-spacing: .05em;
-}
+} */
+
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
 */
 
 a {
-  color: inherit;
   text-decoration: inherit;
+  color: inherit;
 }
 
 /*
@@ -155,8 +154,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace); /* 1 */
   font-size: 1em; /* 2 */
+  font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace); /* 1 */
 }
 
 /*
@@ -173,9 +172,9 @@ Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 
 sub,
 sup {
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 
@@ -210,15 +209,15 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-feature-settings: inherit; /* 1 */
-  font-variation-settings: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  font-weight: inherit; /* 1 */
-  line-height: inherit; /* 1 */
-  color: inherit; /* 1 */
   margin: 0; /* 2 */
   padding: 0; /* 3 */
+  font-size: 100%; /* 1 */
+  font-family: inherit; /* 1 */
+  font-weight: inherit; /* 1 */
+  color: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  line-height: inherit; /* 1 */
 }
 
 /*
@@ -343,7 +342,7 @@ legend {
 ol,
 ul,
 menu {
-  list-style: none;
+  /* list-style: none; // 去除點點 */
   margin: 0;
   padding: 0;
 }
@@ -370,8 +369,8 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  opacity: 1; /* 1 */
   color: theme('colors.gray.400', #9ca3af); /* 2 */
+  opacity: 1; /* 1 */
 }
 
 /*

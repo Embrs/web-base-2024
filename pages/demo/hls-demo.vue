@@ -19,7 +19,7 @@ const OnPause = () => {
 onMounted(() => {
   const el = elVideo.value;
   const hls = new Hls();
-  hls.loadSource('/video/video-demo/4.m3u8'); // HLS视频源的URL
+  hls.loadSource('/video/hls/hero/hero.m3u8'); // HLS视频源的URL
   hls.attachMedia(el);
   hls.on(Hls.Events.MANIFEST_PARSED, () => {
     el.play();
