@@ -78,17 +78,26 @@ const Fetch = (url: string, option: AnyObject) => {
     // 響應攔截
     onResponse ({ response }) {
       // TODO isLogin
-      const _res = response._data;
-      _res.httpStatus = response.status;
+      const _res: ResObject = response._data;
+      _res.status.httpStatus = response.status;
       return Promise.reject(_res);
     },
 
     // 錯誤處理
     onResponseError ({ response }) {
       // TODO 異常處理
-      const _res = IsObject(response._data) ? response._data : { error: response._data };
-      _res.is_success = false;
-      _res.httpStatus = response.status;
+      const _res:ResObject =
+        IsObject(response._data)
+          ? response._data
+          : {
+              status: {
+                is_success: false,
+                errMsg: '未知異常',
+                httpStatus: 999
+              }
+            };
+      _res.status.is_success = false;
+      _res.status.httpStatus = response.status;
       return Promise.reject(_res);
     }
   });
