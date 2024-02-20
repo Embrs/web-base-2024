@@ -29,7 +29,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss', // https://nuxt.com/modules/tailwindcss
     '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
     'nuxt-icon', // https://nuxt.com/modules/icon
-    '@nuxtjs/google-fonts' // https://google-fonts.nuxtjs.org/getting-started/setup
+    '@nuxtjs/google-fonts', // https://google-fonts.nuxtjs.org/getting-started/setup
+    '@nuxt/image' // https://image.nuxt.com/get-started/installation
   ],
   // i18n: { // i18n 目前 8.0.0-rc.3 error 打包運行會 500
   //   vueI18n: './i18n/i18n.config.ts'
@@ -127,16 +128,6 @@ export default defineNuxtConfig({
     }
   },
 
-  // FB 像素 ------------------------------------------------------------
-  // https://github.com/quando1910/nuxt3-meta-pixel
-  facebook: {
-    /* module options */
-    track: 'PageView',
-    pixelId: process.env.NUXT_PUBLIC_FB_PIXELID_ID as string || '',
-    autoPageView: true,
-    disabled: false // 禁用像素
-  },
-
   // colorMode 主題色 ---------------------------------------------------
   colorMode: {
     classSuffix: ''
@@ -147,6 +138,11 @@ export default defineNuxtConfig({
     icon: 'ElIcon',
     importStyle: 'scss'
     // themes: ['dark'] //暗黑模式
+  },
+
+  // Nuxt image圖片注入位置 ----------------------------------------------
+  image: {
+    dir: 'public'
   },
 
   // vite ---------------------------------------------------------------
