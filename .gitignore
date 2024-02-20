@@ -18,6 +18,7 @@ logs
 .fleet
 .idea
 
+/Users/zoufengmao/Desktop/Program/Athena/athena-bgm/.stylelintcache
 # Local env files
 # .env
 # .env.*
