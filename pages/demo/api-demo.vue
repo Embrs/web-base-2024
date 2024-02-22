@@ -9,7 +9,7 @@ const apiResData = ref<GetDemoRes['data']>();
 /**  說明 API */
 const ApiGetDemo = async (): Promise<boolean> => {
   const res = await api.GetDemo();
-  if (res.is_success) {
+  if (res.status.is_success) {
     apiResData.value = res.data;
     return true;
   }

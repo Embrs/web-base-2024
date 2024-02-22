@@ -1,58 +1,10 @@
-// import { HttpOption } from './setting';
 // import cloneDeep from 'lodash/cloneDeep';
-
-// type UrlType = string | Request | Ref<string | Request> | (() => string | Request)
-// export type HttpOption<T> = UseFetchOptions<ResOptions<T>>
-
-// TODO 異常處理
-// const HandleError = (response: FetchResponse<ResOptions<T>> & FetchResponse<ResponseType>) => {
-//   const err = (text: string) => {
-//     // Message.error({
-//     //   content: response?._data?.message ?? text,
-//     //   icon: () => h(IconEmoticonDead),
-//     // })
-//   }
-//   if (!response._data) {
-//     err('請求超時，服務器無響應！')
-//     return
-//   }
-//   // const userStore = useUserStore()
-//   const handleMap: { [key: number]: () => void } = {
-//     404: () => err('服務器資源不存在'),
-//     500: () => err('服務器內部錯誤'),
-//     403: () => err('沒有權限訪問該資源'),
-//     401: () => {
-//       err('登錄狀態已過期，需要重新登錄')
-//       // userStore.clearUserInfo()
-//       // TODO 跳轉實際登錄頁
-//       navigateTo('/')
-//     },
-//   }
-
-// if (_res.httpStatus === 401) {
-//   console.log('11111');
-//   // throw showError({ statusCode: 404, statusMessage: 'Page Not Found' });
-//   throw createError({
-//     statusCode: 404,
-//     statusMessage: 'Page Not Found',
-//     data: {
-//       myCustomField: true
-//     }
-//   });
-// }
-
-//   handleMap[response.status] ? handleMap[response.status]() : err('未知錯誤！')
-// }
-/** 是物件 */
-const IsObject = (obj: any) => {
-  return Object.prototype.toString.call(obj) === '[object Object]';
-};
 
 const GetApiUrl = () => {
   if (process.server) {
-    const { public: { apiUrl } } = useRuntimeConfig();
-    console.log('api', apiUrl);
-    return `${process.env.NUXT_PUBLIC_API_BASE}`;
+    const { public: { apiBase } } = useRuntimeConfig();
+    return apiBase;
+    // return `${process.env.NUXT_PUBLIC_API_BASE}`;
   }
   return '';
 };
@@ -86,10 +38,11 @@ const Fetch = (url: string, option: AnyObject) => {
     // 錯誤處理
     onResponseError ({ response }) {
       // TODO 異常處理
-      const _res:ResObject =
-        IsObject(response._data)
+      const _res: ResObject =
+        response?._data?.status
           ? response._data
           : {
+              data: null,
               status: {
                 is_success: false,
                 errMsg: '未知異常',

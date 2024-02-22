@@ -1,7 +1,6 @@
 
-interface GetDemoRes {
-  is_success: boolean;
-  data?: {
+interface GetDemoRes extends ResObject {
+  data: {
     announcement_type_description: string;
     announcement_type_id: number;
   }[];
@@ -12,9 +11,8 @@ interface QueryDemoParams {
   announcement_type_id: string;
 };
 
-interface QueryDemoRes {
-  is_success: boolean;
-  data?: {
+interface QueryDemoRes extends ResObject {
+  data: {
     announcement_content: string;
     announcement_cover_path: string;
     announcement_id: number;
