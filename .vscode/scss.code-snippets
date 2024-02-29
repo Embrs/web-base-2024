@@ -160,7 +160,7 @@
   "debounce 基礎": {
 		"prefix": "debounce",
 		"body": [
-			"debounce(() => {",
+			"lodash.debounce(() => {",
 			"  // ",
 			"}, 400, { leading: true, trailing: false });"
 		]
