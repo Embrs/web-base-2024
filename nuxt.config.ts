@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { visualizer } from 'rollup-plugin-visualizer';
+import version from './version';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -92,7 +93,8 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'zh-Hant-TW',
         // @ts-ignore
-        version: process.env.npm_package_version as string
+        // version: process.env.npm_package_version as string
+        version
       },
       // viewport: 'width=500, initial-scale=1',
       // title meta setting composables/mixins/mixin-init-meta.ts
