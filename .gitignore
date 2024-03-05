@@ -5,6 +5,8 @@
 .nitro
 .cache
 dist
+.stylelintcache
+test.html
 
 # Node dependencies
 node_modules

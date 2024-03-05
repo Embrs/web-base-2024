@@ -10,10 +10,10 @@
   a(href="https://icones.js.org/" target="_blank") Link
   p Icon(name="" size="24")
   Icon(name="uil:github")
-  Icon(name="material-symbols-light:10k-rounded" size="100")
-  Icon(name="meteocons:hurricane-fill")
+  Icon(name="mdi:abugida-devanagari" size="100")
+  Icon(name="meteocons:hurricane-fill" class="icon-style")
   Icon(name="🚀")
-  Icon(name="IconDemo1")
+  Icon(name="IconDemo1" class="icon-style")
   Icon(name="IconDemo2")
   p IconCSS 用 CSS 圖示代替 SVG 圖示來減少 DOM 大小並提高效能的方法
   IconCSS(name="uil:twitter")
@@ -26,7 +26,10 @@
   // color: red;
   @include column;
 }
-
+.icon-style {
+  font-size: 100px;
+  color: #eee;
+}
 // 組件 ----
 .box {
   width: 100px !important;
