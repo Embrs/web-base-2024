@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// AtImg 等比縮放，懶加載 圖片
+// NuxtImgPlus 等比縮放，懶加載 圖片
 // 資料 --------------------------------------------------------------------------------------------
 const props = defineProps({
   src: {
@@ -74,7 +74,7 @@ const ImgLoadErr = () => {
 </script>
 
 <template lang="pug">
-#AtImg(
+#NuxtImgPlus(
   :style="imgBoxStyle"
 )
   NuxtImg.nuxt-img(
@@ -94,7 +94,7 @@ const ImgLoadErr = () => {
 
 <style lang="scss" scoped>
 // 佈局 ----
-#AtImg {
+#NuxtImgPlus {
   position: relative;
   overflow: hidden;
   transition: opacity .4s ease;
