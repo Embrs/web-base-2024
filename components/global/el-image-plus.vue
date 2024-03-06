@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// AtImg 等比縮放，懶加載 圖片
+// ElImagePlus 等比縮放，懶加載 圖片
 import { Picture as IconPicture } from '@element-plus/icons-vue';
 
 // 資料 --------------------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ const imgBoxStyle = computed(() => {
 </script>
 
 <template lang="pug">
-#AtImg(:style="imgBoxStyle")
+#ElImagePlus(:style="imgBoxStyle")
   ElImage.img(
     :lazy="true"
     alt="我是圖片"
@@ -49,7 +49,7 @@ const imgBoxStyle = computed(() => {
 
 <style lang="scss" scoped>
 // 佈局 ----
-#AtImg {
+#ElImagePlus {
   position: relative;
   overflow: hidden;
 }
