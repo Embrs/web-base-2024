@@ -60,7 +60,6 @@ const imgBoxStyle = computed(() => {
   display: block;
   -webkit-user-drag: none; // 不可拖曳圖片
   -webkit-touch-callout: none; // ios禁用菜單
-  pointer-events: none; // 防止拖拉圖片
 }
 .err-slot {
   @include wh;
