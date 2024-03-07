@@ -1,5 +1,5 @@
 /**  async await 等待 */
-const Wait = () => (ms = 1000) => new Promise((resolve) => setTimeout(() => resolve(null), ms));
+const Wait = (ms = 1000) => new Promise((resolve) => setTimeout(() => resolve(null), ms));
 
 /** object has key */
 const HasKey = (object: object, key: string) => object != null && Object.hasOwnProperty.call(object, key);
