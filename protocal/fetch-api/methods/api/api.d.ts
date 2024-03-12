@@ -1,18 +1,15 @@
 interface AnyObject {
-  [key: string|number]: any;
+  [key: string|number]: any
 }
 
 interface DefaultRes {
-  data: any;
-  status: ApiStatus;
+  data: null
+  status: ApiStatus
 }
 
 interface ApiStatus {
-  is_success: boolean,
-  code?: number;
-  message?: string;
-  detail?: {[key:string]: string[]}
-  errMsg: string;
-  httpStatus?: number;
-  [key: string]: array
+  is_success: boolean
+  message: string
+  detail: string
+  httpStatus?: number
 }

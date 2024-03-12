@@ -1,21 +1,25 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-// TODO mock 回傳調整
+// mock 回傳調整
 const basic: any = {
   data: null,
   status: {
-    isPass: true
+    is_success: true,
+    message: '',
+    detail: '',
+    httpStatus: 200
   }
 };
-// const MockWait = (data: any, sec: number):any =>
-//   new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve(data);
-//     }, sec);
-//   });
 
-// -------------------------------------------------------------------------------------------------
-//  mock
+// 預設回傳 -------------------------------------------------------------------------------------------------
+export const DEFAULT = (): Promise<DefaultRes> => {
+  return new Promise((resolve) => {
+    const res: DefaultRes = cloneDeep(basic);
+    setTimeout(() => { resolve(res); }, 100);
+  });
+};
+
+// 測試 -------------------------------------------------------------------------------------------------
 export const GET_DEMO = (): Promise<GetDemoRes> => {
   return new Promise((resolve) => {
     const res: GetDemoRes = cloneDeep(basic);
