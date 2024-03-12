@@ -4,9 +4,9 @@ const isMock = import.meta.env.VITE_TEST_MODE === 'T';
 // -----------------------------------------------------------------------------------------------
 const router = {
   GET_DEMO: '/api/announcementType',
-  queryDemo: '/api/announcementRange',
-  login: '/api/user/login',
-  userInfo: '/api/user'
+  QUERY_DEMO: '/api/announcementRange',
+  LOGIN: '/api/user/login',
+  USER_INFO: '/api/user'
 };
 // -----------------------------------------------------------------------------------------------
 export const GetDemo = (): Promise<GetDemoRes> => {
@@ -21,14 +21,14 @@ export const GetDemo = (): Promise<GetDemoRes> => {
  */
 export const QueryDemo = (params: QueryDemoParams): Promise<QueryDemoRes> => {
   // if (isMock) return GET_LOG(); // Mock
-  return methods.get(router.queryDemo, params) as Promise<QueryDemoRes>;
+  return methods.get(router.QUERY_DEMO, params) as Promise<QueryDemoRes>;
 };
 
 export const PostDemo = (params: QueryDemoParams): Promise<any> =>
   methods.post(router.GET_DEMO, params);
 
 export const Login = (params: any): Promise<any> =>
-  methods.post(router.login, params);
+  methods.post(router.LOGIN, params);
 
 export const UserInfo = (): Promise<any> =>
-  methods.get(router.userInfo);
+  methods.get(router.USER_INFO);
