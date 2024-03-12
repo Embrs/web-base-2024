@@ -19,16 +19,16 @@ export const GetDemo = (): Promise<GetDemoRes> => {
  * @param params
  * @returns
  */
-export const QueryDemo = (params: QueryDemoParams): Promise<QueryDemoRes> => {
+export const QueryDemo = (params: QueryDemoParams): Promise<QueryDemoRes> | QueryDemoRes => {
   // if (isMock) return GET_LOG(); // Mock
-  return methods.get(router.QUERY_DEMO, params) as Promise<QueryDemoRes>;
+  return methods.get(router.QUERY_DEMO, params) as Promise<QueryDemoRes> | QueryDemoRes;
 };
 
-export const PostDemo = (params: QueryDemoParams): Promise<any> =>
-  methods.post(router.GET_DEMO, params);
+export const PostDemo = (params: QueryDemoParams): Promise<DefaultRes> | DefaultRes =>
+  methods.post(router.GET_DEMO, params) as Promise<DefaultRes>;
 
-export const Login = (params: any): Promise<any> =>
-  methods.post(router.LOGIN, params);
+export const Login = (params: any): Promise<DefaultRes> | DefaultRes =>
+  methods.post(router.LOGIN, params) as Promise<DefaultRes>;
 
-export const UserInfo = (): Promise<any> =>
-  methods.get(router.USER_INFO);
+export const UserInfo = (): Promise<DefaultRes> | DefaultRes =>
+  methods.get(router.USER_INFO) as Promise<DefaultRes>;

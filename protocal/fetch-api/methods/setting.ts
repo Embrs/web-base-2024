@@ -30,7 +30,7 @@ const Fetch = (url: string, option: AnyObject) => {
     // 響應攔截
     onResponse ({ response }) {
       // TODO isLogin
-      const _res: ResObject = response._data;
+      const _res: DefaultRes = response._data;
       _res.status.httpStatus = response.status;
       return Promise.reject(_res);
     },
@@ -38,7 +38,7 @@ const Fetch = (url: string, option: AnyObject) => {
     // 錯誤處理
     onResponseError ({ response }) {
       // TODO 異常處理
-      const _res: ResObject =
+      const _res: DefaultRes =
         response?._data?.status
           ? response._data
           : {

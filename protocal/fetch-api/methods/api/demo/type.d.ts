@@ -1,5 +1,5 @@
 
-interface GetDemoRes extends ResObject {
+interface GetDemoRes extends DefaultRes {
   data: {
     announcement_type_description: string;
     announcement_type_id: number;
@@ -11,7 +11,7 @@ interface QueryDemoParams {
   announcement_type_id: string;
 };
 
-interface QueryDemoRes extends ResObject {
+interface QueryDemoRes extends DefaultRes {
   data: {
     announcement_content: string;
     announcement_cover_path: string;

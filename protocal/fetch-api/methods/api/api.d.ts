@@ -2,7 +2,7 @@ interface AnyObject {
   [key: string|number]: any;
 }
 
-interface ResObject {
+interface DefaultRes {
   data: any;
   status: ApiStatus;
 }
