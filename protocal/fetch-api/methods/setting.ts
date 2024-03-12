@@ -60,11 +60,14 @@ const Fetch = (url: string, option: AnyObject) => {
 export const methods = {
   get: (url: string, query: AnyObject = {}) => {
     return Fetch(url, { method: 'get', query }).catch((err) => err);
-    // TODO Refresh token
   },
 
   post: (url: string, body: AnyObject = {}) => {
     return Fetch(url, { method: 'post', body }).catch((err) => err);
+  },
+
+  patch: (url: string, body: AnyObject = {}) => {
+    return Fetch(url, { method: 'patch', body }).catch((err) => err);
   },
 
   put: (url: string, body: AnyObject = {}) => {
