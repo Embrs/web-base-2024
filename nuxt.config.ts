@@ -19,6 +19,9 @@ const DevServerConfig = () => {
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  experimental: {
+    asyncContext: true // https://nuxt.com/docs/guide/going-further/experimental-features#asynccontext
+  },
   // 模塊注入
   modules: [
     // '@nuxtjs/i18n', // 目前壞了，等待官方修復 https://nuxt.com.cn/modules/i18n
