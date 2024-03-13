@@ -31,10 +31,16 @@
 		],
 		"description": "RWD"
 	},
+  "component 元件動態注入": {
+    "prefix": "com",
+    "body": [
+      "const $2 = defineAsyncComponent(() => import('$1'));"
+    ]
+  },
   "rwds": {
     "prefix": "rwds",
 		"body": [
-	    ".pc-show {"
+	    ".pc-show {",
       "  @include rwd-mobile {",
       "    display: none;",
       "  }",
@@ -59,13 +65,7 @@
       "console.log($1);",
     ]
   },
-  "apibase": {
-    "prefix": "apibase",
-    "body": [
-      "const { proxy } = getCurrentInstance()!;",
-      "const $$api = proxy!.$$api;"
-    ]
-  },
+ 
   "vue 檔模板": {
     "prefix": "tt",
     "body": [
@@ -81,7 +81,7 @@
       "<style lang=\"scss\" scoped>",
       "// 佈局 ----",
       "#$1 {",
-      "  // TODO"
+      "  // TODO",
       "}",
       "",
       "// 組件 ----",
@@ -95,7 +95,7 @@
       "<style lang=\"scss\" scoped>",
       "// 佈局 ----",
       "#$1 {",
-      "  // TODO"
+      "  // TODO",
       "}",
       "",
       "// 組件 ----",
@@ -137,7 +137,7 @@
     "prefix": "api",
     "body": [
       "/**  說明 API */",
-      "const Api$1 = async(): Promise<boolean> => {",
+      "const Api$1 = async (): Promise<boolean> => {",
       "  const res = await api.$1();",
       "  if (res.status.success) {",
       "    return true;",
@@ -171,6 +171,4 @@
       "// @ts-ignore"
     ]
   },
-  
-  
 }
