@@ -108,7 +108,7 @@ export const Decrypt = (str: string) => {
   }
 };
 
-const ScrollToTag = (idOrClass: string) => {
+const ScrollToTag = (idOrClass: string, isSmooth = true) => {
   if (process.server) return;
   const elScroll = document.querySelector(idOrClass) as HTMLElement;
   if (!elScroll) return;
@@ -116,7 +116,17 @@ const ScrollToTag = (idOrClass: string) => {
   window.scrollTo({
     top,
     left: 0,
-    behavior: 'smooth'
+    behavior: isSmooth ? 'smooth' : 'instant'
+  });
+};
+const ScrollTop = (idOrClass: string, isSmooth = true) => {
+  if (process.server) return;
+  const el = document.querySelector(idOrClass) as HTMLElement;
+  if (!el) return;
+  el.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: isSmooth ? 'smooth' : 'instant'
   });
 };
 
@@ -136,5 +146,6 @@ export default {
   ArrayObjectFilter, // array Object 深度空元素過濾器
   Encrypt,
   Decrypt,
-  ScrollToTag
+  ScrollToTag,
+  ScrollTop
 };
