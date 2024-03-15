@@ -45,7 +45,7 @@ const Fetch = (url: string, option: AnyObject) => {
               data: null,
               status: {
                 is_success: false,
-                errMsg: '未知異常',
+                message: '未知異常',
                 httpStatus: 999
               }
             };

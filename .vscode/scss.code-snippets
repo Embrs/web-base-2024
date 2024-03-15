@@ -139,10 +139,10 @@
       "/**  說明 API */",
       "const Api$1 = async (): Promise<boolean> => {",
       "  const res = await api.$1();",
-      "  if (res.status.is_success) {",
+      "  if (res?.status?.is_success) {",
       "    return true;",
       "  }",
-      "  if (res.status.message) ElMessage({ message: res.status.message, type: 'error' });",
+      "  if (res?.status?.message) ElMessage({ message: res?.status?.message, type: 'error' });",
       "  return false;",
       "};",
     ]
