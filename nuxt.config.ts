@@ -25,7 +25,6 @@ export default defineNuxtConfig({
   // 模塊注入
   modules: [
     // '@nuxtjs/i18n', // 目前壞了，等待官方修復 https://nuxt.com.cn/modules/i18n
-    // '@zadigetvoltaire/nuxt-gtm', // GTM 要使用請解除 https://nuxt.com.cn/modules/nuxt-gtm
     '@element-plus/nuxt', // https://nuxt.com.cn/modules/element-plus
     '@pinia/nuxt', // https://ithelp.ithome.com.tw/articles/10302381
     '@nuxtjs/device', // const {} = useDevice(); // https://nuxt.com/modules/device
@@ -53,8 +52,9 @@ export default defineNuxtConfig({
     public: {
       apiBase: '',
       domainUrl: '',
-      clarityOpen: '',
       clarityCode: '',
+      gtmId: '',
+      gtagId: '',
       testMode: isDev ? 'T' : 'F'
     }
   },
@@ -115,14 +115,6 @@ export default defineNuxtConfig({
   stylelint: {
     lintOnStart: false, // 專案啟動時不自動檢查所有相關檔案
     chokidar: true // 監聽文件異動進行檢核（文件未列出此選項）
-  },
-  // google gtm --------------------------------------------------------
-  gtm: {
-    id: process.env.NUXT_PUBLIC_GTM_ID as string || '',
-    enabled: true, // dev 可使用
-    debug: true, // 可 debug (印 console.log)
-    // loadScript: true, // 是否加載 GTM 腳本（如果您手動包含 GTM，但需要在組件中使用 dataLayer 功能，則很有幫助）（可選）
-    trackOnNextTick: false // 是否在 Vue.nextTick 中調用 trackView
   },
 
   // gogole fonts ------------------------------------------------------
