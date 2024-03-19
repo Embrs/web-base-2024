@@ -5,7 +5,8 @@ import version from './version';
 const isDev = process.env.NODE_ENV === 'development';
 
 const DevServerConfig = () => {
-  if (isDev) return {
+  if (!isDev) return {};
+  return {
     proxy: {
       '/api': {
         target: process.env.NUXT_PUBLIC_API_BASE as string,
@@ -14,7 +15,6 @@ const DevServerConfig = () => {
       }
     }
   };
-  return {};
 };
 
 export default defineNuxtConfig({
