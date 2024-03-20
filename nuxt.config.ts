@@ -86,7 +86,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    // baseUrl: '/',
+    // baseURL: '/',
     pageTransition: { name: 'page', mode: 'out-in' },
     // meta
     head: {
