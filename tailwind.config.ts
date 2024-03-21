@@ -23,6 +23,7 @@ module.exports = {
       'primary-700': 'var(--primary-700)',
       'primary-800': 'var(--primary-800)',
       'primary-900': 'var(--primary-900)',
+      'primary-950': 'var(--primary-950)',
       primary: 'var(--primary)',
 
       'secondary-100': 'var(--secondary-100)',
@@ -54,7 +55,70 @@ module.exports = {
       bg: 'var(--bg)',
       'bg-white': 'var(--bg-white)',
       'bg-dark': 'var(--bg-dark)'
+    },
+    screens: {
+
+      xl: { max: '1536px' },
+      // => @media (max-width: 153px) { ... }
+
+      lg: { max: '1024px' },
+      // => @media (max-width: 1024px) { ... }
+
+      md: { max: '768px' },
+      // => @media (max-width: 768px) { ... }
+
+      sm: { max: '375px' }
+      // => @media (max-width: 375px) { ... }
+    },
+    extend: {
+      fontSize: {},
+      margin: {},
+      padding: {},
+      height: {},
+      width: {},
+      borderRadius: {},
+      container: 'container' // 預設容器1536
+    },
+    container: {
+      center: true, // 水平置中
+      padding: '1.5rem' // 水平間距
     }
   },
   plugins: []
 };
+
+// 自定義fontsize
+for (let i = 1; i <= 100; i++) {
+  const remSize = `${(i / 16).toFixed(3)}rem`;
+  module.exports.theme.extend.fontSize[`${i}px`] = remSize;
+}
+
+// 自定margin
+for (let i = 1; i <= 100; i++) {
+  const remSize = `${(i / 16).toFixed(3)}rem`;
+  module.exports.theme.extend.margin[`${i}px`] = remSize;
+}
+
+// 自定padding
+for (let i = 1; i <= 100; i++) {
+  const remSize = `${(i / 16).toFixed(3)}rem`;
+  module.exports.theme.extend.padding[`${i}px`] = remSize;
+}
+
+// 自定height
+for (let i = 1; i <= 100; i++) {
+  const remSize = `${(i / 16).toFixed(3)}rem`;
+  module.exports.theme.extend.height[`${i}px`] = remSize;
+}
+
+// 自定width
+for (let i = 1; i <= 100; i++) {
+  const remSize = `${(i / 16).toFixed(3)}rem`;
+  module.exports.theme.extend.width[`${i}px`] = remSize;
+}
+
+// 自定border-radius
+for (let i = 1; i <= 100; i++) {
+  const remSize = `${(i / 16).toFixed(3)}rem`;
+  module.exports.theme.extend.borderRadius[`${i}px`] = remSize;
+}
