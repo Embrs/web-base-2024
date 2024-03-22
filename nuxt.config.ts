@@ -101,7 +101,10 @@ export default defineNuxtConfig({
       },
       // viewport: 'width=500, initial-scale=1',
       // title meta setting composables/mixins/mixin-init-meta.ts
-      meta: [],
+      meta: [
+        { name: 'format-detection', content: 'telephone=no,email=no,adress=no' } // 去除擾人自動偵測
+        // { name: 'google-site-verification', content: '' }, // TODO google search console https://search.google.com/search-console?hl=zh-tw
+      ],
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
