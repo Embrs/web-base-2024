@@ -4,15 +4,7 @@ MixinWindowResize();
 MixinInitMeta();
 MixinLineCheck();
 const storeI18n = StoreI18n();
-const storeTool = StoreTool();
 
-const InitFlow = () => {
-  storeTool.SetWindowWidth();
-};
-
-onMounted(() => {
-  InitFlow();
-});
 </script>
 
 <template lang="pug">

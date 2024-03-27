@@ -8,4 +8,7 @@ export const MixinWindowResize = () => {
   onBeforeUnmount(() => {
     window.removeEventListener('resize', storeTool.SetWindowWidth);
   });
+  onMounted(() => {
+    storeTool.SetWindowWidth();
+  });
 };
