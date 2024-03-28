@@ -1,30 +1,25 @@
 // import cloneDeep from 'lodash/cloneDeep';
+// import tool from '@/utils/tool';
 
 const GetApiUrl = () => {
   if (process.server) {
+    // 添加 apiUrl,nuxt3 環境變量要從useRuntimeConfig裡面取
     const { public: { apiBase } } = useRuntimeConfig();
     return apiBase;
     // return `${process.env.NUXT_PUBLIC_API_BASE}`;
   }
   return '';
 };
-
 const Fetch = (url: string, option: AnyObject) => {
   return $fetch(`${url}?t=${Date.now()}`, {
     // 合併參數
     ...option,
     // 請求攔截器
     onRequest ({ options }) {
-      // 添加 apiUrl,nuxt3 環境變量要從useRuntimeConfig裡面取
+      // const storeToken = StoreToken();
       options.baseURL = GetApiUrl();
       options.headers = new Headers(options.headers);
-      options.headers.set('Content-Type', 'application/json');
-      // TODO Token 加入
-      // 添加請求頭,沒登錄不攜帶 token
-      // const userStore = useUserStore()
-      // if (!userStore.isLogin)
-      //   return
-      // options.headers.set('Authorization', `Bearer ${userStore.getToken}`)
+      // options.headers.set('Authorization', `Bearer ${storeToken.token}`);
     },
 
     // 響應攔截
@@ -45,7 +40,7 @@ const Fetch = (url: string, option: AnyObject) => {
               data: null,
               status: {
                 is_success: false,
-                message: '未知異常',
+                success: '未知異常',
                 httpStatus: 999
               }
             };
@@ -59,22 +54,26 @@ const Fetch = (url: string, option: AnyObject) => {
 // 自動導出
 export const methods = {
   get: (url: string, query: AnyObject = {}) => {
-    return Fetch(url, { method: 'get', query }).catch((err) => err);
+    return Fetch(url, { method: 'get', query, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
   },
 
   post: (url: string, body: AnyObject = {}) => {
-    return Fetch(url, { method: 'post', body }).catch((err) => err);
+    return Fetch(url, { method: 'post', body, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
   },
 
   patch: (url: string, body: AnyObject = {}) => {
-    return Fetch(url, { method: 'patch', body }).catch((err) => err);
+    return Fetch(url, { method: 'patch', body, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
   },
 
   put: (url: string, body: AnyObject = {}) => {
-    return Fetch(url, { method: 'put', body }).catch((err) => err);
+    return Fetch(url, { method: 'put', body, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
   },
 
   delete: (url: string, query: AnyObject = {}) => {
-    return Fetch(url, { method: 'delete', query }).catch((err) => err);
+    return Fetch(url, { method: 'delete', query, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
+  },
+
+  filePost: (url: string, body: AnyObject = {}) => {
+    return Fetch(url, { method: 'post', body: tool.ToFormData(body), headers: {} }).catch((err) => err);
   }
 };

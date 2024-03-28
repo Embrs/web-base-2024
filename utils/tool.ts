@@ -129,7 +129,19 @@ const ScrollTop = (idOrClass: string, isSmooth = true) => {
     behavior: isSmooth ? 'smooth' : 'instant'
   });
 };
-
+/**
+ * 轉換為FormData格式
+ * @param { Object } params
+ */
+export const ToFormData = (params: AnyObject) => {
+  const data = new FormData();
+  Object.keys(params).forEach((key) => {
+    if (IsArray(params[key])) {
+      if (params[key].length !== 0) { params[key].forEach((v:any) => data.append(key, v)); }
+    } else data.append(key, params[key]);
+  });
+  return data;
+};
 /** 補零 */
 // '123'.padStart(5, '0') // '00123';
 // '123'.padEnd(5, '0') // '12300';
@@ -147,5 +159,6 @@ export default {
   Encrypt,
   Decrypt,
   ScrollToTag,
-  ScrollTop
+  ScrollTop,
+  ToFormData
 };
