@@ -54,26 +54,26 @@ const Fetch = (url: string, option: AnyObject) => {
 // 自動導出
 export const methods = {
   get: (url: string, query: AnyObject = {}) => {
-    return Fetch(url, { method: 'get', query, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
+    return Fetch(url, { method: 'get', query }).catch((err) => err);
   },
 
   post: (url: string, body: AnyObject = {}) => {
-    return Fetch(url, { method: 'post', body, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
+    return Fetch(url, { method: 'post', body }).catch((err) => err);
   },
 
   patch: (url: string, body: AnyObject = {}) => {
-    return Fetch(url, { method: 'patch', body, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
+    return Fetch(url, { method: 'patch', body }).catch((err) => err);
   },
 
   put: (url: string, body: AnyObject = {}) => {
-    return Fetch(url, { method: 'put', body, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
+    return Fetch(url, { method: 'put', body }).catch((err) => err);
   },
 
   delete: (url: string, query: AnyObject = {}) => {
-    return Fetch(url, { method: 'delete', query, headers: { 'Content-Type': 'application/json' } }).catch((err) => err);
+    return Fetch(url, { method: 'delete', query }).catch((err) => err);
   },
 
   filePost: (url: string, body: AnyObject = {}) => {
-    return Fetch(url, { method: 'post', body: tool.ToFormData(body), headers: {} }).catch((err) => err);
+    return Fetch(url, { method: 'post', body: tool.ToFormData(body) }).catch((err) => err);
   }
 };
