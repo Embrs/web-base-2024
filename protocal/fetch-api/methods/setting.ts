@@ -86,10 +86,10 @@ export const methods = {
     return new Promise((resolve) => {
       const xhr = new XMLHttpRequest();
       xhr.upload.addEventListener('progress', (e) => {
-        if (e.lengthComputable && e.total > 0) progressObj['upload'] = e.loaded / e.total;
+        if (e.lengthComputable && e.total > 0) progressObj['upload'] = Math.floor((e.loaded / e.total) * 100);
       });
       xhr.addEventListener('progress', (e) => {
-        if (e.lengthComputable && e.total > 0) progressObj['download'] = e.loaded / e.total;
+        if (e.lengthComputable && e.total > 0) progressObj['download'] = Math.floor((e.loaded / e.total) * 100);
       });
       xhr.addEventListener('loadend', (e: any) => {
         let _res: DefaultRes = JSON.parse(e?.currentTarget?.responseText || '');
