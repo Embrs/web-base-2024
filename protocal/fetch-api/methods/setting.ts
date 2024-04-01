@@ -1,6 +1,15 @@
 // import cloneDeep from 'lodash/cloneDeep';
 // import tool from '@/utils/tool';
 
+const defErr: DefaultRes = Object.freeze({
+  data: null,
+  status: {
+    is_success: false,
+    message: '未知異常',
+    httpStatus: 999
+  }
+});
+
 const GetApiUrl = () => {
   if (process.server) {
     // 添加 apiUrl,nuxt3 環境變量要從useRuntimeConfig裡面取
@@ -16,16 +25,17 @@ const Fetch = (url: string, option: AnyObject) => {
     ...option,
     // 請求攔截器
     onRequest ({ options }) {
-      // const storeToken = StoreToken();
+      const storeUser = StoreUser();
       options.baseURL = GetApiUrl();
       options.headers = new Headers(options.headers);
-      // options.headers.set('Authorization', `Bearer ${storeToken.token}`);
+      options.headers.set('Authorization', `Bearer ${storeUser.token}`);
     },
 
     // 響應攔截
     onResponse ({ response }) {
       // TODO isLogin
-      const _res: DefaultRes = response._data;
+      let _res: DefaultRes = response._data;
+      _res = _res?.status ? _res : defErr;
       _res.status.httpStatus = response.status;
       return Promise.reject(_res);
     },
@@ -34,16 +44,9 @@ const Fetch = (url: string, option: AnyObject) => {
     onResponseError ({ response }) {
       // TODO 異常處理
       const _res: DefaultRes =
-        response?._data?.status
-          ? response._data
-          : {
-              data: null,
-              status: {
-                is_success: false,
-                success: '未知異常',
-                httpStatus: 999
-              }
-            };
+       response?._data?.status
+         ? response._data
+         : defErr;
       _res.status.is_success = false;
       _res.status.httpStatus = response.status;
       return Promise.reject(_res);
@@ -75,5 +78,27 @@ export const methods = {
 
   filePost: (url: string, body: AnyObject = {}) => {
     return Fetch(url, { method: 'post', body: tool.ToFormData(body) }).catch((err) => err);
+  },
+
+  // 上傳進度
+  progressFilePost: (url: string, body: AnyObject = {}, progressObj: FileProgress) => {
+    const storeUser = StoreUser();
+    return new Promise((resolve) => {
+      const xhr = new XMLHttpRequest();
+      xhr.upload.addEventListener('progress', (e) => {
+        if (e.lengthComputable && e.total > 0) progressObj['upload'] = e.loaded / e.total;
+      });
+      xhr.addEventListener('progress', (e) => {
+        if (e.lengthComputable && e.total > 0) progressObj['download'] = e.loaded / e.total;
+      });
+      xhr.addEventListener('loadend', (e: any) => {
+        let _res: DefaultRes = JSON.parse(e?.currentTarget?.responseText || '');
+        _res = _res?.status ? _res : defErr;
+        resolve(_res);
+      });
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('Authorization', `Bearer ${storeUser.token}`);
+      xhr.send(tool.ToFormData(body));
+    });
   }
 };

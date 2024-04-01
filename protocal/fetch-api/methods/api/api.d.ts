@@ -1,15 +1,20 @@
 interface AnyObject {
-  [key: string|number]: any
+  [key: string|number]: any;
 }
 
 interface DefaultRes {
-  data: null
-  status: ApiStatus
+  data: null;
+  status: ApiStatus;
 }
 
 interface ApiStatus {
-  is_success: boolean
-  message: string
-  detail: string
-  httpStatus?: number
+  is_success: boolean,
+  message?: string;
+  detail?: string
+  httpStatus?: number;
+}
+
+interface FileProgress {
+  upload?: number,
+  download?: number
 }
