@@ -106,6 +106,16 @@
   padding-left: $padding;
 }
 
+// 等比區域
+@mixin ratio-wh($width: 300px, $height: 200px, $contrastWidth: 1920px, $useMax: false) {
+  @if $useMax == true {
+    max-width: $width;
+    max-height: $height;
+  }
+  width: w-ratio($width, $contrastWidth);
+  height: w-ratio($height, $contrastWidth);
+}
+
 // 定位 -------------------------------------------------------------------------------------------------
 @mixin absolute($direction: "top-left" ,$a-pos: 0, $b-pos: $a-pos) {
   position: absolute;
