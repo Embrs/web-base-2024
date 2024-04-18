@@ -107,7 +107,7 @@ export const Decrypt = (str: string) => {
     return '';
   }
 };
-
+/* 滾動到指定元素 */
 const ScrollToTag = (idOrClass: string, isSmooth = true) => {
   if (process.server) return;
   const elScroll = document.querySelector(idOrClass) as HTMLElement;
@@ -119,6 +119,7 @@ const ScrollToTag = (idOrClass: string, isSmooth = true) => {
     behavior: isSmooth ? 'smooth' : 'instant'
   });
 };
+/* 滾動到頂部 */
 const ScrollTop = (idOrClass: string, isSmooth = true) => {
   if (process.server) return;
   const el = document.querySelector(idOrClass) as HTMLElement;
@@ -133,7 +134,7 @@ const ScrollTop = (idOrClass: string, isSmooth = true) => {
  * 轉換為FormData格式
  * @param { Object } params
  */
-export const ToFormData = (params: AnyObject) => {
+const ToFormData = (params: AnyObject) => {
   const data = new FormData();
   Object.keys(params).forEach((key) => {
     if (IsArray(params[key])) {
@@ -141,6 +142,14 @@ export const ToFormData = (params: AnyObject) => {
     } else data.append(key, params[key]);
   });
   return data;
+};
+/* Array 加總 */
+const ArraySum = (arr: number[]): number => {
+  let _sum = 0;
+  if (arr && arr?.length > 0) {
+    _sum = arr.reduce((_s, _v) => (Number(_s) + Number(_v)),0);
+  }
+  return _sum;
 };
 /** 補零 */
 // '123'.padStart(5, '0') // '00123';
@@ -160,5 +169,6 @@ export default {
   Decrypt,
   ScrollToTag,
   ScrollTop,
-  ToFormData
+  ToFormData,
+  ArraySum
 };
