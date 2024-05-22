@@ -12,7 +12,7 @@ const ClickShowLog = () => {
 #I18nDemo
   p I18nDemo
   ElButton(type="primary" @click="storeI18n.ChangeLocale('en')") En
-  ElButton(type="primary" @click="storeI18n.ChangeLocale('zhTw')") Tw
+  ElButton(type="primary" @click="storeI18n.ChangeLocale('tw')") Tw
   ElButton(type="primary" @click="ClickShowLog") Show Log
   p {{ i18n('welcome') }}
   //- p {{ $t('welcome') }}

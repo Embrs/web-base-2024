@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // Demo 請填寫功能描述👈
+const storeI18n = StoreI18n();
 const linkList = [
   { path: '/', label: '回首頁' },
   { path: '/demo/font-demo', label: '文字' },
@@ -23,7 +24,7 @@ const linkList = [
   .row-item
     div(v-for="item of linkList" :key="item.path")
       ElButton
-        NuxtLink(:to="item.path") {{ item.label }}
+        NuxtLink(:to="storeI18n.LocalePath(item.path)") {{ item.label }}
   div
     NuxtPage
 </template>

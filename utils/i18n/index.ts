@@ -4,7 +4,7 @@ import { StoreI18n } from '@/composables/stores/store-i18n';
 
 const localeIndex = {
   en: 0,
-  zhTw: 1
+  tw: 1
 };
 
 export default (key: string): string => {

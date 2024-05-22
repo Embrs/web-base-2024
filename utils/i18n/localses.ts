@@ -3,6 +3,6 @@ interface Locales {
 }
 
 export default {
-  locales: ['en', 'zhTw'],
+  locales: ['en', 'tw'],
   welcome: ['welcome', '你好']
 } as Locales;
