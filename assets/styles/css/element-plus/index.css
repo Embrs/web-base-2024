@@ -1,4 +1,2 @@
-.el-button--aa {
-  color: wheat !important;
-  background-color: #666 !important;
-}
+@import './_theme';
+@import './_style';

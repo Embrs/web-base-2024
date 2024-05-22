@@ -3,20 +3,21 @@ import type { RouterConfig } from '@nuxt/schema';
 // https://router.vuejs.org/api/interfaces/routeroptions.html
 export default <RouterConfig>{
   // 注入頁面
-  routes: (_routes) => [
-    ..._routes,
-    {
-      name: 'dd-dd-dd-demo',
-      path: '/dd/dd/dd/demo',
-      component: () => import('@/pages/demo.vue').then((r) => r.default || r)
-    }
-  ],
+  // routes: (_routes) => [
+  //   ..._routes,
+  //   {
+  //     name: 'dd-dd-dd-demo',
+  //     path: '/dd/dd/dd/demo',
+  //     component: () => import('@/pages/demo.vue').then((r) => r.default || r)
+  //   }
+  // ],
   scrollBehavior (to, from, savedPosition) {
     // ex: <NuxtLink to="#top"> To Top </ NuxtLink>
     // 滾動到 ID 位置
     if (to.hash) {
       return new Promise((resolve) => {
         setTimeout(() => {
+          // 去除 Header 高度
           // const headerHeight = document.querySelector('#Header')?.clientHeight || 0;
           const elScroll = document.querySelector(to.hash) as HTMLElement;
           if (!elScroll) resolve();

@@ -60,7 +60,9 @@ const ClickChangeTheme = (theme: ThemeType) => {
       v-for="color of colorList" :key="color"
       :class="color"
     ) ${{ color }}
-
+  .box-area
+    el-color-picker(v-model="storeTheme.colors.primaryTest100" show-alpha)
+    .primary-test-100 {{ storeTheme.colors.primaryTest100 }}
 </template>
 
 <style lang="scss" scoped>
@@ -117,4 +119,12 @@ const ClickChangeTheme = (theme: ThemeType) => {
 .t-gray {background-color: $t-gray}
 .t-white {background-color: $t-white}
 .bg {background-color: $bg}
+
+.primary-test-100 {
+  @include center;
+  @include wh(200px, 50px);
+  // color: #fff;
+  background-color: v-bind('storeTheme.colors.primaryTest100');
+  // mix-blend-mode: difference;
+}
 </style>

@@ -1,15 +1,14 @@
 <script setup lang="ts">
 // Demo 請填寫功能描述👈
 const linkList = [
-  { path: '/', label: 'To Home' },
-  { path: '/demo/font-demo', label: 'Font Demo' },
-  { path: '/demo/api-demo', label: 'Api Demo' },
-  { path: '/demo/theme-demo', label: 'Theme Demo' },
-  { path: '/demo/el-self-demo', label: 'El plus self' },
-  { path: '/demo/i18n-demo', label: 'I18n Demo' },
-  { path: '/demo/icon-demo', label: 'Icon Demo' },
-  { path: '/demo/el-demo', label: 'El Demo' },
-  { path: '/demo/params-demo/type-123/id-456', label: 'Params Demo' },
+  { path: '/', label: '回首頁' },
+  { path: '/demo/font-demo', label: '文字' },
+  { path: '/demo/api-demo', label: 'Api' },
+  { path: '/demo/theme-demo', label: '主題色' },
+  { path: '/demo/i18n-demo', label: 'I18n語系' },
+  { path: '/demo/icon-demo', label: 'Icon' },
+  { path: '/demo/el-demo', label: 'El plus' },
+  { path: '/demo/params-demo/type-123/id-456', label: 'url 參數' },
   { path: '/demo/cookie-demo', label: 'Cookie Demo' },
   { path: '/demo/err-demo', label: 'Error Demo' },
   { path: '/demo/pinia-demo', label: 'Pinia Demo' },
@@ -42,4 +41,8 @@ const linkList = [
 }
 
 // 組件 ----
+.test-box {
+  background-color: #333;
+  @include ratio-wh(200px, 400px, 1024px, true);
+}
 </style>

@@ -1,9 +1,6 @@
 {
-
   // style lint
   "stylelint.validate": [ "css", "scss", "vue" ],
-
-
   //tailwindcss
   "files.associations": {
     "*.css": "tailwindcss"
@@ -47,3 +44,4 @@
     }
   }
 }
+
