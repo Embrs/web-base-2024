@@ -10,10 +10,10 @@ const linkList = [
   { path: '/demo/el-demo', label: 'El plus' },
   { path: '/demo/params-demo/type-123/id-456', label: 'url 參數' },
   { path: '/demo/cookie-demo', label: 'Cookie Demo' },
-  { path: '/demo/err-demo', label: 'Error Demo' },
-  { path: '/demo/pinia-demo', label: 'Pinia Demo' },
-  { path: '/demo/rwd-demo', label: 'RWD Demo' },
-  { path: '/demo/hls-demo', label: 'HlsDemo' },
+  { path: '/demo/err-demo', label: 'Error' },
+  { path: '/demo/pinia-demo', label: 'Pinia' },
+  { path: '/demo/rwd-demo', label: 'RWD' },
+  { path: '/demo/hls-demo', label: 'Hls影片串流' },
   { path: '/sitemap.xml', label: 'SiteMap' }
 ];
 </script>
