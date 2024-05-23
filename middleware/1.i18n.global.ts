@@ -1,13 +1,13 @@
 export default defineNuxtRouteMiddleware((to, from) => {
   const storeI18n = StoreI18n();
   const points = to.path.replace('/', '').split('/').filter((_p: string) => !!_p);
-  const lang = points?.[0];
+  const _urlLang = points?.[0];
+
   // 語系不存在
-  if (!storeI18n.localGroup.includes(lang)) {
-    points.unshift(storeI18n.locale);
-    console.log('points', points);
+  if (!storeI18n.langGroup.includes(_urlLang)) {
+    points.unshift(storeI18n.lang);
     const newPath = `/${points.join('/')}`;
     return navigateTo(newPath);
   }
-  storeI18n.locale = lang as localeType;
+  storeI18n.lang = _urlLang as LangType;
 });
