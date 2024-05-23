@@ -11,8 +11,9 @@ const ClickShowLog = () => {
 <template lang="pug">
 #I18nDemo
   p I18nDemo
-  ElButton(type="primary" @click="storeI18n.ChangeLocale('en')") En
   ElButton(type="primary" @click="storeI18n.ChangeLocale('tw')") Tw
+  ElButton(type="primary" @click="storeI18n.ChangeLocale('en')") En
+  ElButton(type="primary" @click="storeI18n.ChangeLocale('jp')") Jp
   ElButton(type="primary" @click="ClickShowLog") Show Log
   p {{ i18n('welcome') }}
   //- p {{ $t('welcome') }}

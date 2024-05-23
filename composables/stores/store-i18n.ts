@@ -3,13 +3,14 @@ import elZhTw from 'element-plus/es/locale/lang/zh-tw';
 import elEn from 'element-plus/es/locale/lang/en';
 
 // -----------------------------------------------------------------------------------------------
-export type LangType = 'en' |'tw';
+export type LangType = 'en' |'tw' | 'jp';
 export const StoreI18n = pinia.defineStore('StoreI18n', () => {
   // const { locale: i18nLocale } = useI18n();
   const $router = useRouter();
-
   const langGroup = ['tw', 'en', 'jp'];
-  const lang = ref <LangType>('tw');
+  const lang = useCookie<LangType>('i18nLang', { default: () => 'tw' });
+  // 已使用過瀏覽器設定語系
+  const alreadyUseBrowserLang = useCookie<Boolean>('useI18nBrowserLang', { default: () => false });
 
   // element-plus 組件語系
   const elLang = computed(() => {
@@ -52,6 +53,7 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
   // -----------------------------------------------------------------------------------------------
   return {
     lang,
+    alreadyUseBrowserLang,
     langGroup,
     elLang,
     ChangeLocale,

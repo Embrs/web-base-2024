@@ -3,6 +3,6 @@ interface Locales {
 }
 
 export default {
-  locales: ['en', 'tw'],
-  welcome: ['welcome', '你好']
+  locales: ['tw', 'en', 'jp'],
+  welcome: ['你好', 'welcome', 'こんにちは']
 } as Locales;
