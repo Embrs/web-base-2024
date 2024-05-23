@@ -52,10 +52,9 @@ export default defineNuxtConfig({
     public: {
       apiBase: '',
       domainUrl: '',
-      clarityCode: '',
       gtmId: '',
       gtagId: '',
-      testMode: isDev ? 'T' : 'F'
+      clarityCode: ''
     }
   },
   // ts 設定
