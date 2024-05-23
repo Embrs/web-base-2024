@@ -3,5 +3,5 @@ export default (type: OpenType, params: OpenParams = {}) => {
     type,
     params
   };
-  mitt.emit('open', openData);
+  mitt.emit('open-com', openData);
 };

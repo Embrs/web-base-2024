@@ -3,7 +3,7 @@
 import mitt from 'mitt';
 
 type ApplicationEvents = {
-  'open': OpenData,
+  'open-com': OpenData,
   'refresh-page': any,
   'reload-page': any,
 };

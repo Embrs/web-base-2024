@@ -36,13 +36,13 @@ const Open = (openData: OpenData) => {
 
 // 生命週期 -----------------------------------------------------------------------------------------
 onMounted(() => {
-  mitt.on('open', (openData: OpenData) => {
+  mitt.on('open-com', (openData: OpenData) => {
     Open(openData);
   });
 });
 
 onBeforeUnmount(() => {
-  mitt.off('open');
+  mitt.off('open-com');
 });
 </script>
 
