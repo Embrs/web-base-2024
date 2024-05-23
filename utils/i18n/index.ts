@@ -10,6 +10,6 @@ const localeIndex = {
 
 export default (key: string): string => {
   const storeI18n = StoreI18n();
-  const index = localeIndex[storeI18n.lang];
+  const index = localeIndex[storeI18n.locale];
   return localesData?.[key]?.[index] || key;
 };
