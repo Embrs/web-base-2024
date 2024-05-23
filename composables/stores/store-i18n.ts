@@ -6,19 +6,10 @@ import elEn from 'element-plus/es/locale/lang/en';
 export type localeType = 'en' |'tw';
 export const StoreI18n = pinia.defineStore('StoreI18n', () => {
   // const { locale: i18nLocale } = useI18n();
-  const $route = useRoute();
   const $router = useRouter();
 
   const localGroup = ['tw', 'en'];
   const locale = ref<localeType>('tw');
-
-  watch(
-    () => $route.params.lang,
-    (_lang) => {
-      if (!localGroup.includes(_lang as localeType)) return;
-      locale.value = _lang as localeType;
-    }
-  );
 
   // element-plus 組件語系
   const elLocale = computed(() => {
