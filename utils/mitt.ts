@@ -2,12 +2,10 @@
 // https://www.casper.tw/development/2020/12/15/vue-3-mitt/
 import mitt from 'mitt';
 
-type demoInfo = {
-  id: string,
-  name: string,
-}
 type ApplicationEvents = {
-  'demo': demoInfo,
+  'open': OpenData,
+  'refresh-page': any,
+  'reload-page': any,
 };
 
 const emitter = mitt<ApplicationEvents>();

@@ -17,6 +17,11 @@
   gap: $gap;
 }
 
+@mixin row-end($gap: 0) {
+  @include row($gap);
+  justify-content: flex-end;
+}
+
 @mixin row-between($gap: 0) {
   @include row($gap);
   justify-content: space-between;
