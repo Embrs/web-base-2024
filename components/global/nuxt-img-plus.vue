@@ -59,6 +59,7 @@ const imgBoxStyle = computed(() => {
   }
   return _style;
 });
+
 // 圖片樣式
 const imgStyle = computed(() => {
   const _style = {

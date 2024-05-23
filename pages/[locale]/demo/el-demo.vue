@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // ElDemo 請填寫功能描述👈
-import Arrow from '@/components/arrow.vue';
+import Arrow from '@/components/demo/arrow.vue';
 
 const cities = [
   {

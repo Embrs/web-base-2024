@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // PiniaDemo 請填寫功能描述👈
+import StoreDemoEl from '@/components/demo/store-demo-el.vue';
 const storeDemo = StoreDemo();
 </script>
 
@@ -10,7 +11,7 @@ const storeDemo = StoreDemo();
   p {{ storeDemo.doubleCount }}
   el-button(type="primary" @click="storeDemo.Add") Add
 
-  GlobalDemo
+  StoreDemoEl
 </template>
 
 <style lang="scss" scoped>
