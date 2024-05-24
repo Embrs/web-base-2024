@@ -16,7 +16,8 @@ const linkList = [
   { path: '/demo/rwd-demo', label: 'RWD' },
   { path: '/demo/drawer-modal-demo', label: 'Drawer Modal' },
   { path: '/demo/hls-demo', label: 'Hls影片串流' },
-  { path: '/sitemap.xml', label: 'SiteMap' }
+  { path: '/sitemap.xml', label: 'SiteMap' },
+  { path: '/demo/tab-demo', label: 'TabDemo' }
 ];
 </script>
 
