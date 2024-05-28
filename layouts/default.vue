@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import OpenGroup from '@/components/open-group/index.vue';
 // layout
 import LoadingPage from '@/components/layout/loading-page.vue';
 </script>
@@ -10,6 +11,8 @@ import LoadingPage from '@/components/layout/loading-page.vue';
   //- pre(v-for="i of 100" :key="i") {{ "123231212123231212312aa123231212312aa123231212312aa123231212312aa123231212312aa123231212312aa312aa" }}
   //- // TODO check
   slot
+  ClientOnly
+    OpenGroup
 </template>
 
 <style lang="scss">
