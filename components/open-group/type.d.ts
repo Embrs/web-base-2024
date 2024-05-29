@@ -2,14 +2,14 @@
 type OpenType = 
   'OpenNone'
   | 'DrawerDemo' // 測試用
-  | 'ModalDemo' // 測試用
+  | 'DialogDemo' // 測試用
 
 // Params -----------------------------------------------------------------------------------------------
 type OpenParams = 
   OpenNone
   | DrawerDemo // 測試用
 
-  | ModalDemo // 測試用
+  | DialogDemo // 測試用
 
 /** 無 */
 interface OpenNone {}
@@ -19,8 +19,8 @@ interface DrawerDemo {
   demoText: string
 }
 
-/** 測試 Modal */
-interface ModalDemo {
+/** 測試 Dialog */
+interface DialogDemo {
   demoText: string
 }
 

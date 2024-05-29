@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// DrawerModalDemo 請填寫功能描述👈
+// DrawerDialogDemo 請填寫功能描述👈
 const ClickDrawer = () => {
   const _params: DrawerDemo = {
     demoText: '123'
@@ -7,24 +7,24 @@ const ClickDrawer = () => {
   openCom('DrawerDemo', _params);
 };
 
-const ClickModal = () => {
-  const _params: ModalDemo = {
+const ClickDialog = () => {
+  const _params: DialogDemo = {
     demoText: '123'
   };
-  openCom('ModalDemo', _params);
+  openCom('DialogDemo', _params);
 };
 </script>
 
 <template lang="pug">
-#DrawerModalDemo
-  p DrawerModalDemo
+#DrawerDialogDemo
+  p DrawerDialogDemo
   ElButton(@click="ClickDrawer") Drawer
-  ElButton(@click="ClickModal") Modal
+  ElButton(@click="ClickDialog") Dialog
 </template>
 
 <style lang="scss" scoped>
 // 佈局 ----
-#DrawerModalDemo {
+#DrawerDialogDemo {
   // TODO
 }
 

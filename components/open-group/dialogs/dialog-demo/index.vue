@@ -1,11 +1,11 @@
 <script setup lang="ts">
-// ModalDemo
+// DialogDemo
 // 資料 --------------------------------------------------------------------------------------------
 const storeTool = StoreTool();
 
 const props = defineProps({
   params: {
-    type: Object as () => ModalDemo,
+    type: Object as () => DialogDemo,
     required: true
   }
 });
@@ -69,7 +69,7 @@ const ReloadPage = () => {
   mitt.emit('reload-page');
 };
 
-const EmitHideModal = () => {
+const EmitHideDialog = () => {
   emit('on-hide');
 };
 
@@ -82,9 +82,9 @@ ElDialog(
   :width="storeTool.isMobile ? '95%':'800px'"
   :before-close="OnHandleClose"
   :destroy-on-close="true"
-  @closed="EmitHideModal"
+  @closed="EmitHideDialog"
 )
-  #ModalDemo
+  #DialogDemo
     Loading
       div
         p {{ props.params.demoText }}
@@ -96,7 +96,7 @@ ElDialog(
       //-   @on-complete="OnComplete"
       //- )
   template(#footer)
-    #ModalDemoFooter
+    #DialogDemoFooter
       elButton(
         type="primary"
         :loading="isWaiting"
@@ -106,10 +106,10 @@ ElDialog(
 
 <style lang="scss" scoped>
 // 佈局 ----
-#ModalDemo {
+#DialogDemo {
   height: 100%;
 }
-#ModalDemoFooter {
+#DialogDemoFooter {
   @include row-end;
   height: 100%;
 }

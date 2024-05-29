@@ -3,7 +3,7 @@
 import { ref, onBeforeUnmount } from 'vue';
 
 import DrawerDemo from './drawers/drawer-demo/index.vue';
-import ModalDemo from './modals/modal-demo/index.vue';
+import DialogDemo from './dialogs/dialog-demo/index.vue';
 
 // 資料 --------------------------------------------------------------------------------------------
 const openList = ref<OpenItem[]>([]);
@@ -11,7 +11,7 @@ const openList = ref<OpenItem[]>([]);
 // Component ---------------------------------------------------------------------------------------
 const openMap = {
   DrawerDemo,
-  ModalDemo
+  DialogDemo
 };
 
 // 接收事件 -----------------------------------------------------------------------------------------
@@ -50,8 +50,9 @@ onBeforeUnmount(() => {
 #OpenGroup(v-if="openList.length > 0")
   component(
     :is="openMap[drawerItem.type]"
-    v-for="drawerItem of openList" :key="drawerItem.uuid"
+    v-for="(drawerItem, index) of openList" :key="drawerItem.uuid"
     :params="drawerItem?.params"
+    :index="index"
     @on-hide="OnHide(drawerItem.uuid)"
   )
 </template>

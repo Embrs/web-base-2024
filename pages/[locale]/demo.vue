@@ -14,7 +14,7 @@ const linkList = [
   { path: '/demo/err-demo', label: 'Error' },
   { path: '/demo/pinia-demo', label: 'Pinia' },
   { path: '/demo/rwd-demo', label: 'RWD' },
-  { path: '/demo/drawer-modal-demo', label: 'Drawer Modal' },
+  { path: '/demo/drawer-dialog-demo', label: 'Open Demo' },
   { path: '/demo/hls-demo', label: 'Hls影片串流' },
   { path: '/sitemap.xml', label: 'SiteMap' },
   { path: '/demo/tab-demo', label: 'TabDemo' }

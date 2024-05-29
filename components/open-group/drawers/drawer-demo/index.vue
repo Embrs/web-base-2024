@@ -7,6 +7,10 @@ const props = defineProps({
   params: {
     type: Object as () => DrawerDemo,
     required: true
+  },
+  index: {
+    type: Number,
+    default: 0
   }
 });
 
@@ -18,6 +22,10 @@ const isWaiting = ref(false);
 // 標題
 const title = computed(() => {
   return 'demo';
+});
+
+const webDrawerWidth = computed(() => {
+  return `${storeTool.windowWidth - 270 - (props.index * 10)}px`;
 });
 
 // 接收事件 -----------------------------------------------------------------------------------------
@@ -45,6 +53,19 @@ const OnComplete = () => {
   visible.value = false;
 };
 
+const ClickDrawer = () => {
+  const _params: DrawerDemo = {
+    demoText: '123'
+  };
+  openCom('DrawerDemo', _params);
+};
+
+const ClickDialog = () => {
+  const _params: DialogDemo = {
+    demoText: '123'
+  };
+  openCom('DialogDemo', _params);
+};
 const ClickCreateBtn = lodash.debounce(async () => {
   // if (isWaiting.value) return;
   // isWaiting.value = true;
@@ -79,7 +100,7 @@ const EmitHideModal = () => {
 ElDrawer(
   v-model="visible"
   :title="title"
-  :size="storeTool.isMobile ? '95%':'800px'"
+  :size="storeTool.isMobile ? '95%': webDrawerWidth"
   :before-close="OnHandleClose"
   :destroy-on-close="true"
   @closed="EmitHideModal"
@@ -88,6 +109,8 @@ ElDrawer(
     Loading
       div
         p {{ props.params.demoText }}
+        ElButton(@click="ClickDrawer") OpenDrawer
+        ElButton(@click="ClickDialog") OpenDialog
       //- StaffForm(
       //-   ref="elStaffForm"
       //-   actionType="create"
