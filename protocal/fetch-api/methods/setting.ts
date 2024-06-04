@@ -20,12 +20,13 @@ const GetApiUrl = () => {
   return '';
 };
 const Fetch = (url: string, option: AnyObject) => {
+  // const router = useRouter();
+  const storeUser = StoreUser();
   return $fetch(`${url}?t=${Date.now()}`, {
     // 合併參數
     ...option,
     // 請求攔截器
     onRequest ({ options }) {
-      const storeUser = StoreUser();
       options.baseURL = GetApiUrl();
       options.headers = new Headers(options.headers);
       options.headers.set('Authorization', `Bearer ${storeUser.token}`);
@@ -37,6 +38,11 @@ const Fetch = (url: string, option: AnyObject) => {
       let _res: DefaultRes = response._data;
       _res = _res?.status ? _res : defErr;
       _res.status.httpStatus = response.status;
+      if (['未登入'].includes(_res?.status?.message || '')) {
+        setTimeout(() => {
+          // router.push('/sign-in');
+        }, 1000);
+      }
       return Promise.reject(_res);
     },
 
@@ -49,6 +55,11 @@ const Fetch = (url: string, option: AnyObject) => {
          : defErr;
       _res.status.is_success = false;
       _res.status.httpStatus = response.status;
+      if (['未登入'].includes(_res?.status?.message || '')) {
+        setTimeout(() => {
+          // router.push('/sign-in');
+        }, 1000);
+      }
       return Promise.reject(_res);
     }
   });
