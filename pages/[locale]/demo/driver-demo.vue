@@ -28,7 +28,8 @@ const ClickStart = () => {
 // -----------------------------------------------------------------------------------------------
 const inputText = ref('');
 const ShowNotice = (event: Event) => {
-  const el = event.target.parentElement as HTMLInputElement;
+  // @ts-ignore
+  const el = event?.target?.parentElement as HTMLInputElement;
   console.dir(el);
   driverObj.highlight({
     element: el,
