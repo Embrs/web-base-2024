@@ -5,33 +5,13 @@
 <template lang="pug">
 #FontDemo
   p FontDemo
-  h1 H1
-  h2 H2
-  h3 H3
-  h4 H4
-  h5 H5
-  h6 H6
-  hr
-  p fs('footnote-description')
-  p fs(12px)
-  p default 16px
-  hr
-  p family: "Noto Sans", "Noto Sans TC"
-  hr
-  h4.title Display
-  .display-large display-large
-  .display-medium display-medium
-  .display-small display-small
-  hr
-  h4.title Body
-  .body-regular body-regular
-  .body-small body-small
-  .footnote-description footnote-description
-  hr
-  h4.title Label
-  .label-large label-large
-  .label-small label-small
-  hr
+  .h1 H1
+  .h2 H2
+  .h3 H3
+  .h4 H4
+  .h5 H5
+  .h6 H6
+
   h4.title Default
   .size-12px size-12px
   .size-14px size-14px
@@ -49,29 +29,23 @@
 .title {
   color: #4a95aa
 }
-.footnote-description {
-  @include fs('footnote-description');
+.h1 {
+  @include fs('h1');
 }
-.body-small {
-  @include fs('body-small');
+.h2 {
+  @include fs('h2');
 }
-.body-regular {
-  @include fs('body-regular');
+.h3 {
+  @include fs('h3');
 }
-.display-small {
-  @include fs('display-small');
+.h4 {
+  @include fs('h4');
 }
-.display-medium {
-  @include fs('display-medium');
+.h5 {
+  @include fs('h5');
 }
-.display-large {
-  @include fs('display-large');
-}
-.label-large {
-  @include fs('label-large');
-}
-.label-small {
-  @include fs('label-small');
+.h6 {
+  @include fs('h6');
 }
 .size-12px {
   @include fs(12px);

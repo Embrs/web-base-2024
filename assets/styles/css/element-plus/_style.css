@@ -1,15 +1,12 @@
 .el-drawer__header {
+  height: 50px;
   margin-bottom: 0 !important;
   padding: 0 16px !important;
-  height: 50px;
   border-bottom: 1px solid #eaeaea;
-  /* background-color: #B47F2A !important; */
-  /* color: white !important; */
 }
 .el-drawer__footer {
   padding: 0 16px !important;
   height: 50px;
-  /* border-top: solid 1px #ddd; */
 }
   /* ----- 自定義按鈕 ----- */
   /* .el-button--aa {

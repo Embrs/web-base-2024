@@ -1,6 +1,6 @@
 // https://cn.vuejs.org/guide/reusability/custom-directives.html#directive-hooks
 export default defineNuxtPlugin((nuxtApp) => {
-  // 從哪進入
+  // 動畫從哪進入 v-from="[x,y,延遲毫秒]"
   nuxtApp.vueApp.directive('from', {
     mounted (el, binding) {
       // 綁定目標進入畫面時觸發

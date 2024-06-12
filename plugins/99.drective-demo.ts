@@ -1,6 +1,6 @@
 // https://cn.vuejs.org/guide/reusability/custom-directives.html#directive-hooks
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.directive('rbac', {
+  nuxtApp.vueApp.directive('demo', {
     // // 在绑定元素的 attribute 前
     // // 或事件监听器应用前调用
     // created(el, binding, vnode, prevVnode) {
