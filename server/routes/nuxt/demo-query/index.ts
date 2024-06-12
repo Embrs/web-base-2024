@@ -2,5 +2,6 @@
 
 export default defineEventHandler((event: any) => {
   const query = getQuery(event);
+  console.log(query);
   return { a: query.param1, b: query.param2 };
 });

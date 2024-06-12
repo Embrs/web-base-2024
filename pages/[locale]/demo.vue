@@ -17,7 +17,8 @@ const linkList = [
   { path: '/demo/drawer-dialog-demo', label: 'Open Demo' },
   { path: '/demo/hls-demo', label: 'Hls影片串流' },
   { path: '/sitemap.xml', label: 'SiteMap' },
-  { path: '/demo/tab-demo', label: 'TabDemo' }
+  { path: '/demo/tab-demo', label: 'TabDemo' },
+  { path: '/demo/server-api-demo', label: 'Server Api' }
 ];
 </script>
 
