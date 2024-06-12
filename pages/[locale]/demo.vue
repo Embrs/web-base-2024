@@ -18,7 +18,8 @@ const linkList = [
   { path: '/demo/hls-demo', label: 'Hls影片串流' },
   { path: '/sitemap.xml', label: 'SiteMap' },
   { path: '/demo/tab-demo', label: 'TabDemo' },
-  { path: '/demo/server-api-demo', label: 'Server Api' }
+  { path: '/demo/server-api-demo', label: 'Server Api' },
+  { path: '/demo/driver-demo', label: 'Driver Step' }
 ];
 </script>
 
