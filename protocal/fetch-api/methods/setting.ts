@@ -19,7 +19,7 @@ const GetApiUrl = () => {
   }
   return '';
 };
-const Fetch = (url: string, option: AnyObject) => {
+const Fetch = (url: string, option: AnyObject, downloadFile: boolean = false) => {
   // const router = useRouter();
   const storeUser = StoreUser();
   return $fetch(`${url}?t=${Date.now()}`, {
@@ -36,7 +36,20 @@ const Fetch = (url: string, option: AnyObject) => {
     onResponse ({ response }) {
       // TODO isLogin
       let _res: DefaultRes = response._data;
-      _res = _res?.status ? _res : defErr;
+      if (!_res?.status) {
+        if (!downloadFile) {
+          _res = defErr;
+        }
+        if (downloadFile) {
+          _res = {
+            data: response._data,
+            status: {
+              is_success: true,
+              message: ''
+            }
+          };
+        }
+      }
       _res.status.httpStatus = response.status;
       if (['未登入'].includes(_res?.status?.message || '')) {
         setTimeout(() => {
@@ -89,6 +102,9 @@ export const methods = {
 
   filePost: (url: string, body: AnyObject = {}) => {
     return Fetch(url, { method: 'post', body: tool.ToFormData(body) }).catch((err) => err);
+  },
+  downloadGet: (url: string, body: AnyObject = {}) => {
+    return Fetch(url, { method: 'get', body: tool.ToFormData(body) }, true).catch((err) => err);
   },
 
   // 上傳進度
