@@ -143,7 +143,16 @@ export default defineNuxtConfig({
   image: {
     dir: 'public'
   },
-
+  // Nuxt route 路由設定 ------------------------------------------------
+  // https://nuxt.com/docs/guide/concepts/rendering#route-rules
+  routeRules: {
+    // '/': { prerender: true }, // 每一次建構時，都重新預渲染頁面 (透過 Builder)
+    // '/blog/**': { static: true }, // 接收到一個請求時，頁面依照需求重新渲染頁面 (透過 Lambda)
+    // '/products/**': { swr: 600 }, // 接收到一個請求時，10 分鐘的快取緩衝過期後，將會再次的重新取得資料進行渲染 (透過 Lambda)
+    // '/admin/**': { ssr: false }, // 僅在客戶端渲染
+    // '/react/*': { redirect: '/vue' }, // 路由重新導向規則
+    // '/api/**': { cors: true } // 添加 CORS Header
+  },
   // vite ---------------------------------------------------------------
   vite: {
     css: {
