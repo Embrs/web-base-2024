@@ -72,6 +72,11 @@
   word-wrap: break-word;
 }
 
+@mixin text-wrap {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 @mixin text-row($row: 3) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
