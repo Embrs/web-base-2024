@@ -19,7 +19,8 @@ const linkList = [
   // { path: '/sitemap.xml', label: 'SiteMap' },
   { path: '/demo/tab-demo', label: 'TabDemo' },
   { path: '/demo/server-api-demo', label: 'Server Api' },
-  { path: '/demo/driver-demo', label: 'Driver Step' }
+  { path: '/demo/driver-demo', label: 'Driver Step' },
+  { path: '/demo/google-form', label: 'Google Form' }
 ];
 </script>
 
