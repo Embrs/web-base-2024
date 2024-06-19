@@ -22,9 +22,6 @@ const linkList = [
   { path: '/demo/driver-demo', label: 'Driver Step' },
   { path: '/demo/google-form', label: 'Google Form' }
 ];
-useHead({
-  title: 'demo'
-});
 </script>
 
 <template lang="pug">
