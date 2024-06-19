@@ -6,10 +6,10 @@ import elJp from 'element-plus/es/locale/lang/ja';
 // -----------------------------------------------------------------------------------------------
 export type LocaleType = 'en' |'tw' | 'jp';
 export const StoreI18n = pinia.defineStore('StoreI18n', () => {
+  const useLocale = false; // 是否使用語系地區
   const $router = useRouter();
-  const localeGroup = ['tw', 'en', 'jp'];
   const locale = useCookie<LocaleType>('i18nLoacle', { default: () => 'tw' });
-
+  const localeGroup = ['tw', 'en', 'jp'];
   // 已使用過瀏覽器設定語系地區
   const alreadyUseBrowserLocale = useCookie<Boolean>('useI18nBrowserLoacle', { default: () => false });
 
@@ -47,6 +47,7 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
 
   // 轉目前語系路徑
   const LocalePath = (_path: string) => {
+    if (!useLocale) return _path;
     const points = _path.replace('/', '').split('/').filter((_p: string) => !!_p);
     const _local = points[0];
     if (localeGroup.includes(_local)) return _path;
@@ -54,6 +55,7 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
   };
   // -----------------------------------------------------------------------------------------------
   return {
+    useLocale, // 是否使用語系地區
     locale,
     alreadyUseBrowserLocale,
     localeGroup,

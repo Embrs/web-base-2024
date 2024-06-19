@@ -1,9 +1,15 @@
 export default defineNuxtRouteMiddleware((to, from) => {
   const storeI18n = StoreI18n();
-  const points = to.path.replace('/', '').split('/').filter((_p: string) => !!_p);
-  const _urlLocale = points?.[0];
+  // 不使用語系地區 離開
+  if (!storeI18n.useLocale) return;
 
-  // 語系不存在
+  // 提取語系地區
+  console.log('to', to);
+  const points = to.path.replace('/', '').split('/').filter((_p: string) => !!_p);
+
+  const _urlLocale = String(to.params?.locale || 'tw');
+
+  // 語系地區不存在
   if (!storeI18n.localeGroup.includes(_urlLocale)) {
     points.unshift(storeI18n.locale);
     const newPath = `/${points.join('/')}`;
