@@ -86,6 +86,7 @@ export default defineNuxtConfig({
 
   app: {
     // baseURL: '/',
+    buildAssetsDir: '/static/',
     pageTransition: { name: 'page', mode: 'out-in' },
     // meta
     head: {
