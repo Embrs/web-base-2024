@@ -36,6 +36,7 @@
     "eslint-plugin-vue-pug": "^0.6.1",
     "nuxt": "^3.12.1",
     "nuxt-icon": "^0.6.8",
+    "nuxt-mail": "^5.0.1",
     "pinia": "^2.1.7",
     "pug": "^3.0.2",
     "rollup-plugin-visualizer": "^5.12.0",

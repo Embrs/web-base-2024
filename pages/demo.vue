@@ -20,7 +20,8 @@ const linkList = [
   { path: '/demo/tab-demo', label: 'TabDemo' },
   { path: '/demo/server-api-demo', label: 'Server Api' },
   { path: '/demo/driver-demo', label: 'Driver Step' },
-  { path: '/demo/google-form', label: 'Google Form' }
+  { path: '/demo/google-form', label: 'Google Form' },
+  { path: '/demo/email-demo', label: 'Email Demo' }
 ];
 </script>
 

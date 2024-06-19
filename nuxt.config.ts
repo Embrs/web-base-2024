@@ -32,8 +32,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss', // https://nuxt.com/modules/tailwindcss
     '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
     'nuxt-icon', // https://nuxt.com/modules/icon
-    '@nuxtjs/google-fonts', // https://google-fonts.nuxtjs.org/getting-started/setup
-    '@nuxt/image' // https://image.nuxt.com/get-started/installation
+    '@nuxt/image', // https://image.nuxt.com/get-started/installation
+    'nuxt-mail', // https://nuxt.com/modules/nuxt-mail
+    '@nuxtjs/google-fonts' // https://google-fonts.nuxtjs.org/getting-started/setup
   ],
   // i18n: { // i18n 目前 8.0.0-rc.3 error 打包運行會 500
   //   vueI18n: './i18n/i18n.config.ts'
@@ -143,6 +144,20 @@ export default defineNuxtConfig({
   // Nuxt image圖片注入位置 ----------------------------------------------
   image: {
     dir: 'public'
+  },
+  // Nuxt mail ----------------------------------------------------------
+  mail: {
+    message: {
+      to: process.env.NUXT_PUBILC_MAIL_MESSAGE_TO as string || ''
+    },
+    smtp: {
+      host: process.env.NUXT_PUBILC_MAIL_SMTP_HOST as string || '',
+      port: process.env.NUXT_PUBILC_MAIL_SMTP_PORT as string || '',
+      auth: {
+        user: process.env.NUXT_PUBILC_MAIL_SMTP_AUTH_USER as string || '',
+        pass: process.env.NUXT_PUBILC_MAIL_SMTP_AUTH_PASS as string || ''
+      }
+    }
   },
   // Nuxt route 路由設定 ------------------------------------------------
   // https://nuxt.com/docs/guide/concepts/rendering#route-rules
