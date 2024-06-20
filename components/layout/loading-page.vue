@@ -4,13 +4,13 @@ const nuxtApp = useNuxtApp();
 const isFinish = ref(false);
 const isHide = ref(false);
 
-nuxtApp.hook('page:finish', () => {
+nuxtApp.hooks.hookOnce('page:finish', () => {
   isHide.value = true;
   setTimeout(() => {
     isFinish.value = true;
   }, 600);
 });
-nuxtApp.hook('app:rendered', (e) => {
+nuxtApp.hooks.hookOnce('app:rendered', (e) => {
   if (e.ssrContext?.error) {
     isHide.value = true;
     isFinish.value = true;
