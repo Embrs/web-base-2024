@@ -12,6 +12,7 @@ export default <RouterConfig>{
   //   }
   // ],
   scrollBehavior (to, from, savedPosition) {
+    const nuxtApp = useNuxtApp();
     // ex: <NuxtLink to="#top"> To Top </ NuxtLink>
     // 滾動到 ID 位置
     if (to.hash) {
@@ -45,12 +46,24 @@ export default <RouterConfig>{
     // 這將使用瀏覽器前進/後退導航中儲存的滾動位
     // if (to.path !== from.path) {
     return new Promise((resolve) => {
-      resolve({
-        left: savedPosition?.left || 0,
-        top: savedPosition?.top || 0,
-        behavior: 'smooth'
-      });
+      if (!savedPosition?.top) {
+        // 無上次節點
+        nuxtApp.hooks.hookOnce('page:finish', () => {
+          resolve({
+            left: 0,
+            top: 0
+          });
+        });
+      } else {
+        // 有上次節點
+        setTimeout(() => {
+          resolve({
+            left: savedPosition?.left || 0,
+            top: savedPosition?.top || 0,
+            behavior: 'smooth'
+          });
+        }, 400);
+      }
     });
-    // }
   }
 };
