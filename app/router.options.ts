@@ -2,23 +2,26 @@ import type { RouterConfig } from '@nuxt/schema';
 
 // https://router.vuejs.org/api/interfaces/routeroptions.html
 export default <RouterConfig>{
-  // 注入頁面
-  // routes: (_routes) => [
-  //   ..._routes,
-  //   {
-  //     name: 'dd-dd-dd-demo',
-  //     path: '/dd/dd/dd/demo',
-  //     component: () => import('@/pages/demo.vue').then((r) => r.default || r)
-  //   }
-  // ],
+  /**
+   * 注入頁面
+    routes: (_routes) => [
+      ..._routes,
+      {
+        name: 'dd-dd-dd-demo',
+        path: '/dd/dd/dd/demo',
+        component: () => import('@/pages/demo/index.vue').then((r) => r.default || r)
+      }
+    ],
+   */
   scrollBehavior (to, from, savedPosition) {
     const nuxtApp = useNuxtApp();
-    // ex: <NuxtLink to="#top"> To Top </ NuxtLink>
-    // 滾動到 ID 位置
+    /**
+     * 滾動到 ID 位置
+     * ex: <NuxtLink to="#top"> To Top </ NuxtLink>
+     */
     if (to.hash) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          // 去除 Header 高度
           // const headerHeight = document.querySelector('#Header')?.clientHeight || 0;
           const elScroll = document.querySelector(to.hash) as HTMLElement;
           if (!elScroll) resolve();
@@ -32,7 +35,9 @@ export default <RouterConfig>{
       });
     }
 
-    // 如果連結到同一頁面，則以平滑的行為捲動到頂部
+    /**
+     * 如果連結到同一頁面，則以平滑的行為捲動到頂部
+     */
     if (to === from) {
       return new Promise((resolve) => {
         resolve({
@@ -43,27 +48,18 @@ export default <RouterConfig>{
       });
     }
 
-    // 這將使用瀏覽器前進/後退導航中儲存的滾動位
+    /**
+     *  這將使用瀏覽器前進/後退導航中儲存的滾動位
+     */
     // if (to.path !== from.path) {
     return new Promise((resolve) => {
-      if (!savedPosition?.top) {
-        // 無上次節點
-        nuxtApp.hooks.hookOnce('page:finish', () => {
-          resolve({
-            left: 0,
-            top: 0
-          });
+      // 有上次節點
+      nuxtApp.hooks.hookOnce('page:finish', () => {
+        resolve({
+          top: savedPosition?.top || 0,
+          left: savedPosition?.left || 0
         });
-      } else {
-        // 有上次節點
-        setTimeout(() => {
-          resolve({
-            left: savedPosition?.left || 0,
-            top: savedPosition?.top || 0,
-            behavior: 'smooth'
-          });
-        }, 400);
-      }
+      });
     });
   }
 };
