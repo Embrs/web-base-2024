@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   },
   // .env setting
   runtimeConfig: {
-    apiSecret: '',
+    googleRecaptchaSiteKey: '',
     public: {
       apiBase: '',
       domainUrl: '',
