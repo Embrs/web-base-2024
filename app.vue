@@ -3,7 +3,11 @@ MixinWindowResize();
 MixinInitMeta();
 MixinLineCheck();
 const storeI18n = StoreI18n();
-
+const storeEnv = StoreEnv();
+useAsyncData('app-init', async () => {
+  await storeEnv.Init();
+  return true;
+});
 </script>
 
 <template lang="pug">
