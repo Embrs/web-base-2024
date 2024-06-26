@@ -1,10 +1,11 @@
 export const StoreEnv = pinia.defineStore('StoreEnv', () => {
-  const env = useState<{[key: string]: string}>('StoreEnv-envObj', () => ({}));
+  const env = useState<{[key: string]: any}>('StoreEnv-envObj', () => ({}));
 
-  const Init = async () => {
-    const res = await $fetch('/nuxt/env');
-    const _env = JSON.parse(Decrypt(res));
-    env.value = _env;
+  const Init = () => {
+    if (import.meta.server) {
+      const runtimeConfig = useRuntimeConfig();
+      env.value = runtimeConfig;
+    }
   };
   return { Init, env };
 });

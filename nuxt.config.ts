@@ -148,14 +148,14 @@ export default defineNuxtConfig({
   // Nuxt mail ----------------------------------------------------------
   mail: {
     message: {
-      to: process.env.NUXT_PUBILC_MAIL_MESSAGE_TO as string || ''
+      to: process.env.NUXT_MAIL_MESSAGE_TO as string || ''
     },
     smtp: {
-      host: process.env.NUXT_PUBILC_MAIL_SMTP_HOST as string || '',
-      port: process.env.NUXT_PUBILC_MAIL_SMTP_PORT as string || '',
+      host: process.env.NUXT_MAIL_SMTP_HOST as string || '',
+      port: process.env.NUXT_MAIL_SMTP_PORT as string || '',
       auth: {
-        user: process.env.NUXT_PUBILC_MAIL_SMTP_AUTH_USER as string || '',
-        pass: process.env.NUXT_PUBILC_MAIL_SMTP_AUTH_PASS as string || ''
+        user: process.env.NUXT_MAIL_SMTP_AUTH_USER as string || '',
+        pass: process.env.NUXT_MAIL_SMTP_AUTH_PASS as string || ''
       }
     }
   },
