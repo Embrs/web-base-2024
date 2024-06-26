@@ -11,11 +11,11 @@ const defErr: DefaultRes = Object.freeze({
 });
 
 const GetApiUrl = () => {
-  if (process.server) {
+  if (import.meta.server) {
     // 添加 apiUrl,nuxt3 環境變量要從useRuntimeConfig裡面取
-    const { public: { apiBase } } = useRuntimeConfig();
+    const { apiBase } = useRuntimeConfig();
     return apiBase;
-    // return `${process.env.NUXT_PUBLIC_API_BASE}`;
+    // return `${process.env.NUXT_API_BASE}`;
   }
   return '';
 };

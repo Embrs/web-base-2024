@@ -35,7 +35,7 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
 
   // 偵測瀏覽器語系地區(只能在 client 使用)
   const GetBrowserLocale = () => {
-    if (process.server) return '';
+    if (import.meta.server) return '';
     const _browserLocale = navigator?.language?.toLowerCase()?.toLowerCase();
     if (_browserLocale.includes('zh')) return 'tw';
     if (_browserLocale.includes('tw')) return 'tw';

@@ -9,7 +9,7 @@ const DevServerConfig = () => {
   return {
     proxy: {
       '/api': {
-        target: process.env.NUXT_PUBLIC_API_BASE as string,
+        target: process.env.NUXT_API_BASE as string,
         // target: 'http://pltf.org.tw',
         changeOrigin: true
       }
@@ -50,8 +50,8 @@ export default defineNuxtConfig({
   // .env setting
   runtimeConfig: {
     googleRecaptchaSiteKey: '',
+    apiBase: '',
     public: {
-      apiBase: '',
       domainUrl: '',
       gtmId: '',
       gtagId: '',

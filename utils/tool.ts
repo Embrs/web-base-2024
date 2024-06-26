@@ -109,7 +109,7 @@ export const Decrypt = (str: string) => {
 };
 /* 滾動到指定元素 */
 const ScrollToTag = (idOrClass: string, isSmooth = true) => {
-  if (process.server) return;
+  if (import.meta.server) return;
   const elScroll = document.querySelector(idOrClass) as HTMLElement;
   if (!elScroll) return;
   const top = elScroll?.offsetTop || 0;
@@ -121,7 +121,7 @@ const ScrollToTag = (idOrClass: string, isSmooth = true) => {
 };
 /* 滾動到頂部 */
 const ScrollTop = (idOrClass: string, isSmooth = true) => {
-  if (process.server) return;
+  if (import.meta.server) return;
   const el = document.querySelector(idOrClass) as HTMLElement;
   if (!el) return;
   el.scrollTo({

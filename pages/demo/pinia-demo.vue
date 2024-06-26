@@ -9,8 +9,9 @@ const storeDemo = StoreDemo();
   p PiniaDemo
   p {{ storeDemo.count }}
   p {{ storeDemo.doubleCount }}
+  p {{ storeDemo.test }}
   el-button(type="primary" @click="storeDemo.Add") Add
-
+  el-button(type="primary" @click="storeDemo.test++") useState
   StoreDemoEl
 </template>
 

@@ -13,13 +13,13 @@ export const StoreTool = pinia.defineStore('StoreTool', () => {
 
   // 目前網址
   const currentUrl = computed(() => {
-    if (process.server) return '';
+    if (import.meta.server) return '';
     return window.location.href;
   });
 
   // 設定裝置
   const SetDevice = () => {
-    if (process.client) {
+    if (import.meta.client) {
       const userAgent = navigator.userAgent;
 
       isMobileDevice.value = !!(userAgent.match(
@@ -32,7 +32,7 @@ export const StoreTool = pinia.defineStore('StoreTool', () => {
 
   // 設定寬度
   const SetWindowWidth = () => {
-    if (process.client) {
+    if (import.meta.client) {
       const { innerWidth: width } = window;
       windowWidth.value = width;
     }
