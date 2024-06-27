@@ -14,7 +14,7 @@ const HandleError = () => {
 <template lang="pug">
 #Error
   div(
-    style="background-image: linear-gradient(135deg, #B31A24 35%, #6B1016 100%); color: #fff"
+    style="background-image: linear-gradient(135deg, #A2D1CF 35%, #7B9CA1 100%); color: #fff"
     class="text-white flex min-h-screen items-center"
   )
     div(class="mx-auto flex flex-wrap items-center p-4")

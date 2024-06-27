@@ -30,8 +30,8 @@ const linkList = [
 #Demo
   .row-item
     div(v-for="item of linkList" :key="item.path")
-      ElButton
-        NuxtLink(:to="storeI18n.LocalePath(item.path)") {{ item.label }}
+      NuxtLink(:to="storeI18n.LocalePath(item.path)")
+        ElButton {{ item.label }}
   div
     NuxtPage
 </template>

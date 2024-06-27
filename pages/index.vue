@@ -6,8 +6,10 @@
 <template lang="pug">
 #Home
   p Home
-  ElButton
-    NuxtLink(to="/demo") To Demo
+  NuxtLink(to="/demo")
+    ElButton To Demo
+  NuxtLink(to="/template-1")
+    ElButton To Template 1
 </template>
 
 <style lang="scss" scoped>
