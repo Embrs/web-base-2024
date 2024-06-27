@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Home 請填寫功能描述👈
 import Carousel from '@/components/template/carousel.vue';
+import ContactUsForm from '@/components/template/contact-us-form.vue';
 definePageMeta({
   layout: 'layout-1'
 });
@@ -10,6 +11,7 @@ definePageMeta({
 #Home
   p Home
   Carousel
+  ContactUsForm
 
 </template>
 

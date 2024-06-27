@@ -16,12 +16,13 @@ const TouchEnd = (e: TouchEvent | MouseEvent) => {
 };
 
 const OnMove = (move: number) => {
-  console.log(move);
+  if (startPoint === 0) return;
   if (move > 150) {
     elElCarousel.value.prev();
   } else if (move < -150) {
     elElCarousel.value.next();
   }
+  startPoint = 0;
 };
 
 </script>
@@ -49,8 +50,11 @@ const OnMove = (move: number) => {
 #Carousel {
   // TODO
   .carousel-item {
-    background-color: #aaa;
     @include center;
+    @include fs(30px);
+    user-select: none;
+    color: white;
+    background-color: #aaa;
   }
 }
 
