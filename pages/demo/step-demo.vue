@@ -1,10 +1,10 @@
 <script setup lang="ts">
-// TabDemo 請填寫功能描述👈
-import AATab from '@/components/demo/tab/aa-tab.vue';
-import BBTab from '@/components/demo/tab/bb-tab.vue';
-import CCTab from '@/components/demo/tab/cc-tab.vue';
+// StepDemo 請填寫功能描述👈
+import AAStep from '@/components/demo/step/aa-step.vue';
+import BBStep from '@/components/demo/step/bb-step.vue';
+import CCStep from '@/components/demo/step/cc-step.vue';
 // 資料 --------------------------------------------------------------------------------------------
-interface TabDemo {
+interface StepDemo {
   a1: string,
   a2: string,
   b1: string,
@@ -14,7 +14,7 @@ interface TabDemo {
 }
 const elStepCom = ref();
 
-const params = ref<TabDemo>({
+const params = ref<StepDemo>({
   a1: '',
   a2: '',
   b1: '',
@@ -25,9 +25,9 @@ const params = ref<TabDemo>({
 
 const currentStep = ref<1|2|3>(1);
 const stepMap = {
-  1: AATab,
-  2: BBTab,
-  3: CCTab
+  1: AAStep,
+  2: BBStep,
+  3: CCStep
 };
 
 // 接收事件 -----------------------------------------------------------------------------------------
@@ -61,12 +61,12 @@ const ClickNext = async () => {
 </script>
 
 <template lang="pug">
-#TabDemo
+#StepDemo
   .info-area
     pre {{ params }}
-  .tab-area
+  .step-area
     transition(name="page" mode="out-in")
-      component(:is="stepMap[currentStep]" ref="elStepCom" :params="params")
+      component(:is="stepMap[currentStep]" ref="elStepCom" v-model="params")
   .btn-area
     ElButton(v-show="currentStep > 1" type="primary" @click="ClickBack") Back
     ElButton(v-show="currentStep < 3" type="primary" @click="ClickNext") Next
@@ -74,7 +74,7 @@ const ClickNext = async () => {
 
 <style lang="scss" scoped>
 // 佈局 ----
-#TabDemo {
+#StepDemo {
   // TODO
   @include wh;
   display: grid;

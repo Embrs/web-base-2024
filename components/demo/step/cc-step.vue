@@ -1,25 +1,23 @@
 <script setup lang="ts">
-// BBTab 請填寫功能描述👈
+// CCStep 請填寫功能描述👈
 
-interface BBTab {
-  b1: string,
-  b2: string
+interface CCStep {
+  c1: string,
+  c2: string
 }
 
 // 資料 --------------------------------------------------------------------------------------------
-const props = defineProps({
-  params: {
-    type: Object as () => BBTab,
-    required: true
-  }
+const params = defineModel({
+  type: Object as () => CCStep,
+  required: true
 });
 
 const elForm = ref();
 
 const rules = computed(() => {
   return {
-    b1: [{ required: true, message: '請輸入', trigger: 'change' }],
-    b2: [{ required: true, message: '請輸入', trigger: 'change' }]
+    c1: [{ required: true, message: '請輸入', trigger: 'change' }],
+    c2: [{ required: true, message: '請輸入', trigger: 'change' }]
   };
 });
 
@@ -43,23 +41,23 @@ defineExpose({ FormValidate });
 </script>
 
 <template lang="pug">
-#BBTab
+#CCStep
   ElForm(
     ref="elForm"
-    :model="props.params"
+    :model="params"
     :rules="rules"
     size="large"
     label-width="88px"
     @submit.prevent
   )
-    ElFormItem(label="b1" prop="b1")
+    ElFormItem(label="c1" prop="c1")
       ElInput(
-        v-model.trim="props.params.b1"
+        v-model.trim="params.c1"
         maxlength="200"
       )
-    ElFormItem(label="b2" prop="b2")
+    ElFormItem(label="c2" prop="c2")
       ElInput(
-        v-model.trim="props.params.b2"
+        v-model.trim="params.c2"
         maxlength="200"
       )
 
@@ -67,10 +65,10 @@ defineExpose({ FormValidate });
 
 <style lang="scss" scoped>
 // 佈局 ----
-#BBTab {
+#CCStep {
   // TODO
   padding: 10px;
-  background-color: #bbb;
+  background-color: #ccc;
 }
 
 // 組件 ----

@@ -1,25 +1,23 @@
 <script setup lang="ts">
-// AATab 請填寫功能描述👈
+// BBStep 請填寫功能描述👈
 
-interface AATab {
-  a1: string,
-  a2: string
+interface BBStep {
+  b1: string,
+  b2: string
 }
 
 // 資料 --------------------------------------------------------------------------------------------
-const props = defineProps({
-  params: {
-    type: Object as () => AATab,
-    required: true
-  }
+const params = defineModel({
+  type: Object as () => BBStep,
+  required: true
 });
 
 const elForm = ref();
 
 const rules = computed(() => {
   return {
-    a1: [{ required: true, message: '請輸入', trigger: 'change' }],
-    a2: [{ required: true, message: '請輸入', trigger: 'change' }]
+    b1: [{ required: true, message: '請輸入', trigger: 'change' }],
+    b2: [{ required: true, message: '請輸入', trigger: 'change' }]
   };
 });
 
@@ -43,23 +41,23 @@ defineExpose({ FormValidate });
 </script>
 
 <template lang="pug">
-#AATab
+#BBStep
   ElForm(
     ref="elForm"
-    :model="props.params"
+    :model="params"
     :rules="rules"
     size="large"
     label-width="88px"
     @submit.prevent
   )
-    ElFormItem(label="a1" prop="a1")
+    ElFormItem(label="b1" prop="b1")
       ElInput(
-        v-model.trim="props.params.a1"
+        v-model.trim="params.b1"
         maxlength="200"
       )
-    ElFormItem(label="a2" prop="a2")
+    ElFormItem(label="b2" prop="b2")
       ElInput(
-        v-model.trim="props.params.a2"
+        v-model.trim="params.b2"
         maxlength="200"
       )
 
@@ -67,10 +65,10 @@ defineExpose({ FormValidate });
 
 <style lang="scss" scoped>
 // 佈局 ----
-#AATab {
+#BBStep {
   // TODO
   padding: 10px;
-  background-color: #aaa;
+  background-color: #bbb;
 }
 
 // 組件 ----
