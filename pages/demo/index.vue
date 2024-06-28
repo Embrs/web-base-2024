@@ -22,7 +22,8 @@ const linkList = [
   { path: '/demo/driver-demo', label: 'Driver Step' },
   { path: '/demo/google-form', label: 'Google Form' },
   { path: '/demo/email-demo', label: 'Email Demo' },
-  { path: '/demo/google-map', label: 'Google Map' }
+  { path: '/demo/google-map', label: 'Google Map' },
+  { path: '/demo/qr-code-demo', label: 'QR Code' }
 ];
 </script>
 

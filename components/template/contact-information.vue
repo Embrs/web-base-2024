@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// contactInformation 聯絡資訊
+// ContactInformation 聯絡資訊
 // import connectInfo from '@/components/page/contact-us/data/connect-info';
 
 // 資料 --------------------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ ElDrawer(
   :append-to-body="true"
   @closed="ClickClose"
 )
-  #contactInformation 聯絡資訊(ref="elDrawer")
+  #ContactInformation 聯絡資訊(ref="elDrawer")
     .close-area
       Icon.close-btn(name="IconRCClose" size="40px" @click="ClickClose")
     h2.title 聯繫方式
@@ -96,7 +96,7 @@ ElDrawer(
 
 <style lang="scss" scoped>
 // 佈局 ----
-#contactInformation 聯絡資訊 {
+#ContactInformation 聯絡資訊 {
   height: 100%;
   position: relative;
   overflow-y: auto;
@@ -121,7 +121,7 @@ ElDrawer(
 
 // 組件 ----
 .description {
-  @include fs('body-regular');
+  // TODO
 }
 
 .info-item {
@@ -141,7 +141,6 @@ ElDrawer(
   }
   .info-text {
     @include column(8px);
-    @include fs('body-regular');
     .info-title {
       font-weight: 600;
       color: $primary-500;
