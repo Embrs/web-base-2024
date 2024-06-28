@@ -1,6 +1,23 @@
 <script setup lang="ts">
 // ContactInformation 聯絡資訊
 // import connectInfo from '@/components/page/contact-us/data/connect-info';
+const connectInfo = {
+  fb: 'https://www.facebook.com/athenaadsgroup',
+  ig: 'https://www.instagram.com/athena__ads?igshid=MzMyNGUyNmU2YQ==&utm_source=qr',
+  yt: 'https://www.youtube.com/channel/UCbB04DoFuJnJ6tSDorEPkRw',
+  line: 'https://page.line.me/205wvmwc?oat_content=url&openQrModal=true',
+  104: 'https://www.104.com.tw/company/1a2x6blwep?jobsource=checkc',
+  googleRating: 'https://www.google.com/search?hl=zh-TW&gl=tw&q=雅典娜數位整合行銷#lrd=0x34693dd1a80bbeb5:0x766cd394034d11ed,1', // 觀看評價
+  googleWriteRating: 'https://www.google.com/search?hl=zh-TW&gl=tw&q=雅典娜數位整合行銷#lrd=0x34693dd1a80bbeb5:0x766cd394034d11ed,3', // 留下評價
+  googleMap: 'https://maps.app.goo.gl/3nf4JqGcas4YAvN39',
+  joinLine: 'https://lin.ee/PBNG6PG',
+  des: '每週一至週五（國定假日除外），上午 9:30 至 下午6:00 雅典娜誠摯為您服務。',
+  lineId: '@athenaads',
+  eMail: 'info@athenaads.com',
+  phone: '04-22230080',
+  address: '40042 台中市中區三民路二段136號',
+  addressImg: '/img/contact-us/addr.jpg'
+};
 
 // 資料 --------------------------------------------------------------------------------------------
 
@@ -15,114 +32,29 @@
 
 <template lang="pug">
 #ContactInformation
-  //- .close-area
-  //-   Icon.close-btn(name="IconRCClose" size="40px" @click="ClickClose")
-  //- h2.title 聯繫方式
-  //- .description {{ connectInfo.des }}
-  //- .info-area
-  //-   .info-item
-  //-     Icon.info-icon(name="IconOLine")
-  //-     .info-text
-  //-       NuxtLink(:to="config.join.line" target="_blank" title="Athena line")
-  //-         .info-title LINE ID
-  //-         //- .info-content {{ connectInfo.lineId }}
-  //-   .info-item
-  //-     Icon.info-icon(name="IconOMail")
-  //-     .info-text
-  //-       //- NuxtLink(:to="`mailto:${connectInfo.eMail}`" title="Athena e-mail")
-  //-         .info-title 聯絡信箱
-  //-         //- .info-content {{ connectInfo.eMail }}
-  //-   .info-item
-  //-     Icon.info-icon(name="IconOPhone")
-  //-     .info-text
-  //-       //- NuxtLink(:to="`tel:=+886-${connectInfo.phone.substring(1)}`" title="Athena phone")
-  //-         .info-title 聯絡電話
-  //-         //- .info-content {{ connectInfo.phone }}
-  //-   .info-item
-  //-     Icon.info-icon(name="IconOAddr")
-  //-     .info-text
-  //-       NuxtLink(:to="config.link.googleMap" target="_blank" title="Athena address")
-  //-         .info-title 地址
-  //-         //- .info-content {{ connectInfo.address }}
-  //- .img-area
-      //- NuxtImg.addr-img(:src="connectInfo.addressImg" alt="address" title="address")
+  .info-area
+    NuxtLink(:to="connectInfo.joinLine" target="_blank" title="Athena line")
+      .info-title LINE ID
+      .info-content {{ connectInfo.lineId }}
+
+    NuxtLink(:to="`mailto:${connectInfo.eMail}`" title="Athena e-mail")
+      .info-title 聯絡信箱
+      .info-content {{ connectInfo.eMail }}
+
+    NuxtLink(:to="`tel:=+886-${connectInfo.phone.substring(1)}`" title="Athena phone")
+      .info-title 聯絡電話
+      .info-content {{ connectInfo.phone }}
+
+    NuxtLink(:to="connectInfo.googleMap" target="_blank" title="Athena address")
+      .info-title 地址
+      .info-content {{ connectInfo.address }}
+  .img-area
+      NuxtImg.addr-img(:src="connectInfo.addressImg" alt="address" title="address")
 </template>
 
 <style lang="scss" scoped>
 // 佈局 ----
-#ContactInformation 聯絡資訊 {
-  height: 100%;
-  position: relative;
-  overflow-y: auto;
-  @include column(40px);
-  @include rwd-mobile {
-    padding: 100px 16px 23px;
-  }
-  @include rwd-pc {
-    padding: 40px 100px 40px 64px;
-  }
-  .info-area {
-    @include column(24px);
-  }
-  .img-area {
-    max-width: 554px;
-    border-radius: 32px;
-    @include rwd-mobile {
-      margin: 0 auto;
-    }
-  }
-}
 
 // 組件 ----
-.description {
-  // TODO
-}
 
-.info-item {
-  @include row(24px);
-  .info-icon {
-    color: $secondary-500;
-    background-color: $tertiary-500;
-    border-radius: 100%;
-    @include rwd-mobile {
-      padding: 6px;
-      @include wh(40px);
-    }
-    @include rwd-pc {
-      padding: 8px;
-      @include wh(56px);
-    }
-  }
-  .info-text {
-    @include column(8px);
-    .info-title {
-      font-weight: 600;
-      color: $primary-500;
-    }
-  }
-}
-.close-area {
-  position: fixed;
-  top: 10px;
-  right: 21px;
-  @include rwd-pc {
-    display: none;
-  }
-  .close-btn {
-    @include btn-click;
-  }
-}
-.title {
-  color: $primary-500;
-  @include rwd-mobile {
-    @include fs('h5');
-  }
-  @include rwd-pc {
-    @include fs('h2');
-  }
-}
-.addr-img {
-  overflow: hidden;
-  border-radius: 32px;
-}
 </style>

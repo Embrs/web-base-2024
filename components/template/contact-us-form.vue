@@ -199,18 +199,11 @@ const ApiCreateContact = async (): Promise<boolean> => {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
-  background-color: $tertiary-300;
   @include rwd-mobile {
     width: 100%;
-    padding: 20px;
-    border-radius: 16px;
   }
   @include rwd-pc {
     @include max-width-padding(500px, 60px);
-    min-height: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border-radius: 32px;
   }
 }
 // 組件 ----
