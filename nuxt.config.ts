@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt', // https://ithelp.ithome.com.tw/articles/10302381
     '@nuxtjs/device', // const {} = useDevice(); // https://nuxt.com/modules/device
     '@nuxtjs/stylelint-module', // https://github.com/nuxt-modules/stylelint
-    '@nuxtjs/tailwindcss', // https://nuxt.com/modules/tailwindcss
+    // '@nuxtjs/tailwindcss', // https://nuxt.com/modules/tailwindcss
     '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
     'nuxt-icon', // https://nuxt.com/modules/icon
     '@nuxt/image', // https://image.nuxt.com/get-started/installation
