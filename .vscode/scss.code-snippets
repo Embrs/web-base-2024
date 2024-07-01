@@ -171,4 +171,22 @@
       "// @ts-ignore"
     ]
   },
+  "flow 流程基底": {
+    "prefix": "flow",
+    "body": [
+      "const $1Flow = () => {",
+      "  try {",
+      "    // if () {",
+      "    //   throw new Error('Error');",
+      "    // }",
+      "    // return true;",
+      "  } catch (error) {",
+      "    // console.error('error', error);",
+      "    // return false;",
+      "  } finally {",
+      "    // TODO",
+      "  }",
+      "};"
+    ]
+  }
 }
