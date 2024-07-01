@@ -35,7 +35,7 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
 
   // 偵測瀏覽器語系地區(只能在 client 使用)
   const GetBrowserLocale = () => {
-    if (import.meta.server) return '';
+    if (import.meta.server) return 'tw';
     const _browserLocale = navigator?.language?.toLowerCase()?.toLowerCase();
     if (_browserLocale.includes('zh')) return 'tw';
     if (_browserLocale.includes('tw')) return 'tw';
@@ -53,15 +53,23 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
     if (localeGroup.includes(_local)) return _path;
     return `/${locale.value}/${points.join('/')}`;
   };
+
+  onMounted(() => {
+    // 瀏覽器語系跳轉
+    if (!alreadyUseBrowserLocale.value) {
+      alreadyUseBrowserLocale.value = true;
+      ChangeLocale(GetBrowserLocale());
+    }
+  });
   // -----------------------------------------------------------------------------------------------
   return {
     useLocale, // 是否使用語系地區
     locale,
-    alreadyUseBrowserLocale,
+    // alreadyUseBrowserLocale,
     localeGroup,
     elLocale,
     ChangeLocale,
-    LocalePath,
-    GetBrowserLocale
+    LocalePath
+    // GetBrowserLocale
   };
 });
