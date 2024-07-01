@@ -19,7 +19,7 @@ ElConfigProvider(:locale="storeI18n.elLocale")
 
 <style lang="scss">
 html {
-  // color: $t-dark;
+  // color: $text;
   // background-color: $bg;
 }
 </style>

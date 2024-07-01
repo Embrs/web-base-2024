@@ -58,7 +58,7 @@ body {
   line-height: inherit; /* 2 */
 }
 #__nuxt {
-  /* font-family: "Noto Sans", "Noto Sans TC"; */
+  /*: "Noto Sans", "Noto Sans TC"; */
   font-family: "Noto Sans TC";
 }
 

@@ -29,6 +29,8 @@
     "@nuxtjs/google-fonts": "^3.1.3",
     "@nuxtjs/stylelint-module": "^5.2.0",
     "@pinia/nuxt": "^0.5.1",
+    "@unocss/eslint-config": "^0.61.0",
+    "@unocss/nuxt": "^0.61.0",
     "@vue/language-plugin-pug": "^2.0.22",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
     "driver.js": "^1.3.1",

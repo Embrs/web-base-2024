@@ -30,9 +30,8 @@
   --tertiary-100: #FDF9F2;
   --tertiary: #F3E0BE;
   --error: #D90000;
-  --t-dark: #413737;
-  --t-gray: #949494;
-  --t-white: #FFFFFF;
+  --text: #413737;
+  --gray: #949494;
   --bg: #FDF9F2;
 }
 :root.dark {
@@ -67,15 +66,14 @@
   --tertiary-100: #FDF9F2;
   --tertiary: #F3E0BE;
   --error: #D90000;
-  --t-dark: #413737;
-  --t-gray: #949494;
-  --t-white: #FFF;
+  --text: #413737;
+  --gray: #949494;
   --bg: #FDF9F2;
 }
 
 :root.pink {
   --primary-100: #31af31;
-  --t-dark: #22E235;
+  --text: #22E235;
   --bg: #BD5743;
 
   /* element-plus 自定義。 pink 無法使用 element scss 設定檔，所以要強制調整*/

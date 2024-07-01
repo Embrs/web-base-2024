@@ -25,16 +25,17 @@ export default defineNuxtConfig({
   // 模塊注入
   modules: [
     // '@nuxtjs/i18n', // 目前壞了，等待官方修復 https://nuxt.com.cn/modules/i18n
+    // '@nuxtjs/tailwindcss', // https://nuxt.com/modules/tailwindcss
     '@element-plus/nuxt', // https://nuxt.com.cn/modules/element-plus
     '@pinia/nuxt', // https://ithelp.ithome.com.tw/articles/10302381
     '@nuxtjs/device', // const {} = useDevice(); // https://nuxt.com/modules/device
     '@nuxtjs/stylelint-module', // https://github.com/nuxt-modules/stylelint
-    // '@nuxtjs/tailwindcss', // https://nuxt.com/modules/tailwindcss
     '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
     'nuxt-icon', // https://nuxt.com/modules/icon
     '@nuxt/image', // https://image.nuxt.com/get-started/installation
     'nuxt-mail', // https://nuxt.com/modules/nuxt-mail
-    '@nuxtjs/google-fonts' // https://google-fonts.nuxtjs.org/getting-started/setup
+    '@nuxtjs/google-fonts', // https://google-fonts.nuxtjs.org/getting-started/setup
+    '@unocss/nuxt' // https://nuxt.com/modules/unocss
   ],
   // i18n: { // i18n 目前 8.0.0-rc.3 error 打包運行會 500
   //   vueI18n: './i18n/i18n.config.ts'
@@ -116,6 +117,7 @@ export default defineNuxtConfig({
 
   // style -------------------------------------------------------------
   css: ['@/assets/styles/css/index.css'],
+
   stylelint: {
     lintOnStart: false, // 專案啟動時不自動檢查所有相關檔案
     chokidar: true // 監聽文件異動進行檢核（文件未列出此選項）
@@ -124,8 +126,10 @@ export default defineNuxtConfig({
   // gogole fonts ------------------------------------------------------
   googleFonts: {
     families: {
-      'Noto+Sans+TC': [400, 600, 700],
-      'Noto+Sans': [400, 700]
+      'Noto+Sans+TC': true,
+      'Noto+Sans': true
+      // 'Noto+Sans+TC': [400, 600, 700],
+      // 'Noto+Sans': [400, 700]
     }
   },
 
@@ -145,6 +149,7 @@ export default defineNuxtConfig({
   image: {
     dir: 'public'
   },
+
   // Nuxt mail ----------------------------------------------------------
   mail: {
     message: {
@@ -159,6 +164,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   // Nuxt route 路由設定 ------------------------------------------------
   // https://nuxt.com/docs/guide/concepts/rendering#route-rules
   routeRules: {
@@ -169,6 +175,7 @@ export default defineNuxtConfig({
     // '/react/*': { redirect: '/vue' }, // 路由重新導向規則
     // '/api/**': { cors: true } // 添加 CORS Header
   },
+
   // vite ---------------------------------------------------------------
   vite: {
     css: {
