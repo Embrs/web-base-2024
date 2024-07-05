@@ -21,7 +21,7 @@
   br
   //- row
   .title row (內建 align-items: center)
-  .box-area(class="row")
+  .box-area(class="row-100")
     .box1
     .box2
   .title row-10px (flex, gap)
@@ -75,7 +75,7 @@
     md="text-3xl bg-secondary-300"
     lg="text-4xl bg-secondary-600"
   ) ABC 123
-</template>
+//- </template>
 
 <style lang="scss" scoped>
 // 佈局 ----

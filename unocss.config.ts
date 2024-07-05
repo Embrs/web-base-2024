@@ -6,12 +6,6 @@ import transformerVariantGroup from '@unocss/transformer-variant-group';
 
 export default defineConfig({
   shortcuts: [ // class 集合
-    // [/^(flex|grid)-y-center/g, () => 'items-center']
-    // [/^row-(\d+)$/, ([, d]) => ({ gap: `${d}px`, display: 'flex', 'align-items': 'center' })]
-    // [/^row-\[?(.*?)\]?$/, (arr) => {
-    //   console.log('arr', arr);
-    //   return (`row gap-${arr[1]}`);
-    // }], // row-10px
     {
       wh: 'w-full h-full',
       row: 'flex items-center',
@@ -24,19 +18,13 @@ export default defineConfig({
       `,
       'auto-grid': 'grid'
     },
-    // wh-10px
     [/^wh-\[?(.*?)\]?$/, ([, wh]) => (`w-${wh} h-${wh}`)],
-    // wh-10px-20px
     [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => (`w-${w} h-${h}`)],
 
-    // row-10px
     [/^row-\[?(.*?)\]?$/, ([, gap]) => (`row gap-${gap}`)],
-    // row-10px-center
     [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => (`row-${gap} justify-${justify}`)],
 
-    // col-10px
     [/^col-\[?(.*?)\]?$/, ([, gap]) => (`col gap-${gap}`)],
-    // col-10px-center
     [/^col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => (`col-${gap} items-${align}`)]
   ],
   rules: [ // 建立 uno class
