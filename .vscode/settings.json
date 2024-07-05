@@ -43,6 +43,6 @@
         // "hideFromTree": true
     }
   },
-
+  "scss.lint.unknownAtRules": "ignore" // 忽略未知的 at-rule
 }
 

@@ -20,13 +20,14 @@ module.exports = {
   ],
   rules: {
     // 'unit-allowed-list': [ 'em', 'rem', 'deg', 'px', 's', 'vh', 'vw', '%'], // 可使用的單位
-    'load-no-partial-leading-underscore': null;
+    // // "css.lint.unknownAtRules": "ignore",
     'selector-id-pattern': null,
     'rule-empty-line-before': null,
     'media-feature-range-notation': null,
     'at-rule-empty-line-before': null,
     'declaration-empty-line-before': null,
     'selector-class-pattern': null,
+    'comment-empty-line-before': null,
     'scss/double-slash-comment-empty-line-before': null,
     'declaration-block-no-redundant-longhand-properties': null,
     'scss/at-extend-no-missing-placeholder': null,

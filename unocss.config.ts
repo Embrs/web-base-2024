@@ -1,5 +1,6 @@
+// https://www.may-notes.com/unocss-tricks/
 import type { Theme } from '@unocss/preset-mini';
-import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss';
+import { defineConfig, presetAttributify, presetIcons, presetUno, transformerDirectives } from 'unocss';
 
 export default defineConfig({
   shortcuts: [ // class 集合
@@ -30,29 +31,53 @@ export default defineConfig({
     //   console.log('arr', arr);
     //   return (`row gap-${arr[1]}`);
     // }], // row-10px
-    [/^row-\[?(.*?)\]?$/, ([, gap]) => (`row gap-${gap}`)], // row-10px
-    [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => (`row-${gap} justify-${align}`)], // row-10px-center
-    [/^col-\[?(.*?)\]?$/, ([, gap]) => (`col gap-${gap}`)] // col-10px
-    // [/^col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => (`row-${gap} al-${align}`)], // row-10px-center
+
+    {
+      wh: 'w-full h-full',
+      row: 'flex items-center',
+      col: 'flex flex-col',
+
+      'btn-click': `
+        cursor-pointer select-none transition-filter-200
+        hover:brightness-110
+        active:brightness-90
+      `,
+      'auto-grid': 'grid'
+    },
+    // wh-10px
+    [/^wh-\[?(.*?)\]?$/, ([, wh]) => (`w-${wh} h-${wh}`)],
+    // wh-10px-20px
+    [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => (`w-${w} h-${h}`)],
+
+    // row-10px
+    [/^row-\[?(.*?)\]?$/, ([, gap]) => (`row gap-${gap}`)],
+    // row-10px-center
+    [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => (`row-${gap} justify-${justify}`)],
+
+    // col-10px
+    [/^col-\[?(.*?)\]?$/, ([, gap]) => (`col gap-${gap}`)],
+    // col-10px-center
+    [/^col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => (`col-${gap} items-${align}`)]
+
+    // [/^row-\[?(.*?)\]?$/, ([, gap]) => (`row gap-${gap}`)], // row-10px
   ],
   rules: [ // 建立 uno class
     // ['row', { display: 'flex', 'align-items': 'center' }],
-    ['row', { display: 'flex', 'align-items': 'center' }],
-    ['col', { display: 'flex', 'flex-direction': 'column' }],
+    // ['col', { display: 'flex', 'flex-direction': 'column' }]
+    // ['row', { display: 'flex', 'align-items': 'center' }],
     // ['max-h-screen', { 'max-height': 'calc(var(--vh, 1vh) * 100)' }],
     // ['h-screen', { height: 'calc(var(--vh, 1vh) * 100)' }]
     // ['row', { display: 'flex', 'align-items': 'center' }],
     // // [/^row-(\d+)$/, ([, d]) => ({ gap: `${d}px`, display: 'flex', 'align-items': 'center' })]
     // [/^row-\[?(.*?)\]?$/, ([, size]) => (`row gap-${size}`)]
   ],
-  theme: <Theme>{
+  theme: {
     // ...
     colors: {
       // ok: 'var(--c-ok)',
       // primary: 'var(--c-primary)',
       // 'primary-deep': 'var(--c-primary-deep)',
       // mis: 'var(--c-mis)',
-
       'primary-900': 'var(--primary-900)',
       'primary-800': 'var(--primary-800)',
       'primary-700': 'var(--primary-700)',
@@ -62,7 +87,7 @@ export default defineConfig({
       'primary-300': 'var(--primary-300)',
       'primary-200': 'var(--primary-200)',
       'primary-100': 'var(--primary-100)',
-      // primary: 'var(--primary)',
+      primary: 'var(--primary)',
       'secondary-900': 'var(--secondary-900)',
       'secondary-800': 'var(--secondary-800)',
       'secondary-700': 'var(--secondary-700)',
@@ -72,7 +97,7 @@ export default defineConfig({
       'secondary-300': 'var(--secondary-300)',
       'secondary-200': 'var(--secondary-200)',
       'secondary-100': 'var(--secondary-100)',
-      // secondary: 'var(--secondary)',
+      secondary: 'var(--secondary)',
       'tertiary-900': 'var(--tertiary-900)',
       'tertiary-800': 'var(--tertiary-800)',
       'tertiary-700': 'var(--tertiary-700)',
@@ -95,5 +120,8 @@ export default defineConfig({
     // presetIcons({
     //   scale: 1.2
     // })
+  ],
+  transformers: [
+    transformerDirectives()
   ]
 });
