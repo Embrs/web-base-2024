@@ -20,7 +20,7 @@ nuxtApp.hooks.hookOnce('app:rendered', (e) => {
 
 <template lang="pug">
 #LoadingPage(v-if="!isFinish" :class="{'is-hide': isHide}")
-  .todo Loading
+  .todo Todo Loading
 </template>
 
 <style lang="scss" scoped>

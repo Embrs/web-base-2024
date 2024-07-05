@@ -1,7 +1,8 @@
 // https://unocss-cn.pages.dev/guide/
 // https://www.may-notes.com/unocss-tricks/
-import type { Theme } from '@unocss/preset-mini';
 import { defineConfig, presetAttributify, presetIcons, presetUno, transformerDirectives } from 'unocss';
+import extractorPug from '@unocss/extractor-pug';
+import transformerVariantGroup from '@unocss/transformer-variant-group';
 
 export default defineConfig({
   shortcuts: [ // class 集合
@@ -81,6 +82,11 @@ export default defineConfig({
       gray: 'var(--gray)',
       text: 'var(--text)',
       bg: 'var(--bg)'
+    },
+    breakpoints: {
+      md: '769px',
+      lg: '1025px',
+      xl: '1289px'
     }
   },
   presets: [
@@ -92,5 +98,9 @@ export default defineConfig({
   ],
   transformers: [
     transformerDirectives()
+  ],
+  extractors: [
+    transformerVariantGroup(), // 可群組
+    extractorPug() // 可用於 pug
   ]
 });

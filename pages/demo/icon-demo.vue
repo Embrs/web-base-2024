@@ -24,7 +24,7 @@
 // 佈局 ----
 #IconDemo {
   // color: red;
-  @include column;
+  @include col;
 }
 .icon-style {
   font-size: 100px;

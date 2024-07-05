@@ -11,6 +11,14 @@
   gap: $gap;
 }
 
+@mixin col-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: $gap;
+}
+
 @mixin row($gap: 0) {
   display: flex;
   align-items: center;
@@ -37,19 +45,19 @@
   flex-wrap: wrap;
 }
 
-@mixin column($gap: 0, $align: flex-start) {
+@mixin col($gap: 0, $align: flex-start) {
   display: flex;
   flex-direction: column;
   align-items: $align;
   gap: $gap;
 }
 
-@mixin column-between($gap: 0, $align: flex-start) {
+@mixin col-between($gap: 0, $align: flex-start) {
   @include column($gap,$align);
   justify-content: space-between;
 }
 
-@mixin column-around($gap: 0, $align: flex-start) {
+@mixin col-around($gap: 0, $align: flex-start) {
   @include column($gap, $align);
   justify-content: space-around;
 }
