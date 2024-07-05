@@ -43,7 +43,16 @@
     .box1
     .box2
   br
+  .title 錯誤寫法
+  .row
+    p 11
+    p 22
+  .row-20px
+    p 11
+    p 22
   //-
+
+  br
   .title btn-click
   .demo-btn(class="btn-click")
   .demo-btn-2(class="btn-click")
@@ -82,5 +91,9 @@
   @apply wh-100px-50px bg-primary-100;
   // @include wh(100px, 50px);
   // background-color: #aaa;
+}
+
+.demo-1 {
+  @apply wh-100px-50px bg-primary-100;
 }
 </style>

@@ -1,4 +1,5 @@
 :root {
+  --demo: #f00;
   --primary-900: #240507;
   --primary-800: #480A0E;
   --primary-700: #6B1016;
@@ -35,6 +36,7 @@
   --bg: #FDF9F2;
 }
 :root.dark {
+  --demo: #00f;
   --primary-900: #240507;
   --primary-800: #480A0E;
   --primary-700: #6B1016;
@@ -72,6 +74,7 @@
 }
 
 :root.pink {
+  --demo: #0f0;
   --primary-100: #31af31;
   --text: #22E235;
   --bg: #BD5743;

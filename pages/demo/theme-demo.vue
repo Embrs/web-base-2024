@@ -48,13 +48,15 @@ const ClickChangeTheme = (theme: ThemeType) => {
 
 <template lang="pug">
 #ThemeDemo
-  p ThemeDemo
   ElButton(type="primary" @click="ClickChangeTheme('system')") system
   ElButton(type="primary" @click="ClickChangeTheme('dark')") dark
   ElButton(type="primary" @click="ClickChangeTheme('light')") light
   ElButton(type="primary" @click="ClickChangeTheme('pink')") pink
-  p(class="text-primary-100") 123
+
+  p UnoCss
+  .box(class="bg-demo") demo
   p(class="text-error") Theme Type: {{ $colorMode.value }}
+
   .box-area
     .box(
       v-for="color of colorList" :key="color"
@@ -68,13 +70,14 @@ const ClickChangeTheme = (theme: ThemeType) => {
 <style lang="scss" scoped>
 // 佈局 ----
 #ThemeDemo {
-  background-color: #EAEFF2;
   @include wh;
+  padding: 10px;
+  background-color: #EAEFF2;
   .box-area {
     @include row-wrap(10px);
     @include stroke(1, white);
+    padding-top: 10px;
 
-    padding: 10px;
     font-weight: 700;
   }
 }
