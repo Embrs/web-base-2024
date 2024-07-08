@@ -20,7 +20,10 @@ export default defineConfig({
     [/^wh-\[?(.*?)\]?$/, ([, wh]) => `w-${wh} h-${wh}`],
     [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => `w-${w} h-${h}`],
 
-    [/^row-\[?(.*?)\]?$/, ([, gap]) => `row gap-${gap}`],
+    [/^row-\[?(.*?)\]?$/, ([, gap]) => {
+      console.log('gap', gap);
+      return `row gap-${gap}`;
+    }],
     [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `row-${gap} justify-${justify}`],
 
     [/^col-\[?(.*?)\]?$/, ([, gap]) => `col gap-${gap}`],
@@ -77,16 +80,16 @@ export default defineConfig({
   },
   presets: [
     presetUno(),
-    presetAttributify()
+    presetAttributify() // 可分群 => bg="blue-400 hover:blue-600"
     // presetIcons({
     //   scale: 1.2
     // })
   ],
   transformers: [
-    transformerDirectives()
+    transformerDirectives() // 可用 @apply 組合
   ],
   extractors: [
-    transformerVariantGroup(), // 可群組
-    extractorPug() // 可用於 pug
+    transformerVariantGroup(), // 可群組 hover:(bg-gray-400 font-medium) font-(light mono)
+    extractorPug() // 可用於 pug class
   ]
 });
