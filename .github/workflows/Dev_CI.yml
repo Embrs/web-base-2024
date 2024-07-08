@@ -2,7 +2,7 @@ name: CI_develop
 on:
   push:
     branches:
-      - develope
+      - develop
 jobs:
     # unit-test:
     #     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
     #           run: php artisan test --env=testing
     continuous-integration:
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/develope'
+      if: github.ref == 'refs/heads/develop'
       # needs: [unit-test]
       timeout-minutes: 15
       steps:

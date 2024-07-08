@@ -1,4 +1,4 @@
-name: CD_develope
+name: CD_develop
 on:
   workflow_run:
     workflows: CI_develop # 需要监听的流程名字
