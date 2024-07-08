@@ -15,8 +15,10 @@ export default defineConfig({
   shortcuts: [ // class 集合
     {
       wh: 'w-full h-full',
-      row: 'flex items-center',
-      col: 'flex flex-col',
+      'item-row': 'flex items-center',
+      'item-col': 'flex flex-col',
+      'center-row': 'item-row justify-center',
+      'center-col': 'item-col items-center justify-center',
 
       'btn-click': `
         cursor-pointer select-none transition-filter-200
@@ -27,11 +29,14 @@ export default defineConfig({
     [/^wh-\[?(.*?)\]?$/, ([, wh]) => `w-${wh} h-${wh}`],
     [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => `w-${w} h-${h}`],
 
-    [/^row-\[?(.*?)\]?$/, ([, gap]) => `row gap-${gap}`],
-    [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `row-${gap} justify-${justify}`],
+    [/^item-row-\[?(.*?)\]?$/, ([, gap]) => `item-row gap-${gap}`],
+    [/^item-row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `item-row-${gap} justify-${justify}`],
 
-    [/^col-\[?(.*?)\]?$/, ([, gap]) => `col gap-${gap}`],
-    [/^col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => `col-${gap} items-${align}`]
+    [/^item-col-\[?(.*?)\]?$/, ([, gap]) => `item-col gap-${gap}`],
+    [/^item-col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => `item-col-${gap} items-${align}`],
+
+    [/^center-row-\[?(.*?)\]?$/, ([, gap]) => `center-row gap-${gap}`],
+    [/^center-col-\[?(.*?)\]?$/, ([, gap]) => `center-col gap-${gap}`],
   ],
   rules: [ // 建立 uno class
     // ['row', { display: 'flex', 'align-items': 'center' }],

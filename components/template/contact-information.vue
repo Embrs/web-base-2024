@@ -49,7 +49,7 @@ const connectInfo = {
       .info-title 地址
       .info-content {{ connectInfo.address }}
   .img-area
-      NuxtImg.addr-img(:src="connectInfo.addressImg" alt="address" title="address")
+    ElImage.addr-img(:src="connectInfo.addressImg" alt="address" title="address")
 </template>
 
 <style lang="scss" scoped>

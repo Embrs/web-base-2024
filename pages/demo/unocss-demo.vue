@@ -19,46 +19,64 @@
   .limit-area
     div(class="wh-30px-50px bg-green")
   br
-  //- row
-  .title row (內建 align-items: center)
-  .box-area(class="row")
+  //- item-row
+  .title item-row (內建 align-items: center)
+  .box-area(class="item-row")
     .box1
     .box2
-  .title row-10px (flex, gap)
-  .box-area(class="row-10px")
+  .title item-row-10px (flex, gap)
+  .box-area(class="item-row-10px")
     .box1
     .box2
-  .title row-10px-center (flex, gap, justify-content)
-  .box-area(class="row-10px-center")
+  .title item-row-10px-center (flex, gap, justify-content)
+  .box-area(class="item-row-10px-center")
     .box1
     .box2
-  .title .row
-  .box-area.row
+  .title .item-row
+  .box-area.item-row
     .box1
     .box2
-  .title .row-20px
-  .box-area.row-20px
+  .title .item-row-20px
+  .box-area.item-row-20px
     .box1
     .box2
   br
   //- col
-  .title col
-  .box-area(class="col")
+  .title item-col
+  .box-area(class="item-col")
     .box1
     .box2
-  .title col-10px (column, gap)
-  .box-area(class="col-10px")
+  .title item-col-10px (column, gap)
+  .box-area(class="item-col-10px")
     .box1
     .box2
-  .title col-10px-center (column, gap, align-items)
-  .box-area(class="col-10px-center bg-tertiary-300")
+  .title item-col-10px-center (column, gap, align-items)
+  .box-area(class="item-col-10px-center bg-tertiary-300")
     .box1
     .box2
   //-
   br
+  .title center-row
+  .limit-area(class="center-row")
+    .box1
+    .box2
+  .title center-row-10px
+  .limit-area(class="center-row-10px")
+    .box1
+    .box2
+  br
+  .title center-col
+  .limit-area(class="center-col")
+    .box1
+    .box2
+  .title center-col-10px
+  .limit-area(class="center-col-10px")
+    .box1
+    .box2
+  br
   .title btn-click
-  .demo-btn(class="btn-click")
-  .demo-btn-2(class="btn-click") 在css設定檔
+  div(class="demo-btn btn-click")
+  div(class="demo-btn-2 btn-click") 在css設定檔
   br
   .title {{ 'group RWD (lt-md: Phone(0 ~ 768px), md: PC(>768px))' }}
   div(
@@ -89,6 +107,7 @@
   color: #4a95aa;
 }
 .box-area {
+  min-height: 100px;
   background-color: #eee;
 }
 .limit-area {
