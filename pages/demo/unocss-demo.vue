@@ -80,14 +80,14 @@
   br
   .title {{ 'group RWD (lt-md: Phone(0 ~ 768px), md: PC(>768px))' }}
   div(
-    class="text-xl wh-100px bg-primary-400 transition-transform-200 transition-background-color-400"
+    class="wh-100px transition-transform-200 transition-background-color-400"
     hover="translate-y-[-5px] scale-110 bg-primary-100"
     lt-md="text-3xl bg-secondary-100"
     md="text-3xl bg-secondary-300"
   ) ABC 123
   .title {{ 'group RWD (lt-md: Phone(0 ~ 768px), md: Pad(>768px), lg: PC(>1280px))' }}
   div(
-    class="text-xl wh-100px bg-primary-400 transition-transform-200 transition-background-color-400"
+    class="transition-transform-200 transition-background-color-400"
     hover="translate-y-[-5px] scale-110 bg-primary-100"
     lt-md="text-3xl bg-secondary-100"
     md="text-3xl bg-secondary-300"

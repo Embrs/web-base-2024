@@ -14,7 +14,7 @@ const HandleError = () => {
 <template lang="pug">
 #Error
   div(
-    style="background-image: linear-gradient(135deg, #A2D1CF 35%, #7B9CA1 100%); color: #fff"
+    style="background-image: linear-gradient(135deg, #DCDCDC 35%, #9A9A9A 100%); color: #fff"
     class="text-white flex min-h-screen items-center"
   )
     div(class="mx-auto flex flex-wrap items-center p-4")
@@ -25,7 +25,7 @@ const HandleError = () => {
         div( class="mb-4 text-3xl font-medium") {{ props.error.statusCode === 404? '找不到頁面':`噢不！發生了一些意外` }}
         div(class="mb-8 ") {{ props.error.statusMessage }}
         ElButton(
-          type="primary"
+          color="#eee"
           class="border-white rounded border px-4 py-2"
           @click="HandleError"
          ) 回到首頁
