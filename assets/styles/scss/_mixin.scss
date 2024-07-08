@@ -53,12 +53,12 @@
 }
 
 @mixin col-between($gap: 0, $align: flex-start) {
-  @include column($gap,$align);
+  @include col($gap,$align);
   justify-content: space-between;
 }
 
 @mixin col-around($gap: 0, $align: flex-start) {
-  @include column($gap, $align);
+  @include col($gap, $align);
   justify-content: space-around;
 }
 

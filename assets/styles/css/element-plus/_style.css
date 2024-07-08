@@ -5,11 +5,10 @@
   border-bottom: 1px solid #eaeaea;
 }
 .el-drawer__footer {
-  padding: 0 16px !important;
   height: 50px;
+  padding: 0 16px !important;
 }
   /* ----- 自定義按鈕 ----- */
   /* .el-button--aa {
-    color: var(--t-white) !important;
     background-color: var(--tertiary-600) !important;
   } */

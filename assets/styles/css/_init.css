@@ -32,6 +32,44 @@ img {
   display: block;
 }
 
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+  font-size: 100%; /* 1 */
+  font-family: inherit; /* 1 */
+  font-weight: inherit; /* 1 */
+  color: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+}
+
+button,
+select {
+  text-transform: none;
+}
+
 h1,
 h2,
 h3,
@@ -40,4 +78,9 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+}
+
+::before,
+::after {
+  --tw-content: '';
 }

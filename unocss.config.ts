@@ -72,8 +72,8 @@ export default defineConfig({
       'tertiary-100': 'var(--tertiary-100)',
       tertiary: 'var(--tertiary)',
       error: 'var(--error)',
-      gray: 'var(--gray)',
-      text: 'var(--text)',
+      't-gray': 'var(--t-gray)',
+      't-dark': 'var(--t-dark)',
       bg: 'var(--bg)'
     },
     breakpoints: {

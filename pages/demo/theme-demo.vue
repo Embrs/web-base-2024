@@ -34,9 +34,8 @@ const colorList = [
   'tertiary-100',
   'tertiary',
   'error',
-  'text',
-  'gray',
-  't-white',
+  't-dark',
+  't-gray',
   'bg'
 ];
 
@@ -118,8 +117,8 @@ const ClickChangeTheme = (theme: ThemeType) => {
 .tertiary-100 {background-color: $tertiary-100}
 .tertiary {background-color: $tertiary}
 .error {background-color: $error}
-.text {background-color: $text}
-.gray {background-color: $gray}
+.t-dark {background-color: $t-dark}
+.t-gray {background-color: $t-gray}
 .bg {background-color: $bg}
 
 .primary-test-100 {
