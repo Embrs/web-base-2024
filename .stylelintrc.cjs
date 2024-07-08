@@ -26,6 +26,7 @@ module.exports = {
     'at-rule-empty-line-before': null,
     'declaration-empty-line-before': null,
     'selector-class-pattern': null,
+    'comment-empty-line-before': null,
     'scss/double-slash-comment-empty-line-before': null,
     'declaration-block-no-redundant-longhand-properties': null,
     'scss/at-extend-no-missing-placeholder': null,

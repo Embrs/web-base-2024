@@ -1,7 +1,7 @@
-name: CD_develope
+name: CD_develop
 on:
   workflow_run:
-    workflows: CI_develope # 需要监听的流程名字
+    workflows: CI_develop # 需要监听的流程名字
     types: completed
 jobs:
     continuous-deployment:
