@@ -1,6 +1,13 @@
 // https://unocss-cn.pages.dev/guide/
 // https://www.may-notes.com/unocss-tricks/
-import { defineConfig, presetAttributify, presetIcons, presetUno, transformerDirectives } from 'unocss';
+// vscode 套件 v0.60.4
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  transformerDirectives
+} from 'unocss';
 import extractorPug from '@unocss/extractor-pug';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 
@@ -20,10 +27,7 @@ export default defineConfig({
     [/^wh-\[?(.*?)\]?$/, ([, wh]) => `w-${wh} h-${wh}`],
     [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => `w-${w} h-${h}`],
 
-    [/^row-\[?(.*?)\]?$/, ([, gap]) => {
-      console.log('gap', gap);
-      return `row gap-${gap}`;
-    }],
+    [/^row-\[?(.*?)\]?$/, ([, gap]) => `row gap-${gap}`],
     [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `row-${gap} justify-${justify}`],
 
     [/^col-\[?(.*?)\]?$/, ([, gap]) => `col gap-${gap}`],

@@ -11,13 +11,13 @@
   p https://juejin.cn/post/7320528982386065471
   .title wh (預設 100%)
   .limit-area
-    .box0(class="wh")
+    dev(class="wh bg-green")
   .title wh-30px (widht-hgith)
   .limit-area
-    .box0(class="wh-30px")
+    dev(class="wh-30px bg-green")
   .title wh-30px-50px (width, height)
   .limit-area
-    .box0(class="wh-30px-50px")
+    dev(class="wh-30px-50px bg-green")
   br
   //- row
   .title row (內建 align-items: center)
@@ -75,10 +75,10 @@
     md="text-3xl bg-secondary-300"
     lg="text-4xl bg-secondary-600"
   ) ABC 123
-//- </template>
+</template>
 
 <style lang="scss" scoped>
-// 佈局 ----
+
 #UnoCssDemo {
   // TODO
   padding: 20px;
