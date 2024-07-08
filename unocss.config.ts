@@ -15,20 +15,16 @@ export default defineConfig({
         cursor-pointer select-none transition-filter-200
         hover:brightness-110
         active:brightness-90
-      `,
-      'auto-grid': 'grid'
+      `
     },
-    [/^wh-\[?(.*?)\]?$/, ([, wh]) => (`w-${wh} h-${wh}`)],
-    [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => (`w-${w} h-${h}`)],
+    [/^wh-\[?(.*?)\]?$/, ([, wh]) => `w-${wh} h-${wh}`],
+    [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => `w-${w} h-${h}`],
 
-    [/^row-\[?(.*?)\]?$/, ([, gap]) => {
-      console.log('gap', gap);
-      return (`row gap-${gap}`);
-    }],
-    [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => (`row-${gap} justify-${justify}`)],
+    [/^row-\[?(.*?)\]?$/, ([, gap]) => `row gap-${gap}`],
+    [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `row-${gap} justify-${justify}`],
 
-    [/^col-\[?(.*?)\]?$/, ([, gap]) => (`col gap-${gap}`)],
-    [/^col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => (`col-${gap} items-${align}`)]
+    [/^col-\[?(.*?)\]?$/, ([, gap]) => `col gap-${gap}`],
+    [/^col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => `col-${gap} items-${align}`]
   ],
   rules: [ // 建立 uno class
     // ['row', { display: 'flex', 'align-items': 'center' }],
