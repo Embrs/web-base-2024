@@ -11,7 +11,7 @@
   p https://juejin.cn/post/7320528982386065471
   .title wh (預設 100%)
   .limit-area
-    dev(class="wh bg-green")
+    div(class="wh bg-green")
   .title wh-30px (widht-hgith)
   .limit-area
     dev(class="wh-30px bg-green")

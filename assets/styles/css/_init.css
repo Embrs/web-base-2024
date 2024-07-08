@@ -2,7 +2,6 @@ html {
   min-width: 100vw;
   max-width: 100vw;
   min-height: 100vh;
-  
   /* 網頁樣式 */
   overflow-x: hidden;
   overflow-y: overlay;
@@ -83,4 +82,12 @@ h6 {
 ::before,
 ::after {
   --tw-content: '';
+}
+
+*,
+::before,
+::after {
+  border-style: solid; /* 2 */
+  border-width: 0; /* 2 */
+  box-sizing: border-box; /* 1 */
 }
