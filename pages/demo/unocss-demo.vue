@@ -14,10 +14,10 @@
     div(class="wh bg-green")
   .title wh-30px (widht-hgith)
   .limit-area
-    dev(class="wh-30px bg-green")
+    div(class="wh-30px bg-green")
   .title wh-30px-50px (width, height)
   .limit-area
-    dev(class="wh-30px-50px bg-green")
+    div(class="wh-30px-50px bg-green")
   br
   //- row
   .title row (內建 align-items: center)

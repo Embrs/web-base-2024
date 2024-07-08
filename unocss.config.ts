@@ -14,7 +14,7 @@ import transformerVariantGroup from '@unocss/transformer-variant-group';
 export default defineConfig({
   shortcuts: [ // class 集合
     {
-      wh: 'w-full h-full inline-block',
+      wh: 'w-full h-full',
       row: 'flex items-center',
       col: 'flex flex-col',
 
@@ -24,8 +24,8 @@ export default defineConfig({
         active:brightness-90
       `
     },
-    [/^wh-\[?(.*?)\]?$/, ([, wh]) => `w-${wh} h-${wh} inline-block`],
-    [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => `w-${w} h-${h} inline-block`],
+    [/^wh-\[?(.*?)\]?$/, ([, wh]) => `w-${wh} h-${wh}`],
+    [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => `w-${w} h-${h}`],
 
     [/^row-\[?(.*?)\]?$/, ([, gap]) => `row gap-${gap}`],
     [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `row-${gap} justify-${justify}`],
