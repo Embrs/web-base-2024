@@ -21,7 +21,7 @@
   br
   //- row
   .title row (內建 align-items: center)
-  .box-area(class="row-100")
+  .box-area(class="row")
     .box1
     .box2
   .title row-10px (flex, gap)

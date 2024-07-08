@@ -21,7 +21,10 @@ export default defineConfig({
     [/^wh-\[?(.*?)\]?$/, ([, wh]) => (`w-${wh} h-${wh}`)],
     [/^wh-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, w, h]) => (`w-${w} h-${h}`)],
 
-    [/^row-\[?(.*?)\]?$/, ([, gap]) => (`row gap-${gap}`)],
+    [/^row-\[?(.*?)\]?$/, ([, gap]) => {
+      console.log('gap', gap);
+      return (`row gap-${gap}`);
+    }],
     [/^row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => (`row-${gap} justify-${justify}`)],
 
     [/^col-\[?(.*?)\]?$/, ([, gap]) => (`col gap-${gap}`)],
@@ -30,7 +33,6 @@ export default defineConfig({
   rules: [ // 建立 uno class
     // ['row', { display: 'flex', 'align-items': 'center' }],
     // ['col', { display: 'flex', 'flex-direction': 'column' }]
-    // ['row', { display: 'flex', 'align-items': 'center' }],
   ],
   theme: {
     // ...
