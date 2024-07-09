@@ -54,13 +54,14 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
     return `/${locale.value}/${points.join('/')}`;
   };
 
-  onMounted(() => {
+  const BrowserLocaleInit = () => {
     // 瀏覽器語系跳轉
     if (!alreadyUseBrowserLocale.value) {
       alreadyUseBrowserLocale.value = true;
       ChangeLocale(GetBrowserLocale());
     }
-  });
+  };
+
   // -----------------------------------------------------------------------------------------------
   return {
     useLocale, // 是否使用語系地區
@@ -69,7 +70,8 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
     localeGroup,
     elLocale,
     ChangeLocale,
-    LocalePath
+    LocalePath,
+    BrowserLocaleInit
     // GetBrowserLocale
   };
 });

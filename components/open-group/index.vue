@@ -9,7 +9,7 @@ import DialogDemo from './dialogs/dialog-demo/index.vue';
 const openList = ref<OpenItem[]>([]);
 
 // Component ---------------------------------------------------------------------------------------
-const openMap = {
+const openMap: { [key: string]: any } = {
   DrawerDemo,
   DialogDemo
 };

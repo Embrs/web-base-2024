@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 // HlsDemo 請填寫功能描述👈
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';

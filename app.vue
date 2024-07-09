@@ -1,13 +1,22 @@
 <script setup lang="ts">
+
 MixinWindowResize();
 MixinInitMeta();
 MixinLineCheck();
+// MixinServiceWorker();
+
 const storeI18n = StoreI18n();
 const storeEnv = StoreEnv();
+
 useAsyncData('app-init', async () => {
   await storeEnv.Init();
   return true;
 });
+
+onMounted(() => {
+  storeI18n.BrowserLocaleInit();
+});
+
 </script>
 
 <template lang="pug">
