@@ -1,38 +1,9 @@
-export {
+import debounce from 'lodash-es/debounce';
+import throttle from 'lodash-es/throttle';
+import cloneDeep from 'lodash-es/cloneDeep';
+
+export default {
   debounce,
   throttle,
-  cloneDeep,
-  isArguments,
-  isArrayBuffer,
-  isArrayLike,
-  isArrayLikeObject,
-  isBuffer,
-  isBoolean,
-  isDate,
-  isElement,
-  isEmpty,
-  isEqual,
-  isEqualWith,
-  isError,
-  isFunction,
-  isFinite,
-  isLength,
-  isMap,
-  isMatch,
-  isMatchWith,
-  isNative,
-  isNil,
-  isNumber,
-  isNull,
-  isObjectLike,
-  isPlainObject,
-  isRegExp,
-  isSafeInteger,
-  isSet,
-  isString,
-  isSymbol,
-  isTypedArray,
-  isUndefined,
-  isWeakMap,
-  isWeakSet
-} from 'lodash-es';
+  cloneDeep
+};

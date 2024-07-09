@@ -147,7 +147,7 @@ const ToFormData = (params: AnyObject) => {
 const ArraySum = (arr: number[]): number => {
   let _sum = 0;
   if (arr && arr?.length > 0) {
-    _sum = arr.reduce((_s, _v) => (Number(_s) + Number(_v)),0);
+    _sum = arr.reduce((_s, _v) => (Number(_s) + Number(_v)), 0);
   }
   return _sum;
 };
