@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // ContactUsForm 聯絡我們表
-import debounce from 'lodash/debounce';
 
 // 資料 --------------------------------------------------------------------------------------------
 // const props = defineProps({}); definePageMeta({})
@@ -50,7 +49,7 @@ const rules = computed(() => {
 });
 
 // 接收事件 -----------------------------------------------------------------------------------------
-const ClickSubmit = debounce(async () => {
+const ClickSubmit = lodash.debounce(async () => {
   isSending.value = true;
   await SendFlow();
   isSending.value = false;

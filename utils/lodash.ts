@@ -1,7 +1,38 @@
-import debounce from 'lodash/debounce';
-import throttle from 'lodash/throttle';
-
-export default {
+export {
   debounce,
-  throttle
-};
+  throttle,
+  cloneDeep,
+  isArguments,
+  isArrayBuffer,
+  isArrayLike,
+  isArrayLikeObject,
+  isBuffer,
+  isBoolean,
+  isDate,
+  isElement,
+  isEmpty,
+  isEqual,
+  isEqualWith,
+  isError,
+  isFunction,
+  isFinite,
+  isLength,
+  isMap,
+  isMatch,
+  isMatchWith,
+  isNative,
+  isNil,
+  isNumber,
+  isNull,
+  isObjectLike,
+  isPlainObject,
+  isRegExp,
+  isSafeInteger,
+  isSet,
+  isString,
+  isSymbol,
+  isTypedArray,
+  isUndefined,
+  isWeakMap,
+  isWeakSet
+} from 'lodash-es';
