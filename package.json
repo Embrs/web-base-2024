@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "hls.js": "^1.5.5",
     "mitt": "^3.0.1",
     "qrcode-vue3": "^1.6.8",
     "vue": "^3.4.19",
