@@ -1,4 +1,3 @@
-
 const defErr: DefaultRes = Object.freeze({
   data: null,
   status: {

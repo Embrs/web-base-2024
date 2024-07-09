@@ -1,9 +1,28 @@
-/**  async await 等待 */
-const Wait = (ms = 1000) => new Promise((resolve) => setTimeout(() => resolve(null), ms));
-
-/** object has key */
+// 判斷 -----------------------------------------------------------------------------------------------
+/** Object has key */
 const HasKey = (object: object, key: string) => object != null && Object.hasOwnProperty.call(object, key);
 
+/** 是 array */
+const IsArray = (value: any): boolean => {
+  return Object.prototype.toString.call(value) === '[object Array]';
+};
+
+/** 是 object */
+const IsObject = (value: any): boolean => {
+  return Object.prototype.toString.call(value) === '[object Object]';
+};
+
+/** 是 string */
+const IsString = (value: any): boolean => {
+  return Object.prototype.toString.call(value) === '[object String]';
+};
+
+/** 是 number */
+const IsNumber = (value: any): boolean => {
+  return Object.prototype.toString.call(value) === '[object Number]';
+};
+
+// 生成轉換 ----------------------------------------------------------------------------------------------------
 /** UUID 生成 */
 const CreateUUID = () => {
   let d = Date.now();
@@ -28,26 +47,7 @@ const MoneyToNum = (str: string) => {
   return Number(str.replace(/\$\s?|(,*)/g, ''));
 };
 
-/** 是 Array */
-const IsArray = (value: any): boolean => {
-  return Object.prototype.toString.call(value) === '[object Array]';
-};
-
-/** 是 Array */
-const IsObject = (value: any): boolean => {
-  return Object.prototype.toString.call(value) === '[object Object]';
-};
-
-/** 是 Array */
-const IsString = (value: any): boolean => {
-  return Object.prototype.toString.call(value) === '[object String]';
-};
-
-const IsNumber = (value: any): boolean => {
-  return Object.prototype.toString.call(value) === '[object Number]';
-};
-
-/* array Object 深度空元素過濾器 */
+/* array Object 深度空字元過濾器 */
 const ArrayObjectFilter = <T>(data:T): T => {
   const removeValue = [null, undefined, '']; // 過濾的值
   if (IsArray(data)) {
@@ -76,7 +76,7 @@ const ArrayObjectFilter = <T>(data:T): T => {
 };
 
 /* hash 加密 */
-export const Encrypt = (str: string) => {
+const Encrypt = (str: string) => {
   try {
     return btoa(
       encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (_match, p1) {
@@ -89,7 +89,7 @@ export const Encrypt = (str: string) => {
 };
 
 /* hash 解密 */
-export const Decrypt = (str: string) => {
+const Decrypt = (str: string) => {
   try {
     return decodeURIComponent(
       Array.prototype.map
@@ -107,19 +107,41 @@ export const Decrypt = (str: string) => {
     return '';
   }
 };
-/* 滾動到指定元素 */
-const ScrollToTag = (idOrClass: string, isSmooth = true) => {
-  if (import.meta.server) return;
-  const elScroll = document.querySelector(idOrClass) as HTMLElement;
-  if (!elScroll) return;
-  const top = elScroll?.offsetTop || 0;
-  window.scrollTo({
-    top,
-    left: 0,
-    behavior: isSmooth ? 'smooth' : 'instant'
-  });
+
+/* Array 加總 */
+const ArraySum = (arr: number[]): number => {
+  let _sum = 0;
+  if (arr && arr?.length > 0) {
+    _sum = arr.reduce((_s, _v) => (Number(_s) + Number(_v)), 0);
+  }
+  return _sum;
 };
-/* 滾動到頂部 */
+
+/**
+ * 轉換為FormData格式
+ * @param { Object } params
+ */
+const ToFormData = (params: AnyObject) => {
+  const data = new FormData();
+  Object.keys(params).forEach((key) => {
+    if (IsArray(params[key])) {
+      if (params[key].length !== 0) { params[key].forEach((v:any) => data.append(`${key}[]`, v)); }
+    } else data.append(key, params[key]);
+  });
+  return data;
+};
+
+/** 補零 */
+const Zero = (val: string| number, len = 5, _d: 'left' | 'right' = 'left') => {
+  const str = `${val}`;
+  return _d === 'left' ? str.padStart(len, '0') : str.padEnd(len, '0');
+};
+
+// 行為 --------------------------------------------------------------------------------------------------
+/**  async await 等待 */
+const Wait = (ms = 1000) => new Promise((resolve) => setTimeout(() => resolve(null), ms));
+
+/**  滾動到頂部 */
 const ScrollTop = (idOrClass: string, isSmooth = true) => {
   if (import.meta.server) return;
   const el = document.querySelector(idOrClass) as HTMLElement;
@@ -130,45 +152,95 @@ const ScrollTop = (idOrClass: string, isSmooth = true) => {
     behavior: isSmooth ? 'smooth' : 'instant'
   });
 };
-/**
- * 轉換為FormData格式
- * @param { Object } params
- */
-const ToFormData = (params: AnyObject) => {
-  const data = new FormData();
-  Object.keys(params).forEach((key) => {
-    if (IsArray(params[key])) {
-      if (params[key].length !== 0) { params[key].forEach((v:any) => data.append(key, v)); }
-    } else data.append(key, params[key]);
+
+/** 滾動到 element */
+const ScrollToEl = (elScroll: HTMLElement, isSmooth = true) => {
+  if (!elScroll) return;
+  const top = elScroll?.offsetTop || 0;
+  window.scrollTo({
+    top,
+    left: 0,
+    behavior: isSmooth ? 'smooth' : 'instant'
   });
-  return data;
 };
-/* Array 加總 */
-const ArraySum = (arr: number[]): number => {
-  let _sum = 0;
-  if (arr && arr?.length > 0) {
-    _sum = arr.reduce((_s, _v) => (Number(_s) + Number(_v)), 0);
+
+/** 滾動到指定 id or class */
+const ScrollToTag = (idOrClass: string, isSmooth = true) => {
+  if (import.meta.server) return;
+  const elScroll = document.querySelector(idOrClass) as HTMLElement;
+  ScrollToEl(elScroll, isSmooth);
+};
+
+/* 複製文字 */
+const CopyText = (copyString = '') => {
+  if (!copyString) return;
+  // writeText 只有 https or localhost 可用
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(copyString)
+      .then(() => {
+        ElMessage({
+          message: '複製成功',
+          type: 'success'
+        });
+      })
+      .catch(() => {
+        ElMessage({
+          message: '複製失敗',
+          type: 'error'
+        });
+      });
   }
-  return _sum;
+
+  if (document.execCommand) {
+    const textarea = document.createElement('textarea');
+    try {
+      document.body.appendChild(textarea);
+      textarea.value = copyString;
+      textarea.select();
+      document.execCommand('copy');
+      ElMessage({
+        message: '複製成功',
+        type: 'success'
+      });
+    } catch (error) {
+      ElMessage({
+        message: '複製失敗',
+        type: 'error'
+      });
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  }
 };
-/** 補零 */
-// '123'.padStart(5, '0') // '00123';
-// '123'.padEnd(5, '0') // '12300';
+
+/** 分享網址 */
+const ShareUrl = async (url: string, title: string, text: string) => {
+  if (import.meta.server) return;
+  if (!window.navigator.share || !url) return;
+  await window.navigator.share({ title, text, url });
+};
+
 export default {
-  Wait,
   HasKey,
-  CreateUUID,
-  NumToMoney,
-  MoneyToNum,
   IsArray,
   IsObject,
   IsString,
   IsNumber,
+
+  CreateUUID, // UUID 生成
+  NumToMoney, // 1000 => 1,000
+  MoneyToNum, // 1,000 => 1000
   ArrayObjectFilter, // array Object 深度空元素過濾器
-  Encrypt,
-  Decrypt,
-  ScrollToTag,
-  ScrollTop,
-  ToFormData,
-  ArraySum
+  Encrypt, // hash 加密
+  Decrypt, // hash 解密
+  ArraySum, // Array 加總
+  ToFormData, // 轉換為 FormData 格式
+  Zero, // 補零
+
+  Wait, // async await 等待
+  ScrollTop, // 滾動到頂部
+  ScrollToEl, // 滾動到 element
+  ScrollToTag, // 滾動到指定 id or class
+  CopyText, // 複製文字
+  ShareUrl // 分享網址
 };

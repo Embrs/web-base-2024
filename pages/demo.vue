@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 // Demo 請填寫功能描述👈
 const storeI18n = StoreI18n();
 const linkList = [
@@ -36,6 +37,20 @@ const linkList = [
         ElButton {{ item.label }}
   div
     NuxtPage
+  div
+    video(
+      id="my_video_1"
+      class="video-js vjs-default-skin"
+      controls
+      preload="auto"
+      width="640"
+      height="268"
+      data-setup="{}"
+    )
+      source(
+        src="http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
+        type="application/x-mpegURL"
+      )
 
 </template>
 
