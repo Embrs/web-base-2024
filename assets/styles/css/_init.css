@@ -27,7 +27,7 @@ img {
   -webkit-touch-callout: none;
   
   /* 防止拖拉圖片 */
-  pointer-events: none;
+  /* pointer-events: none; */
   display: block;
 }
 
