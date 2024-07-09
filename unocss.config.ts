@@ -37,6 +37,7 @@ export default defineConfig({
 
     [/^center-row-\[?(.*?)\]?$/, ([, gap]) => `center-row gap-${gap}`],
     [/^center-col-\[?(.*?)\]?$/, ([, gap]) => `center-col gap-${gap}`],
+    [/^content-\[?(.*?)\]?$/, ([, url]) => [{ content: `${url}` }]]
   ],
   rules: [ // 建立 uno class
     // ['row', { display: 'flex', 'align-items': 'center' }],

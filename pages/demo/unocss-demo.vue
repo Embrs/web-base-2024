@@ -93,6 +93,12 @@
     md="text-3xl bg-secondary-300"
     lg="text-4xl bg-secondary-600"
   ) ABC 123
+  .title content-[url(/favicon.svg)]
+  div(
+    class="wh-100px content-[url(/img/share.jpg)]"
+    hover="content-[url(/favicon.svg)]"
+    alt="Unocss"
+  )
 </template>
 
 <style lang="scss" scoped>
