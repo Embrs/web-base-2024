@@ -36,6 +36,7 @@ const linkList = [
         ElButton {{ item.label }}
   div
     NuxtPage
+
 </template>
 
 <style lang="scss" scoped>
