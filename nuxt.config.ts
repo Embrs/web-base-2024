@@ -93,7 +93,7 @@ export default defineNuxtConfig({
     // meta
     head: {
       bodyAttrs: {
-        // id: 'AthenaBody'
+        // id: 'Body'
       },
       htmlAttrs: {
         lang: 'zh-Hant-TW',

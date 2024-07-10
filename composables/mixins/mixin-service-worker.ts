@@ -5,7 +5,7 @@ export const MixinServiceWorker = () => {
     console.log(2);
     if ('serviceWorker' in navigator) {
       console.log(3);
-      navigator.serviceWorker.register('/sw.ts')
+      navigator.serviceWorker.register('/sw.js')
         .then((reg) => console.log('完成 SW 設定!', reg))
         .catch((err) => console.log('Error!', err));
     }

@@ -3,7 +3,7 @@
 MixinWindowResize();
 MixinInitMeta();
 MixinLineCheck();
-// MixinServiceWorker();
+MixinServiceWorker();
 
 const storeI18n = StoreI18n();
 const storeEnv = StoreEnv();

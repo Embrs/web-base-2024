@@ -77,7 +77,7 @@ const CheckForm = async () => {
 const SendMail = async () => {
   try {
     await $mail.send({
-      from: 'mail@athenacollege.athenabeta.com.tw',
+      from: 'usermail@google.com',
       subject: 'test',
       text: `
         姓名：${formParams.value.name}
