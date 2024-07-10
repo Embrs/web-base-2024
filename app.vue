@@ -3,7 +3,7 @@
 MixinWindowResize();
 MixinInitMeta();
 MixinLineCheck();
-MixinServiceWorker();
+// MixinServiceWorker();
 
 const storeI18n = StoreI18n();
 const storeEnv = StoreEnv();
@@ -21,6 +21,7 @@ onMounted(() => {
 
 <template lang="pug">
 ElConfigProvider(:locale="storeI18n.elLocale")
+
   NuxtLoadingIndicator(color="#86D4A187")
   NuxtLayout
     NuxtPage

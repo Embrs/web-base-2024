@@ -38,6 +38,7 @@
     "element-plus": "^2.7.5",
     "eslint": "^8.56.0",
     "eslint-plugin-vue-pug": "^0.6.1",
+    "mongoose": "^8.5.0",
     "nuxt": "^3.12.1",
     "nuxt-icon": "^0.6.8",
     "nuxt-mail": "^5.0.1",

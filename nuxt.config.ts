@@ -176,6 +176,13 @@ export default defineNuxtConfig({
     // '/api/**': { cors: true } // 添加 CORS Header
   },
 
+  // Nitro server ------------------------------------------------------
+  nitro: {
+    plugins: [
+      // '@/server/index'
+    ]
+  },
+
   // vite ---------------------------------------------------------------
   vite: {
     css: {

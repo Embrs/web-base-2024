@@ -71,7 +71,20 @@ onUnmounted(() => {
   //- video(ref="elVideo" controls playsinline muted)
   //- ElButton(@click="OnPlay") Play
   //- ElButton(@click="OnPause") Pause
-
+  //- div
+    video(
+      id="my_video_1"
+      class="video-js vjs-default-skin"
+      controls
+      preload="auto"
+      width="640"
+      height="268"
+      data-setup="{}"
+    )
+      source(
+        src="http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
+        type="application/x-mpegURL"
+      )
 </template>
 
 <style lang="scss" scoped>

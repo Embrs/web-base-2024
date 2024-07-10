@@ -25,7 +25,8 @@ const linkList = [
   { path: '/demo/email-demo', label: 'Email Demo' },
   { path: '/demo/google-map', label: 'Google Map' },
   { path: '/demo/qr-code-demo', label: 'QR Code' },
-  { path: '/demo/unocss-demo', label: 'UnoCSS' }
+  { path: '/demo/unocss-demo', label: 'UnoCSS' },
+  { path: '/demo/mongodb-demo', label: 'MongoDB Demo' }
 ];
 </script>
 
@@ -37,20 +38,6 @@ const linkList = [
         ElButton {{ item.label }}
   div
     NuxtPage
-  div
-    video(
-      id="my_video_1"
-      class="video-js vjs-default-skin"
-      controls
-      preload="auto"
-      width="640"
-      height="268"
-      data-setup="{}"
-    )
-      source(
-        src="http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
-        type="application/x-mpegURL"
-      )
 
 </template>
 
