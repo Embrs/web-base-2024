@@ -13,7 +13,7 @@ nitro: {
   ]
 },
 
-2. server mongodb => server
+2. server mongodb 取代原本 server 資料夾
 
 3. .env, MONGODB_URI 設定
 
