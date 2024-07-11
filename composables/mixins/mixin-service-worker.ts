@@ -1,3 +1,4 @@
+// service-worker 註冊
 export const MixinServiceWorker = () => {
   if (import.meta.server) return;
   console.log(1, navigator);
