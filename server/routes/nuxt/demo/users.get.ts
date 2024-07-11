@@ -1,4 +1,4 @@
-import user from '@/server/models/demo/user-model';
+import prisma from '@/server/db/prisma';
 
 export default defineEventHandler(async (event: any) => {
   try {
@@ -6,7 +6,8 @@ export default defineEventHandler(async (event: any) => {
 
     const limit = Number(size) ?? 5;
     const skip = limit * ((Number(page) ?? 1) - 1);
-    const [userList, total] = await Promise.all([user.find().skip(skip).limit(limit), user.countDocuments()]);
+
+    const [userList, total] = await Promise.all([prisma.user.findMany({ skip, take: limit }), prisma.user.count()]);
     if (!userList) {
       return {
         data: { list: [], total: 0 },

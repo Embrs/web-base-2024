@@ -179,7 +179,7 @@ export default defineNuxtConfig({
   // Nitro server ------------------------------------------------------
   nitro: {
     plugins: [
-      '@/server/index'
+      // '@/server/index'
     ]
   },
 

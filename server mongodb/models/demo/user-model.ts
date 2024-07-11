@@ -16,6 +16,6 @@ const userSchema = new mongoose.Schema({
 });
 
 // 建立 Model
-const User = mongoose.model('User', userSchema);
+const user = mongoose.model('users', userSchema);
 
-export default User;
+export default user;

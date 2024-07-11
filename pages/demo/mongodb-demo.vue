@@ -25,7 +25,7 @@ const ClickClear = () => {
 };
 
 const ApiPost = async () => {
-  const res = await $fetch('/nuxt/mongo-demo/user', { method: 'post', body: params.value });
+  const res: any = await $fetch('/nuxt/demo/user', { method: 'post', body: params.value });
   if (res.status.is_success) {
     ElMessage({ message: '新增成功', type: 'success' });
     userId.value = res.data?.id || '';
@@ -37,7 +37,7 @@ const ApiPost = async () => {
 
 const ApiGet = async () => {
   if (!userId.value) return;
-  const res:any = await $fetch(`/nuxt/mongo-demo/user/${userId.value}`, { method: 'get' });
+  const res:any = await $fetch(`/nuxt/demo/user/${userId.value}`, { method: 'get' });
   if (res.status.is_success) {
     params.value.name = res.data.name;
     params.value.email = res.data.email;
@@ -50,7 +50,7 @@ const ApiGet = async () => {
 
 const ApiPut = async () => {
   if (!userId.value) return;
-  const res: any = await $fetch(`/nuxt/mongo-demo/user/${userId.value}`, { method: 'put', body: params.value });
+  const res: any = await $fetch(`/nuxt/demo/user/${userId.value}`, { method: 'put', body: params.value });
   if (res.status.is_success) {
     ElMessage({ message: '更新成功', type: 'success' });
     ClickList();
@@ -61,7 +61,7 @@ const ApiPut = async () => {
 
 const ApiDel = async () => {
   if (!userId.value) return;
-  const res:any = await $fetch(`/nuxt/mongo-demo/user/${userId.value}`, { method: 'delete' });
+  const res:any = await $fetch(`/nuxt/demo/user/${userId.value}`, { method: 'delete' });
   if (res.status.is_success) {
     ElMessage({ message: '刪除成功', type: 'success' });
     ClickList();
@@ -71,14 +71,14 @@ const ApiDel = async () => {
 };
 
 const ClickTableRow = (row: any) => {
-  if (!row._id) return;
-  userId.value = row._id;
+  if (!row.id) return;
+  userId.value = row.id;
   ApiGet();
 };
 
 // -----------------------------------------------------------------------------------------------
 const ClickList = async () => {
-  const res:any = await $fetch('/nuxt/mongo-demo/users', { method: 'get', query: pageParams.value });
+  const res:any = await $fetch('/nuxt/demo/users', { method: 'get', query: pageParams.value });
   if (res.status.is_success && res.data) {
     tableInfo.value.list = res.data.list;
     tableInfo.value.total = res.data.total;
@@ -131,7 +131,7 @@ onMounted(() => {
         border
         @row-click="ClickTableRow"
       )
-        ElTableColumn(prop="_id" label="id" width="120")
+        ElTableColumn(prop="id" label="id" width="120")
         ElTableColumn(prop="name" label="name" width="120")
         ElTableColumn(prop="email" label="email" width="120")
     .row-item
