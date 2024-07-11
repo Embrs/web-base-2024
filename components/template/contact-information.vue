@@ -33,23 +33,23 @@ const connectInfo = {
 <template lang="pug">
 #ContactInformation
   .info-area
-    NuxtLink(:to="connectInfo.joinLine" target="_blank" title="Athena line")
+    NuxtLink(:to="connectInfo.joinLine" target="_blank" title="user line")
       .info-title LINE ID
       .info-content {{ connectInfo.lineId }}
 
-    NuxtLink(:to="`mailto:${connectInfo.eMail}`" title="Athena e-mail")
+    NuxtLink(:to="`mailto:${connectInfo.eMail}`" title="user e-mail")
       .info-title 聯絡信箱
       .info-content {{ connectInfo.eMail }}
 
-    NuxtLink(:to="`tel:=+886-${connectInfo.phone.substring(1)}`" title="Athena phone")
+    NuxtLink(:to="`tel:=+886-${connectInfo.phone.substring(1)}`" title="user phone")
       .info-title 聯絡電話
       .info-content {{ connectInfo.phone }}
 
-    NuxtLink(:to="connectInfo.googleMap" target="_blank" title="Athena address")
+    NuxtLink(:to="connectInfo.googleMap" target="_blank" title="user address")
       .info-title 地址
       .info-content {{ connectInfo.address }}
   .img-area
-      NuxtImg.addr-img(:src="connectInfo.addressImg" alt="address" title="address")
+    ElImage.addr-img(:src="connectInfo.addressImg" alt="address" title="address")
 </template>
 
 <style lang="scss" scoped>

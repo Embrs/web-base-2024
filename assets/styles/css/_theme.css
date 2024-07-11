@@ -1,4 +1,5 @@
 :root {
+  --demo: #f00;
   --primary-900: #240507;
   --primary-800: #480A0E;
   --primary-700: #6B1016;
@@ -32,10 +33,10 @@
   --error: #D90000;
   --t-dark: #413737;
   --t-gray: #949494;
-  --t-white: #FFFFFF;
   --bg: #FDF9F2;
 }
 :root.dark {
+  --demo: #00f;
   --primary-900: #240507;
   --primary-800: #480A0E;
   --primary-700: #6B1016;
@@ -69,11 +70,11 @@
   --error: #D90000;
   --t-dark: #413737;
   --t-gray: #949494;
-  --t-white: #FFF;
   --bg: #FDF9F2;
 }
 
 :root.pink {
+  --demo: #0f0;
   --primary-100: #31af31;
   --t-dark: #22E235;
   --bg: #BD5743;

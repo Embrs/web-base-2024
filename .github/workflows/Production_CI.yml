@@ -48,7 +48,6 @@ jobs:
             with:
                 context: .
                 push: true
-                #athenadean/pure-land-temple 這是  docekr account 帳號/docker hub repo名稱  
-                tags: athena0080/athena-web:latest,athena0080/athena-web:${{ github.event.release.tag_name }}
+                tags: todo0080/todo-web:latest,todo0080/todo-web:${{ github.event.release.tag_name }}
                 cach-from: type=gha
                 cach-to: type=gha,mode=max

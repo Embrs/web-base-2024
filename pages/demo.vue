@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 // Demo 請填寫功能描述👈
 const storeI18n = StoreI18n();
 const linkList = [
@@ -23,7 +24,9 @@ const linkList = [
   { path: '/demo/google-form', label: 'Google Form' },
   { path: '/demo/email-demo', label: 'Email Demo' },
   { path: '/demo/google-map', label: 'Google Map' },
-  { path: '/demo/qr-code-demo', label: 'QR Code' }
+  { path: '/demo/qr-code-demo', label: 'QR Code' },
+  { path: '/demo/unocss-demo', label: 'UnoCSS' },
+  { path: '/demo/mongodb-demo', label: 'MongoDB Demo' }
 ];
 </script>
 
@@ -35,6 +38,7 @@ const linkList = [
         ElButton {{ item.label }}
   div
     NuxtPage
+
 </template>
 
 <style lang="scss" scoped>

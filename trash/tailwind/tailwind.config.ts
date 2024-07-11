@@ -49,9 +49,8 @@ module.exports = {
       tertiary: 'var(--tertiary)',
 
       error: 'var(--error)',
-      't-dark': 'var(--t-dark)',
+      't-text': 'var(--t-dark)',
       't-gray': 'var(--t-gray)',
-      't-white': 'var(--t-white)',
       bg: 'var(--bg)',
       'bg-white': 'var(--bg-white)',
       'bg-dark': 'var(--bg-dark)'

@@ -1,4 +1,3 @@
-import cloneDeep from 'lodash/cloneDeep';
 
 // mock 回傳調整
 const basic: any = {
@@ -14,7 +13,7 @@ const basic: any = {
 // 預設回傳 -------------------------------------------------------------------------------------------------
 export const DEFAULT = (): Promise<DefaultRes> => {
   return new Promise((resolve) => {
-    const res: DefaultRes = cloneDeep(basic);
+    const res: DefaultRes = lodash.cloneDeep(basic);
     setTimeout(() => { resolve(res); }, 100);
   });
 };
@@ -22,7 +21,7 @@ export const DEFAULT = (): Promise<DefaultRes> => {
 // 測試 -------------------------------------------------------------------------------------------------
 export const GET_DEMO = (): Promise<GetDemoRes> => {
   return new Promise((resolve) => {
-    const res: GetDemoRes = cloneDeep(basic);
+    const res: GetDemoRes = lodash.cloneDeep(basic);
     res.data = [{
       announcement_type_description: 'string',
       announcement_type_id: 123

@@ -9,7 +9,7 @@ import AtQRCode from '@/components/at-ui/at-qrcode.vue';
   AtQRCode(
     src="https://athenaads.com/"
     centerImgSrc="/favicon.svg"
-    size="150"
+    :size="150"
   )
 </template>
 

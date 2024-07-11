@@ -2,9 +2,9 @@
   // style lint
   "stylelint.validate": [ "css", "scss", "vue" ],
   //tailwindcss
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
+  // "files.associations": {
+  //   "*.css": "tailwindcss"
+  // },
   "editor.quickSuggestions": {
     "strings": true
   },
@@ -43,6 +43,6 @@
         // "hideFromTree": true
     }
   },
-
+  "scss.lint.unknownAtRules": "ignore" // 忽略未知的 at-rule
 }
 

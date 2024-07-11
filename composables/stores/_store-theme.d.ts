@@ -1,1 +1,1 @@
-type ThemeType = 'dark' | 'light'
+type ThemeType = 'system' | 'dark' | 'light' | 'pink'

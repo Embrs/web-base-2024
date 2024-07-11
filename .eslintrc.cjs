@@ -6,8 +6,8 @@ module.exports = {
   extends: [
     '@nuxtjs/eslint-config-typescript',
     'plugin:vue/vue3-recommended',
-    'plugin:vue-pug/vue3-recommended',
-    'plugin:tailwindcss/recommended'
+    'plugin:vue-pug/vue3-recommended'
+    // 'plugin:tailwindcss/recommended'
   ],
   parserOptions: {
     ecmaVersion: 13,
@@ -35,7 +35,7 @@ module.exports = {
         singleline: { max: 5 },
         multiline: { max: 5 }
       }],
-    'tailwindcss/no-custom-classname': 'off', // tailwindcss 檢查
+    // 'tailwindcss/no-custom-classname': 'off', // tailwindcss 檢查
     '@typescript-eslint/no-unused-vars': 'warn', // 未使用參數
     'vue/attribute-hyphenation': 'off', // html 參數用 [-]
     'vue/no-deprecated-v-on-native-modifier': 'off' // 使用 @submit.native.prevent

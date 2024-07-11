@@ -1,5 +1,3 @@
-import { Encrypt, Decrypt } from './tool';
-
 interface KeyMap {
   [key: string]: string;
 }
@@ -16,9 +14,9 @@ const keyMap = {
 /** 設定項目 */
 const Set = (key: string, anyValue: any, useHash = true) => {
   try {
-    const _key = useHash ? Encrypt(key) : key;
+    const _key = useHash ? tool.Encrypt(key) : key;
     const _data = JSON.stringify(anyValue);
-    const _val = useHash ? Encrypt(_data) : _data;
+    const _val = useHash ? tool.Encrypt(_data) : _data;
     if (_key && _val) {
       localStorage.setItem(_key, _val);
       return true;
@@ -32,9 +30,9 @@ const Set = (key: string, anyValue: any, useHash = true) => {
 /** 提取項目 */
 const Get = (key: string, useHash = true) => {
   try {
-    const _key = useHash ? Encrypt(key) : key;
+    const _key = useHash ? tool.Encrypt(key) : key;
     const _anyValue = localStorage.getItem(_key) || '';
-    const _val = useHash ? Decrypt(_anyValue) : _anyValue;
+    const _val = useHash ? tool.Decrypt(_anyValue) : _anyValue;
     if (_val) {
       return JSON.parse(_val);
     }
@@ -47,7 +45,7 @@ const Get = (key: string, useHash = true) => {
 /** 清除項目 */
 const Remove = (key: string, useHash = true) => {
   try {
-    const _key = useHash ? Encrypt(key) : key;
+    const _key = useHash ? tool.Encrypt(key) : key;
     if (_key) {
       localStorage.removeItem(_key);
       return true;
@@ -64,7 +62,7 @@ const RemoveAll = (keepKeys: string[] = [], useHash = true) => {
     const _keyMap: KeyMap = keyMap;
     for (const _i in _keyMap) {
       const key = _keyMap[_i];
-      const _key = useHash ? Encrypt(key) : key;
+      const _key = useHash ? tool.Encrypt(key) : key;
       if (!keepKeys.includes(_key)) {
         Remove(key);
       }

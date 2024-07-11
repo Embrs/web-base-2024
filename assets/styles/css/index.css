@@ -1,6 +1,8 @@
 /* @import './_font-family'; */
+/* @import './tailwind'; */
 /* @import './_scroll'; */
-@import './_theme';
-@import './_vue-transition';
-@import './tailwind';
+@import './_init.css';
+@import './_uno.css';
+@import './_theme.css';
+@import './_vue-transition.css';
 @import './element-plus';

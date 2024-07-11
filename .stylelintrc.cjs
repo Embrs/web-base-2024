@@ -20,6 +20,7 @@ module.exports = {
   ],
   rules: {
     // 'unit-allowed-list': [ 'em', 'rem', 'deg', 'px', 's', 'vh', 'vw', '%'], // 可使用的單位
+    // // "css.lint.unknownAtRules": "ignore",
     'selector-id-pattern': null,
     'rule-empty-line-before': null,
     'media-feature-range-notation': null,
