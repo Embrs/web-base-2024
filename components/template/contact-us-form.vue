@@ -202,7 +202,7 @@ const ApiCreateContact = async (): Promise<boolean> => {
     width: 100%;
   }
   @include rwd-pc {
-    @include max-width-padding(500px, 60px);
+    @include max-w-padding(500px, 60px);
   }
 }
 // 組件 ----

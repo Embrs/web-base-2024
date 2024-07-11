@@ -32,7 +32,7 @@ useAsyncData('init', async () => {
 <template lang="pug">
 #ApiDemo
   p ApiDemo
-  ElButton(type="primary" @click="ApiDemo") Send Api
+  ElButton(type="primary" @click="ApiGetDemo") Send Api
   pre {{ apiResData }}
 </template>
 

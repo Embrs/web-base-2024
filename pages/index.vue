@@ -1,20 +1,30 @@
 <script setup lang="ts">
-// Home 首頁
+// Home 請填寫功能描述👈
+import Carousel from '@/components/template/carousel.vue';
+import ContactUsForm from '@/components/template/contact-us-form.vue';
+import ContactInformation from '@/components/template/contact-information.vue';
+definePageMeta({
+  // layout: 'layout-1'
+});
 
 </script>
 
 <template lang="pug">
 #Home
-  p Home
+  Carousel
+  ContactUsForm
+  ContactInformation
+
   NuxtLink(to="/demo")
     ElButton To Demo
-  NuxtLink(to="/template-1")
-    ElButton To Template 1
 </template>
 
 <style lang="scss" scoped>
-// 佈局
+// 佈局 ----
 #Home {
   // TODO
 }
+
+// 組件 ----
+
 </style>

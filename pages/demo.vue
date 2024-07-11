@@ -37,7 +37,8 @@ const linkList = [
       NuxtLink(:to="storeI18n.LocalePath(item.path)")
         ElButton {{ item.label }}
   div
-    NuxtPage
+    ClientOnly
+      NuxtPage
 
 </template>
 

@@ -116,7 +116,7 @@
 }
 
 // 限制最大寬度與保留寬度
-@mixin max-width-padding($min-w: 1000px, $padding: 10px) {
+@mixin max-w-padding($min-w: 1000px, $padding: 10px) {
   max-width: calc($min-w + $padding * 2);
   margin-right: auto;
   margin-left: auto;

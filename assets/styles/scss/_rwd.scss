@@ -45,10 +45,10 @@
   width: 100vw;
   margin: 0 auto;
   @include rwd-pc-big {
-    @include max-width-padding(calc($pc-big + $pc-big-padding * 2), $pc-big-padding );
+    @include max-w-padding(calc($pc-big + $pc-big-padding * 2), $pc-big-padding );
   }
   @include rwd-pc {
-    @include max-width-padding(calc($pc + $pc-padding * 2), $pc-padding);
+    @include max-w-padding(calc($pc + $pc-padding * 2), $pc-padding);
   }
   @include rwd-mobile {
     padding: 0 $mobile-padding;
