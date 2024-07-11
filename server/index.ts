@@ -1,4 +1,4 @@
-import MongoInit from '@/server/db/mongo-init';
+import MongoInit from '~/server mysql/db/mongo-init';
 
 export default async () => {
   try {

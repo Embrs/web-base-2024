@@ -1,4 +1,4 @@
-import prisma from '@/server/db/prisma';
+import prisma from '~/server mysql/db/prisma';
 
 export default defineEventHandler(async (event: any) => {
   try {

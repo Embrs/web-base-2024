@@ -1,11 +1,11 @@
-import prisma from '@/server/db/prisma';
+import user from '~/server mysql/models/demo/user-model';
 
 export default defineEventHandler(async (event) => {
   try {
     const { name, email } = await readBody(event);
-    const newUser = await prisma.user.create({ data: { name, email } });
+    const newUser = await user.create({ name, email });
     console.log('new', newUser);
-    return { data: { id: newUser.id }, status: { is_success: true, message: '' } };
+    return { data: { id: newUser._id }, status: { is_success: true, message: '' } };
   } catch (error: any) {
     if (error.code === 11000) {
       return { data: null, status: { is_success: false, message: '已存在' } };

@@ -1,4 +1,4 @@
-import user from '@/server/models/demo/user-model';
+import user from '~/server mysql/models/demo/user-model';
 
 export default defineEventHandler(async (event: any) => {
   try {
