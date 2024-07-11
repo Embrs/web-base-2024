@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // CookieDemo 請填寫功能描述👈
-const counter = useCookie<number>('counter');
+const counter = useCookie<number>('counter', { default: () => 0 });
 const inputCookie = useCookie<string>('inputCookie', {
   maxAge: 10
 });
@@ -31,7 +31,7 @@ const SetCookie = () => {
 <template lang="pug">
 #CookieDemo
   h1 Counter: {{ counter || '-' }}
-  ElButton(@click="counter = null") reset
+  ElButton(@click="counter = 0") reset
   ElButton(@click="counter--") -
   ElButton(@click="counter++") +
   .row-item
