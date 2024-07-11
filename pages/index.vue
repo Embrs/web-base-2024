@@ -15,8 +15,6 @@ definePageMeta({
   ContactUsForm
   ContactInformation
 
-  NuxtLink(to="/demo")
-    ElButton To Demo
 </template>
 
 <style lang="scss" scoped>

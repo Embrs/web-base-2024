@@ -2,8 +2,8 @@
 // layout
 import LoadingPage from '@/components/layout/loading-page.vue';
 
-import Header from '@/components/template/header.vue';
-import Footer from '@/components/template/footer.vue';
+import Header from '@/components/layout/default/header.vue';
+import Footer from '@/components/layout/default/footer.vue';
 
 const OpenGroup = defineAsyncComponent(() => import('@/components/open-group/index.vue'));
 </script>

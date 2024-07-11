@@ -15,7 +15,7 @@ const linklist = [
 #Header
   .link-area(class="max-w-padding-1000px-10px")
     .left-area
-      p Header
+      NuxtLink(to="/" alt="首頁" title="首頁") Logo
     .right-area(class="item-row-10px-end")
       NuxtLink(
         v-for="item of linklist" :key="item.name"
