@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// MongoDBDemo 請填寫功能描述👈
+// DBDemo 請填寫功能描述👈
 
 const params = ref({
   name: '',
@@ -97,9 +97,9 @@ onMounted(() => {
 </script>
 
 <template lang="pug">
-#MongoDBDemo
+#DBDemo
   .left-area
-    p MongoDBDemo
+    p DBDemo
     p https://pjchender.dev/database/mongo-mongoose/
     .row-item
       ElButton(@click="ClickClear") Clear
@@ -147,7 +147,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 // 佈局 ----
-#MongoDBDemo {
+#DBDemo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;

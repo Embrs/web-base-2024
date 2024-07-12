@@ -1,4 +1,5 @@
-export const MixinWebSocket = () => {
+// 客戶端 websocket
+export const MixinClientWs = () => {
   if (import.meta.server) return;
   if (!('WebSocket' in window || 'MozWebSocket' in window)) return;
 
@@ -12,15 +13,6 @@ export const MixinWebSocket = () => {
 
   const wsList: WebSocket[] = [];
   // -----------------------------------------------------------------------------------------------
-  interface WsInfo {
-    isConnected: boolean; // 是否已連線
-    useAutoConnect: boolean; // 是否啟用自動連線
-    autoConnectMs: number; // 自動連線/毫秒
-    On: (event: string, callbackFn: any) => void; // 綁定接收事件
-    Send: (event: string, data: any) => void; // 送出資料
-    Close: () => void; // 關閉連線
-    ReConnect: () => void; // 重新連線
-  }
 
   // -----------------------------------------------------------------------------------------------
   // 連線綁定初始化
@@ -37,20 +29,20 @@ export const MixinWebSocket = () => {
     ws.onmessage = (response) => {
       // 回傳資料檢查
       if (!response?.data) return console.log('message 無回傳資料');
-
+      console.log('onmessage', response);
       // 資料parse解析確認
       const eventData = Parse(response.data);
-      if (!eventData) return console.log('message 資料解析異常');
+      if (!eventData) return console.log('message 非事件資訊', response.data);
 
       // 資料結構確認
       const { event, data } = eventData;
-      if (!event) return console.log('message 無事件名稱');
+      if (!event) return console.log('message 無事件名稱', event, data);
       // 要注意有些事件可能不用資料解析，有不用處理的事件，這裡要改寫
-      if (!data) return console.log('message 無資料');
+      if (!data) return console.log('message 無資料', event, data);
 
       // 事件 function 綁定確認
       const callbackFn = eventListener[event];
-      if (!callbackFn) return console.log('message 事件無對應 Function');
+      if (!callbackFn) return console.log('message 事件無對應 Function', event, data);
       // 事件觸發
       callbackFn(data);
     };
@@ -124,7 +116,7 @@ export const MixinWebSocket = () => {
     const eventListener: Record<string, any> = {};
 
     try {
-      const _wsInfo: WsInfo = {
+      const _wsInfo = ref<WsInfo>({
         isConnected: false, // 是否已連線
         useAutoConnect: _useAutoConnect, // 是否啟用自動連線
         autoConnectMs: _autoConnectMs, // 自動連線/毫秒
@@ -132,12 +124,12 @@ export const MixinWebSocket = () => {
         Send: (event: string, data: any) => { /* 送出資料 */ console.log(event, data); },
         Close: () => { /* 關閉連線 */ },
         ReConnect: () => { /* 重新連線 */ }
-      };
+      });
 
       // 初始化
-      WsInit(wsUrl, _wsInfo, eventListener);
+      WsInit(wsUrl, _wsInfo.value, eventListener);
 
-      return _wsInfo;
+      return _wsInfo.value;
     } catch {
       return undefined;
     }

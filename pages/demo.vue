@@ -26,7 +26,8 @@ const linkList = [
   { path: '/demo/google-map', label: 'Google Map' },
   { path: '/demo/qr-code-demo', label: 'QR Code' },
   { path: '/demo/unocss-demo', label: 'UnoCSS' },
-  { path: '/demo/mongodb-demo', label: 'MongoDB Demo' }
+  { path: '/demo/db-demo', label: 'DB Demo' },
+  { path: '/demo/ws-demo', label: 'WebSocket Demo' }
 ];
 </script>
 
