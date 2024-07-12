@@ -178,6 +178,9 @@ export default defineNuxtConfig({
 
   // Nitro server ------------------------------------------------------
   nitro: {
+    // experimental: {
+    //   websocket: true
+    // },
     plugins: [
       '@/server/index'
     ]
