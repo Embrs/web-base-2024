@@ -1,5 +1,23 @@
 <script setup lang="ts">
 // HlsDemo 請填寫功能描述👈
+</script>
+
+<template lang="pug">
+#HlsDemo
+  p HlsDemo 範例請解開 mark
+</template>
+
+<style lang="scss" scoped>
+// 佈局 ----
+#HlsDemo {
+  // TODO
+}
+
+// 組件 ----
+</style>
+
+<!-- <script setup lang="ts">
+// HlsDemo 請填寫功能描述👈
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 const videoPlayer = ref();
@@ -94,4 +112,4 @@ onUnmounted(() => {
 }
 
 // 組件 ----
-</style>
+</style> -->
