@@ -27,7 +27,8 @@ const linkList = [
   { path: '/demo/qr-code-demo', label: 'QR Code' },
   { path: '/demo/unocss-demo', label: 'UnoCSS' },
   { path: '/demo/db-demo', label: 'DB Demo' },
-  { path: '/demo/ws-demo', label: 'WebSocket Demo' }
+  { path: '/demo/ws-demo', label: 'WebSocket Demo' },
+  { path: '/demo/web-worker-demo', label: 'WebWorker Demo' }
 ];
 </script>
 

@@ -32,7 +32,7 @@ const OnMove = (move: number) => {
   ElCarousel(
     ref="elElCarousel"
     height="50vh"
-    interval="3000"
+    :interval="3000"
     motion-blur
     @touchstart="TouchStart"
     @touchend="TouchEnd"
