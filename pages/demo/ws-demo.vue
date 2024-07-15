@@ -8,11 +8,15 @@ const memo = ref('');
 
 const Create = () => {
   if (ws.value) {
+    // 強制關閉已存在
     ws.value.ForceClose();
   }
+  // 建立新連線
   const _ws = mixinClientWs?.CreateWs(wsUrl.value);
   if (!_ws) return;
   ws.value = _ws;
+
+  // 設定監聽事件
   ws.value.On('test', (val: string) => {
     console.log(val);
     memo.value = val;
