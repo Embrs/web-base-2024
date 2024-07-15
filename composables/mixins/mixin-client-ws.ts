@@ -18,6 +18,7 @@ export const MixinClientWs = () => {
   // -----------------------------------------------------------------------------------------------
   // 連線綁定初始化
   const WsInit = (wsUrl: string, _wsInfo: WsInfo, eventListener: Record<string, any>, ctrl: WsCtrlInfo) => {
+    console.log('winit');
     const token = ''; // TODO token
     // 建立連線;
     const ws = token ? new WebSocket(wsUrl, [token]) : new WebSocket(wsUrl);

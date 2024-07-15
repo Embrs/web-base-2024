@@ -8,7 +8,7 @@ const memo = ref('');
 
 const Create = () => {
   if (ws.value) {
-    ws.value.Close();
+    ws.value.ForceClose();
   }
   const _ws = mixinClientWs?.CreateWs(wsUrl.value);
   if (!_ws) return;
