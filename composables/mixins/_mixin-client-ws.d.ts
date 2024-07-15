@@ -13,8 +13,8 @@ interface WsInfoOptions {
   useHeartbeat?: boolean // 是否啟用心跳
   heartbeatMs?: number // 心跳/毫秒
   heartbeatReconnectLimit?: number // 心跳未接收到幾次後重連
-  pintText: string // 心跳送出文字
-  pongText: string // 心跳回應文字
+  pingText?: string // 心跳送出文字
+  pongText?: string // 心跳回應文字
 };
 
 interface WsInfo extends WsInfoOptions {
