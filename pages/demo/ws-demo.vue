@@ -7,6 +7,9 @@ const demoText = ref('');
 const memo = ref('');
 
 const Create = () => {
+  if (ws.value) {
+    ws.value.Close();
+  }
   const _ws = mixinClientWs?.CreateWs(wsUrl.value);
   if (!_ws) return;
   ws.value = _ws;
@@ -26,6 +29,11 @@ const Close = () => {
   ws.value.Close();
 };
 
+const ForceClose = () => {
+  if (!ws.value) return;
+  ws.value.ForceClose();
+};
+
 const Reconnect = () => {
   ws.value?.Reconnect();
 };
@@ -36,11 +44,12 @@ const Reconnect = () => {
   p WebSocketDemo
   p Test: https://websocketking.com/
   ElInput(v-model="wsUrl" type="text")
-  ElButton(@click="Create") CreateConnect
+  ElButton(@click="Create") 建立WS連線
   ElInput(v-model="demoText" type="text")
-  ElButton(@click="Send") Send
-  ElButton(@click="Close") Disconnect
-  ElButton(@click="Reconnect") Reconnect
+  ElButton(@click="Send") 送出
+  ElButton(@click="Close") 斷線
+  ElButton(@click="ForceClose") 強制斷線
+  ElButton(@click="Reconnect") 重連
   ElInput(
     v-model="memo"
     :rows="4"
