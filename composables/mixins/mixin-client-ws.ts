@@ -184,7 +184,7 @@ export const MixinClientWs = () => {
         useAutoConnect: option?.useAutoConnect ?? true, // 是否啟用自動連線
         autoConnectCount: option?.autoConnectCount ?? 3, // 自動連線/次 設定為 0 代表不啟用
         autoConnectMs: option?.autoConnectMs ?? 1000, // 自動連線/毫秒
-        useHeartbeat: true, // 是否啟用心跳
+        useHeartbeat: false, // 是否啟用心跳
         heartbeatMs: option?.heartbeatMs ?? 1000, // 心跳/毫秒
         heartbeatReconnectLimit: option?.heartbeatReconnectLimit ?? 3, // 心跳未接收到幾次後重連
         pingText: option?.pingText ?? 'ping', // 心跳送出文字
