@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { ElButton, ElInput } from 'element-plus';
-
 // WebSocketDemo 請填寫功能描述👈
 const mixinClientWs = MixinClientWs();
 const ws = ref<WsInfo>();
 const wsUrl = ref('wss://echo.websocket.org');
 const demoText = ref('');
-
 const memo = ref('');
+
 const Create = () => {
   const _ws = mixinClientWs?.CreateWs(wsUrl.value);
   if (!_ws) return;
@@ -23,6 +21,14 @@ const Send = () => {
   ws.value.Send('test', demoText.value);
 };
 
+const Close = () => {
+  if (!ws.value) return;
+  ws.value.Close();
+};
+
+const Reconnect = () => {
+  ws.value?.Reconnect();
+};
 </script>
 
 <template lang="pug">
@@ -33,6 +39,8 @@ const Send = () => {
   ElButton(@click="Create") CreateConnect
   ElInput(v-model="demoText" type="text")
   ElButton(@click="Send") Send
+  ElButton(@click="Close") Disconnect
+  ElButton(@click="Reconnect") Reconnect
   ElInput(
     v-model="memo"
     :rows="4"

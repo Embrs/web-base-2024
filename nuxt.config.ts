@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   modules: [
     // '@nuxtjs/i18n', // 目前壞了，等待官方修復 https://nuxt.com.cn/modules/i18n
     // '@nuxtjs/tailwindcss', // https://nuxt.com/modules/tailwindcss
+    // '@vueuse/nuxt', // https://vueuse.org/nuxt/README.html
     '@element-plus/nuxt', // https://nuxt.com.cn/modules/element-plus
     '@pinia/nuxt', // https://ithelp.ithome.com.tw/articles/10302381
     '@nuxtjs/device', // const {} = useDevice(); // https://nuxt.com/modules/device
