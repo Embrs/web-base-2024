@@ -29,7 +29,8 @@ const linkList = [
   { path: '/demo/db-demo', label: 'DB Demo' },
   { path: '/demo/ws-demo', label: 'WebSocket Demo' },
   { path: '/demo/web-worker-demo', label: 'WebWorker Demo' },
-  { path: '/demo/img-demo', label: 'Img Demo' }
+  { path: '/demo/img-demo', label: 'Img Demo' },
+  { path: '/demo/leave-demo', label: 'Leave Demo' }
 ];
 </script>
 
