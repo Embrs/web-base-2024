@@ -5,7 +5,7 @@ import { Picture as IconPicture } from '@element-plus/icons-vue';
 // 資料 --------------------------------------------------------------------------------------------
 const props = defineProps({
   width: {
-    type: Number,
+    type: [Number, String],
     default: 100 // 寬，100~0 為 %
   },
   height: {
@@ -21,7 +21,7 @@ const props = defineProps({
 // 圖片限制樣式
 const imgBoxStyle = computed(() => {
   const _style: any = {};
-  _style.width = `${props.width}${props.width <= 100 ? '%' : 'px'} !important`;
+  _style.width = `${props.width}${Number(props.width) <= 100 ? '%' : 'px'} !important`;
 
   if (props.useScale) {
     _style['padding-top'] = `${props.height}% !important`;
@@ -36,10 +36,11 @@ const imgBoxStyle = computed(() => {
 <template lang="pug">
 #ElImagePlus(:style="imgBoxStyle")
   ElImage.img(
-    :lazy="true"
+    loading="lazy"
     alt="我是圖片"
     fit="cover"
     v-bind="$attrs"
+    preview-teleported
   )
     template(#error)
       .err-slot

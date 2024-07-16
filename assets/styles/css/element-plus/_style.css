@@ -8,6 +8,10 @@
   height: 50px;
   padding: 0 16px !important;
 }
+/* .el-image-viewer__canvas {
+  overflow: auto;
+} */
+
   /* ----- 自定義按鈕 ----- */
   /* .el-button--aa {
     background-color: var(--tertiary-600) !important;

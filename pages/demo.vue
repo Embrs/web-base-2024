@@ -28,7 +28,8 @@ const linkList = [
   { path: '/demo/unocss-demo', label: 'UnoCSS' },
   { path: '/demo/db-demo', label: 'DB Demo' },
   { path: '/demo/ws-demo', label: 'WebSocket Demo' },
-  { path: '/demo/web-worker-demo', label: 'WebWorker Demo' }
+  { path: '/demo/web-worker-demo', label: 'WebWorker Demo' },
+  { path: '/demo/img-demo', label: 'Img Demo' }
 ];
 </script>
 
@@ -39,8 +40,8 @@ const linkList = [
       NuxtLink(:to="storeI18n.LocalePath(item.path)")
         ElButton {{ item.label }}
   div
-    ClientOnly
-      NuxtPage
+    //- ClientOnly
+    NuxtPage
 
 </template>
 

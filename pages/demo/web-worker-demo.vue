@@ -35,7 +35,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 // 佈局 ----
 #WebWorkerDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

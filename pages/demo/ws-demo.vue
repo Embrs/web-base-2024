@@ -66,7 +66,7 @@ const Reconnect = () => {
 <style lang="scss" scoped>
 // 佈局 ----
 #WebSocketDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----
