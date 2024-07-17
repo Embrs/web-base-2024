@@ -16,21 +16,16 @@ const OnPause = () => {
 onMounted(() => {
   elVideo.value = videojs(elVideo.value, {
     poster: '//vjs.zencdn.net/v/oceans.png',
-    controls: false,
-    autoplay: true,
-    muted: true,
-    sources: [
-      {
-        src: 'http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8',
-        type: 'application/x-mpegURL'
-      }
-    ],
+    controls: false, // 控制列
+    autoplay: true, // 自動撥放
+    muted: true, // 靜音
+    sources: [{ src: hlsUrl, type: 'application/x-mpegURL' }],
     controlBar: {
       remainingTimeDisplay: {
         displayNegative: false
       }
-    },
-    playbackRates: [0.5, 1, 1.5, 2]
+    }
+    // playbackRates: [0.5, 1, 1.5, 2]
   }, () => {
     elVideo.value.log('play.....');
   });
@@ -52,6 +47,10 @@ onUnmounted(() => {
       class="video-js"
       autoplay
       muted
+      :x5-playsinline="true"
+      :playsinline="true"
+      :webkit-playsinline="true"
+      :x-webkit-airplay="true"
       :src="hlsUrl"
       type="application/x-mpegURL"
       data-object-fit
