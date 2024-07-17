@@ -31,6 +31,7 @@ export const StoreI18n = pinia.defineStore('StoreI18n', () => {
         locale: _locale
       }
     });
+    locale.value = _locale;
   };
 
   // 偵測瀏覽器語系地區(只能在 client 使用)
