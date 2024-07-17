@@ -19,13 +19,13 @@ onMounted(() => {
     controls: false, // 控制列
     autoplay: true, // 自動撥放
     muted: true, // 靜音
+    loop: true, // 循環
     sources: [{ src: hlsUrl, type: 'application/x-mpegURL' }],
     controlBar: {
       remainingTimeDisplay: {
         displayNegative: false
       }
     }
-    // playbackRates: [0.5, 1, 1.5, 2]
   }, () => {
     elVideo.value.log('play.....');
   });
@@ -47,6 +47,7 @@ onUnmounted(() => {
       class="video-js"
       autoplay
       muted
+      loop
       :x5-playsinline="true"
       :playsinline="true"
       :webkit-playsinline="true"
