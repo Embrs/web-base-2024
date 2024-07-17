@@ -1,33 +1,24 @@
 <script setup lang="ts">
 // HlsDemo 請填寫功能描述👈
-</script>
-
-<template lang="pug">
-#HlsDemo
-  p HlsDemo 範例請解開 mark
-</template>
-
-<style lang="scss" scoped>
-// 佈局 ----
-#HlsDemo {
-  // TODO
-}
-
-// 組件 ----
-</style>
-
-<!-- <script setup lang="ts">
-// HlsDemo 請填寫功能描述👈
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-const videoPlayer = ref();
+const elVideo = ref();
+const hlsUrl = 'http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8';
+const OnPlay = () => {
+  const el = elVideo.value;
+  el.play();
+};
 
-const myPlayer = ref();
-
+const OnPause = () => {
+  const el = elVideo.value;
+  el.pause();
+};
 onMounted(() => {
-  myPlayer.value = videojs(videoPlayer.value, {
+  elVideo.value = videojs(elVideo.value, {
     poster: '//vjs.zencdn.net/v/oceans.png',
-    controls: true,
+    controls: false,
+    autoplay: true,
+    muted: true,
     sources: [
       {
         src: 'http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8',
@@ -41,68 +32,34 @@ onMounted(() => {
     },
     playbackRates: [0.5, 1, 1.5, 2]
   }, () => {
-    myPlayer.value.log('play.....');
+    elVideo.value.log('play.....');
   });
 });
 
 onUnmounted(() => {
-  if (myPlayer.value) {
-    myPlayer.value.dispose();
+  if (elVideo.value) {
+    elVideo.value.dispose();
   }
 });
-
-// npm install hls.js
-// import Hls from 'hls.js';
-// const elVideo = ref();
-// const isPlaying = ref(false);
-
-// const OnPlay = () => {
-//   const el = elVideo.value;
-//   el.play();
-//   isPlaying.value = true;
-// };
-
-// const OnPause = () => {
-//   const el = elVideo.value;
-//   el.pause();
-//   isPlaying.value = false;
-// };
-
-// onMounted(() => {
-//   const el = elVideo.value;
-//   const hls = new Hls();
-//   hls.loadSource('/video/hls/hero/hero.m3u8'); // HLS视频源的URL
-//   hls.attachMedia(el);
-//   hls.on(Hls.Events.MANIFEST_PARSED, () => {
-//     el.play();
-//     isPlaying.value = true;
-//   });
-// });
 
 </script>
 
 <template lang="pug">
 #HlsDemo
-  video(ref="videoPlayer" class="video-js" style="margin: auto auto")
-  //- p HlsDemo
-  //- p https://www.volcengine.com/theme/4777923-R-7-1
-  //- video(ref="elVideo" controls playsinline muted)
-  //- ElButton(@click="OnPlay") Play
-  //- ElButton(@click="OnPause") Pause
-  //- div
+  .video-box
     video(
-      id="my_video_1"
-      class="video-js vjs-default-skin"
-      controls
-      preload="auto"
-      width="640"
-      height="268"
-      data-setup="{}"
+      ref="elVideo"
+      class="video-js"
+      autoplay
+      muted
+      :src="hlsUrl"
+      type="application/x-mpegURL"
+      data-object-fit
+      data-wf-ignore
     )
-      source(
-        src="http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
-        type="application/x-mpegURL"
-      )
+
+  ElButton(@click="OnPlay") Play
+  ElButton(@click="OnPause") Pause
 </template>
 
 <style lang="scss" scoped>
@@ -112,4 +69,12 @@ onUnmounted(() => {
 }
 
 // 組件 ----
-</style> -->
+.video-box {
+  height: 400px;
+  .video-js {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: transparent;
+  }
+}
+</style>
