@@ -13,6 +13,7 @@ const props = defineProps({
 const visible = ref(true);
 const isChange = ref(false);
 const isWaiting = ref(false);
+const demoText = ref('');
 // const elStaffForm = ref();
 
 // 標題
@@ -88,6 +89,8 @@ ElDialog(
     Loading
       div
         p {{ props.params.demoText }}
+        p 嘗試輸入後關閉
+        ElInput(v-model="demoText" aria-placeholder="輸入文字" @change="OnChnage")
       //- StaffForm(
       //-   ref="elStaffForm"
       //-   actionType="create"
