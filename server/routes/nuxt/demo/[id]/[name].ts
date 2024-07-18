@@ -2,7 +2,10 @@
 
 export default defineEventHandler((event: any) => {
   return {
-    is_success: false,
-    message: `Hello ${event.context.params.name}, ${event.context.params.name}!`
+    data: null,
+    status: {
+      is_success: false,
+      message: `Hello ${event.context.params.name}, ${event.context.params.name}!`
+    }
   };
 });
