@@ -15,7 +15,8 @@ const ClickBox = (e: MouseEvent) => {
 <template lang="pug">
 #AnimateCssDemo
   p AnimateCssDemo
-  NuxtLink(to="https://animate.style/" target="_blank") 教學連結
+  NuxtLink(to="https://animate.style/" target="_blank") Animate.css教學連結
+  NuxtLink(to="https://animista.net/play/basic" target="_blank") animista教學連結
   .box(@click="ClickBox") Click
   .box.animation-text Loaded
   ElButton(
