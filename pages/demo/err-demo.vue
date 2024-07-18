@@ -14,7 +14,7 @@ const ClickSendErr = () => {
 <style lang="scss" scoped>
 // 佈局 ----
 #ErrDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

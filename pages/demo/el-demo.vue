@@ -59,7 +59,7 @@ const cities = [
 <style lang="scss" scoped>
 // 佈局 ----
 #ElDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

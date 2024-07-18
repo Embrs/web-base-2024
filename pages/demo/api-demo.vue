@@ -39,7 +39,7 @@ useAsyncData('init', async () => {
 <style lang="scss" scoped>
 // 佈局 ----
 #ApiDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

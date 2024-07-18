@@ -22,7 +22,7 @@ const ClickTest = async () => {
 <style lang="scss" scoped>
 // 佈局 ----
 #ServerApiDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

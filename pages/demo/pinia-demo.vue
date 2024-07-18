@@ -21,7 +21,7 @@ const storeEnv = StoreEnv();
 <style lang="scss" scoped>
 // 佈局 ----
 #PiniaDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

@@ -22,7 +22,7 @@
 <style lang="scss" scoped>
 // 佈局 ----
 #FontDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

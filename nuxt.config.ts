@@ -117,7 +117,7 @@ export default defineNuxtConfig({
   },
 
   // style -------------------------------------------------------------
-  css: ['@/assets/styles/css/index.css'],
+  css: ['@/assets/styles/css/index.css', 'animate.css/animate.min.css'],
 
   stylelint: {
     lintOnStart: false, // 專案啟動時不自動檢查所有相關檔案

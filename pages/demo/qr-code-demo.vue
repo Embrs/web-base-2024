@@ -35,7 +35,7 @@ import AtQRCode from '@/components/at-ui/at-qrcode.vue';
 // 佈局 ----
 #QRCodeDemo {
   background-color: #dddada;
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

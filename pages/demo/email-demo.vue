@@ -94,7 +94,7 @@ const SendMail = async () => { // 這裡要對應到自己的 javascript 名稱
 <style lang="scss" scoped>
 // 佈局 ----
 #EmailDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

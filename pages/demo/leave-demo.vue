@@ -85,7 +85,6 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 // 佈局 ----
 #LeaveDemo {
-  // TODO
   padding: 10px;
 }
 

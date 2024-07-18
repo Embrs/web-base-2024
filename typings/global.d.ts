@@ -1,3 +1,4 @@
+export type { FormItemRule } from 'element-plus'
 // import type Echo from 'laravel-echo';
 // import $api from '@/protocal/RESTfulApi/methods';
 
@@ -12,4 +13,4 @@
 //     Echo?: Echo;
 //     TradingView?:TradingView, 
 //   }
-// }
+// };

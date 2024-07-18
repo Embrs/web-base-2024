@@ -45,6 +45,7 @@ const SetCookie = () => {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px;
 }
 
 // 佈局 ----

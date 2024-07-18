@@ -21,7 +21,7 @@
 <style lang="scss" scoped>
 // 佈局 ----
 #GoogleMap {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

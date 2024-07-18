@@ -30,7 +30,7 @@ const ClickShowLog = () => {
 <style lang="scss" scoped>
 // 佈局 ----
 #I18nDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

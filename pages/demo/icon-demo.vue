@@ -23,8 +23,8 @@
 <style lang="scss" scoped>
 // 佈局 ----
 #IconDemo {
-  // color: red;
   @include col;
+  padding: 10px;
 }
 .icon-style {
   font-size: 100px;

@@ -25,7 +25,7 @@ const ClickDialog = () => {
 <style lang="scss" scoped>
 // 佈局 ----
 #DrawerDialogDemo {
-  // TODO
+  padding: 10px;
 }
 
 // 組件 ----

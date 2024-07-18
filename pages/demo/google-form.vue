@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // GoogleForm 請填寫功能描述👈
 // https://medium.com/misa-design-%E5%A0%AF%E8%88%9C%E8%A8%AD%E8%A8%88/%E5%8F%AA%E6%87%82%E5%89%8D%E7%AB%AF%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%81%9A%E5%87%BA%E8%83%BD%E7%B7%9A%E4%B8%8A%E5%82%B3%E9%80%81%E7%9A%84%E8%A1%A8%E5%96%AE-6dc735c57bd6
+
 const elForm = ref();
 const testParams = ref({
   name: 'aa',
@@ -9,7 +10,7 @@ const testParams = ref({
   message: 'dd'
 });
 
-const rules = computed(() => {
+const rules = computed<any>(() => {
   return {
     name: [{ required: true, message: '請輸入姓名', trigger: 'change' }],
     email: [

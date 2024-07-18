@@ -75,10 +75,10 @@ const ClickNext = async () => {
 <style lang="scss" scoped>
 // 佈局 ----
 #StepDemo {
-  // TODO
   @include wh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  padding: 10px;
 
   .btn-area {
     @include row;
