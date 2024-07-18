@@ -36,7 +36,8 @@ export default defineNuxtConfig({
     '@nuxt/image', // https://image.nuxt.com/get-started/installation
     'nuxt-mail', // https://nuxt.com/modules/nuxt-mail
     '@nuxtjs/google-fonts', // https://google-fonts.nuxtjs.org/getting-started/setup
-    '@unocss/nuxt' // https://nuxt.com/modules/unocss
+    '@unocss/nuxt', // https://nuxt.com/modules/unocss
+    'v-wave/nuxt' // https://github.com/justintaddei/v-wave
   ],
   // i18n: { // i18n 目前 8.0.0-rc.3 error 打包運行會 500
   //   vueI18n: './i18n/i18n.config.ts'
