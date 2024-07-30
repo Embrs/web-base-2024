@@ -33,7 +33,7 @@ export default defineConfig({
     [/^item-row-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `item-row-${gap} justify-${justify}`],
 
     [/^item-col-\[?(.*?)\]?$/, ([, gap]) => `item-col gap-${gap}`],
-    [/^item-col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, align]) => `item-col-${gap} items-${align}`],
+    [/^item-col-\[?(.*?)\]?-\[?(.*?)\]?$/, ([, gap, justify]) => `item-col-${gap} justify-${justify}`],
 
     [/^center-row-\[?(.*?)\]?$/, ([, gap]) => `center-row gap-${gap}`],
     [/^center-col-\[?(.*?)\]?$/, ([, gap]) => `center-col gap-${gap}`],

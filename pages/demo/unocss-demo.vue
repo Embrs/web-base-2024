@@ -50,7 +50,7 @@
   .box-area(class="item-col-10px")
     .box1
     .box2
-  .title item-col-10px-center (column, gap, align-items)
+  .title item-col-10px-center (column, gap, justify-content)
   .box-area(class="item-col-10px-center bg-tertiary-300")
     .box1
     .box2

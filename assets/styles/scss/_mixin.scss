@@ -11,17 +11,9 @@
   gap: $gap;
 }
 
-@mixin col-center($gap: 0) {
+@mixin row($gap: 0, $align: center) {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: $gap;
-}
-
-@mixin row($gap: 0) {
-  display: flex;
-  align-items: center;
+  align-items: $align;
   gap: $gap;
 }
 
@@ -60,6 +52,11 @@
 @mixin col-around($gap: 0, $align: flex-start) {
   @include col($gap, $align);
   justify-content: space-around;
+}
+
+@mixin col-center($gap: 0, $align: flex-start) {
+  @include col($gap, $align);
+  justify-content: center;
 }
 
 @mixin auto-grid($gap: 0) {
