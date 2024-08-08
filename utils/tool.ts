@@ -220,6 +220,20 @@ const ShareUrl = async (url: string, title: string, text: string) => {
   await window.navigator.share({ title, text, url });
 };
 
+/** 隱藏滾動 */
+const ToggleScrollbar = (canHide: boolean) => {
+  if (import.meta.server) return;
+  const html = document.querySelector('html') as HTMLHtmlElement;
+  const body = document.querySelector('body') as HTMLBodyElement;
+  if (canHide) {
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+  } else {
+    html.style.removeProperty('overflow');
+    body.style.removeProperty('overflow');
+  }
+};
+
 export default {
   HasKey,
   IsArray,
@@ -242,5 +256,6 @@ export default {
   ScrollToEl, // 滾動到 element
   ScrollToTag, // 滾動到指定 id or class
   CopyText, // 複製文字
-  ShareUrl // 分享網址
+  ShareUrl, // 分享網址
+  ToggleScrollbar // 隱藏滾動
 };
