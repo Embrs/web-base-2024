@@ -221,7 +221,7 @@ const ShareUrl = async (url: string, title: string, text: string) => {
 };
 
 /** 隱藏滾動 */
-const ToggleScrollbar = (canHide: boolean) => {
+const HiddenScrollbar = (canHide: boolean) => {
   if (import.meta.server) return;
   const html = document.querySelector('html') as HTMLHtmlElement;
   const body = document.querySelector('body') as HTMLBodyElement;
@@ -257,5 +257,5 @@ export default {
   ScrollToTag, // 滾動到指定 id or class
   CopyText, // 複製文字
   ShareUrl, // 分享網址
-  ToggleScrollbar // 隱藏滾動
+  HiddenScrollbar // 隱藏滾動
 };
