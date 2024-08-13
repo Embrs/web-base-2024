@@ -32,7 +32,8 @@ const linkList = [
   { path: '/demo/img-demo', label: 'Img Demo' },
   { path: '/demo/leave-demo', label: 'Leave Demo' },
   { path: '/demo/animate-css-demo', label: 'Animate.css Demo' },
-  { path: '/demo/wave-demo', label: 'Wave Demo' }
+  { path: '/demo/wave-demo', label: 'Wave Demo' },
+  { path: '/demo/provide-inject-demo', label: 'ProvideInject Demo' }
 ];
 </script>
 
