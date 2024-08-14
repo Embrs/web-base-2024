@@ -16,6 +16,7 @@ const defErr: DefaultRes = Object.freeze({
 //   }
 //   return '';
 // };
+
 const Fetch = (url: string, option: AnyObject, downloadFile: boolean = false) => {
   // const router = useRouter();
   const storeUser = StoreUser();

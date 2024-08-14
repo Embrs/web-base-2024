@@ -4,6 +4,19 @@ import version from './version';
 
 const isDev = process.env.NODE_ENV === 'development';
 
+// const DevServerConfig = () => {
+//   if (!isDev) return {};
+//   return {
+//     proxy: {
+//       '/api': {
+//         target: process.env.NUXT_API_BASE as string,
+//         // target: 'http://pltf.org.tw',
+//         changeOrigin: true
+//       }
+//     }
+//   };
+// };
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   experimental: {
@@ -168,7 +181,7 @@ export default defineNuxtConfig({
     ],
     devProxy: {
       '/api': {
-        target: `${process.env.NUXT_PUBLIC_API_BASE as string}/api`, // 这里是接口地址
+        target: `${process.env.NUXT_API_BASE as string}/api`, // 这里是接口地址
         changeOrigin: true,
         prependPath: true
       }
@@ -177,7 +190,7 @@ export default defineNuxtConfig({
     // https://nuxt.com/docs/guide/concepts/rendering#route-rules
     routeRules: {
       '/api/**': {
-        proxy: `${process.env.NUXT_PUBLIC_API_BASE as string}/api/**`
+        proxy: `${process.env.NUXT_API_BASE as string}/api/**`
       }
       //   '/': { ssr: true },
       //   '/about/**': { isr: true }, // 內容將在CDN中持久存在，直到下一次部署
@@ -215,6 +228,7 @@ export default defineNuxtConfig({
         open: true // 如果存在本地服務端口，將在打包後自動展示
       })
     ],
+    // server: DevServerConfig(),
     build: {
       chunkSizeWarningLimit: 1500, // 分割檔案
       rollupOptions: {
