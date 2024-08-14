@@ -181,7 +181,7 @@ export default defineNuxtConfig({
     ],
     devProxy: {
       '/api': {
-        target: `${process.env.NUXT_API_BASE as string}/api`, // 这里是接口地址
+        target: `${process.env.NUXT_API_BASE as string}/api`, // 這裡是接口地址
         changeOrigin: true,
         prependPath: true
       }
