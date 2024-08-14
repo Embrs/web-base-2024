@@ -4,19 +4,6 @@ import version from './version';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const DevServerConfig = () => {
-  if (!isDev) return {};
-  return {
-    proxy: {
-      '/api': {
-        target: process.env.NUXT_API_BASE as string,
-        // target: 'http://pltf.org.tw',
-        changeOrigin: true
-      }
-    }
-  };
-};
-
 export default defineNuxtConfig({
   devtools: { enabled: true },
   experimental: {
@@ -167,25 +154,44 @@ export default defineNuxtConfig({
     }
   },
 
-  // Nuxt route 路由設定 ------------------------------------------------
-  // https://nuxt.com/docs/guide/concepts/rendering#route-rules
-  routeRules: {
-    // '/': { prerender: true }, // 每一次建構時，都重新預渲染頁面 (透過 Builder)
-    // '/blog/**': { static: true }, // 接收到一個請求時，頁面依照需求重新渲染頁面 (透過 Lambda)
-    // '/products/**': { swr: 600 }, // 接收到一個請求時，10 分鐘的快取緩衝過期後，將會再次的重新取得資料進行渲染 (透過 Lambda)
-    // '/admin/**': { ssr: false }, // 僅在客戶端渲染
-    // '/react/*': { redirect: '/vue' }, // 路由重新導向規則
-    // '/api/**': { cors: true } // 添加 CORS Header
-  },
-
   // Nitro server ------------------------------------------------------
   nitro: {
     // experimental: {
     //   websocket: true
     // },
+    compressPublicAssets: {
+      gzip: true
+      // brotli: true
+    },
     plugins: [
       '@/server/index'
-    ]
+    ],
+    devProxy: {
+      '/api': {
+        target: `${process.env.NUXT_PUBLIC_API_BASE as string}/api`, // 这里是接口地址
+        changeOrigin: true,
+        prependPath: true
+      }
+    },
+    // Nuxt route 路由設定 ------------------------------------------------
+    // https://nuxt.com/docs/guide/concepts/rendering#route-rules
+    routeRules: {
+      '/api/**': {
+        proxy: `${process.env.NUXT_PUBLIC_API_BASE as string}/api/**`
+      }
+      //   '/': { ssr: true },
+      //   '/about/**': { isr: true }, // 內容將在CDN中持久存在，直到下一次部署
+      //   '/service/**': { isr: true }, // 內容將在CDN中持久存在，直到下一次部署
+      //   '/contact-us/**': { isr: true }, // 內容將在CDN中持久存在，直到下一次部署
+      //   '/professional-advisers/**': { isr: true }, // 內容將在CDN中持久存在，直到下一次部署
+      //   '/privacy/**': { isr: true } // 內容將在CDN中持久存在，直到下一次部署
+      //   // { prerender: true }, // 每一次建構時，都重新預渲染頁面 (透過 Builder)
+      //   // '/blog/**': { static: true }, // 接收到一個請求時，頁面依照需求重新渲染頁面 (透過 Lambda)
+      //   // '/products/**': { swr: 600 }, // 接收到一個請求時，10 分鐘的快取緩衝過期後，將會再次的重新取得資料進行渲染 (透過 Lambda)
+      //   // '/admin/**': { ssr: false }, // 僅在客戶端渲染
+      //   // '/react/*': { redirect: '/vue' }, // 路由重新導向規則
+      //   // '/api/**': { cors: true } // 添加 CORS Header
+    }
   },
 
   // vite ---------------------------------------------------------------
@@ -209,8 +215,6 @@ export default defineNuxtConfig({
         open: true // 如果存在本地服務端口，將在打包後自動展示
       })
     ],
-    // axios CORS
-    server: DevServerConfig(),
     build: {
       chunkSizeWarningLimit: 1500, // 分割檔案
       rollupOptions: {
