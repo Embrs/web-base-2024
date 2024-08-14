@@ -2,7 +2,7 @@
 import { visualizer } from 'rollup-plugin-visualizer';
 import version from './version';
 
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 
 // const DevServerConfig = () => {
 //   if (!isDev) return {};
@@ -103,8 +103,6 @@ export default defineNuxtConfig({
         // version: process.env.npm_package_version as string
         version
       },
-      // viewport: 'width=500, initial-scale=1',
-      // title meta setting composables/mixins/mixin-init-meta.ts
       meta: [
         { name: 'format-detection', content: 'telephone=no,email=no,adress=no' } // 去除擾人自動偵測
         // { name: 'google-site-verification', content: '' }, // TODO google search console https://search.google.com/search-console?hl=zh-tw
@@ -179,6 +177,7 @@ export default defineNuxtConfig({
     plugins: [
       '@/server/index'
     ],
+    // 開發模式戶端代理
     devProxy: {
       '/api': {
         target: `${process.env.NUXT_API_BASE as string}/api`, // 這裡是接口地址
@@ -189,9 +188,9 @@ export default defineNuxtConfig({
     // Nuxt route 路由設定 ------------------------------------------------
     // https://nuxt.com/docs/guide/concepts/rendering#route-rules
     routeRules: {
-      '/api/**': {
-        proxy: `${process.env.NUXT_API_BASE as string}/api/**`
-      }
+      // '/api/**': { // 自訂反向代理
+      //   proxy: `${process.env.NUXT_API_BASE as string}/api/**`
+      // }
       //   '/': { ssr: true },
       //   '/about/**': { isr: true }, // 內容將在CDN中持久存在，直到下一次部署
       //   '/service/**': { isr: true }, // 內容將在CDN中持久存在，直到下一次部署

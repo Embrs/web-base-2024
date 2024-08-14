@@ -7,15 +7,14 @@ const defErr: DefaultRes = Object.freeze({
   }
 });
 
-// const GetApiUrl = () => {
-//   if (import.meta.server) {
-//     // 添加 apiUrl,nuxt3 環境變量要從useRuntimeConfig裡面取
-//     const { apiBase } = useRuntimeConfig();
-//     return apiBase;
-//     // return `${process.env.NUXT_API_BASE}`;
-//   }
-//   return '';
-// };
+const GetApiUrl = () => {
+  if (import.meta.server) {
+    // 添加 apiUrl,nuxt3 環境變量要從useRuntimeConfig裡面取
+    const { apiBase } = useRuntimeConfig();
+    return apiBase;
+  }
+  return '';
+};
 
 const Fetch = (url: string, option: AnyObject, downloadFile: boolean = false) => {
   // const router = useRouter();
@@ -25,7 +24,7 @@ const Fetch = (url: string, option: AnyObject, downloadFile: boolean = false) =>
     ...option,
     // 請求攔截器
     onRequest ({ options }) {
-      options.baseURL = ''; // GetApiUrl();
+      options.baseURL = GetApiUrl();
       options.headers = new Headers(options.headers);
       options.headers.set('Authorization', `Bearer ${storeUser.token}`);
     },
