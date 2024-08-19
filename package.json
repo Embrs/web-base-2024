@@ -29,6 +29,7 @@
     "@nuxtjs/stylelint-module": "^5.2.0",
     "@pinia/nuxt": "^0.5.1",
     "@prisma/client": "^5.16.2",
+    "@rollup/rollup-win32-x64-msvc": "^4.21.0",
     "@unocss/eslint-config": "^0.61.3",
     "@unocss/extractor-pug": "^0.61.3",
     "@unocss/nuxt": "^0.61.3",
