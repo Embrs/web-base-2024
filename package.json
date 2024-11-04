@@ -63,7 +63,7 @@
     "@rollup/rollup-linux-x64-musl": "4.9.5"
   },
   "engines": {
-    "node": "= 20.18.0",
-    "npm": ">= 10.8.2"
+    "node": "= 20.11.1",
+    "npm": ">= 10.2.4"
   }
 }
