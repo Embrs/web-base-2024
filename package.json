@@ -58,10 +58,6 @@
     "video.js": "^8.16.1",
     "vite-plugin-pug": "^0.3.2"
   },
-  "optionalDependencies": {
-    "@rollup/rollup-win32-x64-msvc": "^4.21.0",
-    "@rollup/rollup-linux-x64-musl": "4.9.5"
-  },
   "engines": {
     "node": "= 20.11.1",
     "npm": ">= 10.2.4"
